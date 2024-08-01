@@ -19,6 +19,7 @@ export default {
     colors: {
       sand: '#F9D6BA',
       burnedSand: '#FF4D00',
+      moon: '#5F5F5F',
     },
   },
   plugins: [],
