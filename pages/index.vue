@@ -1,9 +1,11 @@
 <script lang="ts" setup>
-
+definePageMeta({
+  title: 'Louis Place Mobile Software Engineer',
+})
 </script>
 
 <template>
-  <div>
+  <div class="pb-20">
     <section class="flex flex-col items-center text-center mt-12">
       <NuxtImg
         src="/img/me.jpeg"
@@ -56,7 +58,6 @@
           <span>
             M'envoyer un mail
           </span>
-
         </NuxtLink>
       </div>
     </section>
