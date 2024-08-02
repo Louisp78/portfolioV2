@@ -1,5 +1,6 @@
 <script setup lang="ts">
 // TODO: find implement OG with the corresponding plugin
+// TODO: Get the robots.txt file
 useSeoMeta({
   title: 'Louis Place - Mobile Software Engineer & Marine Biology Enthusiast Portfolio',
   ogTitle: 'Louis Place - Mobile Software Engineer & Marine Biology Enthusiast Portfolio',
