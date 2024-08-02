@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   eslint: {
     config: {
-      stylistic: true, // <---
+      stylistic: true,
     },
   },
   postcss: {

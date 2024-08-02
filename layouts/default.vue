@@ -1,3 +1,11 @@
+<script lang="ts" setup>
+const menuOpened = ref<boolean>(false)
+
+function handleBurgerMenu() {
+  menuOpened.value = !menuOpened.value
+}
+</script>
+
 <template>
   <div>
     <nav>
@@ -45,14 +53,6 @@
     </div>
   </div>
 </template>
-
-<script lang="ts" setup>
-const menuOpened = ref<boolean>(false)
-
-function handleBurgerMenu() {
-  menuOpened.value = !menuOpened.value
-}
-</script>
 
 <style scoped lang="postcss">
 .menu-item {
