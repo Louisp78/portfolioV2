@@ -14,6 +14,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['"Times New Roman"', ...defaultTheme.fontFamily.sans],
+        inconsolata: ["Inconsolata", ...defaultTheme.fontFamily.sans],
       },
     },
     colors: {
