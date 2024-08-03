@@ -35,6 +35,6 @@ h2 {
   @apply text-xl;
 }
 section {
-  @apply px-5;
+  @apply px-5 lg:px-14;
 }
 </style>
