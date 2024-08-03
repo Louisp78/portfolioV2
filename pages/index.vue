@@ -8,11 +8,9 @@ definePageMeta({
   <div class="flex flex-col lg:flex-row-reverse lg:justify-between pb-20">
     <section class="flex flex-col items-center mt-12 min-w-fit">
       <NuxtImg
-        src="/img/me.jpeg"
+        src="/img/me.png"
         class="rounded-full mb-7"
-        :width="200"
-        :height="200"
-        sizes=""
+        sizes="200px lg:300px"
         :modifiers="{ rotate: null }"
         alt="Photo of me"
       />
