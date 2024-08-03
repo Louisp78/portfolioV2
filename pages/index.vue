@@ -64,7 +64,7 @@ definePageMeta({
         <!-- TODO : Add a tooltip for the btn with my email adress -->
         <NuxtLink
           to="mailto:louis.place@epita.fr"
-          class="flex gap-2 p-3 font-inconsolata font-medium bg-sand rounded-md w-fit"
+          class="flex gap-2 p-3 font-inconsolata font-medium bg-sand rounded-md w-fit hover:text-burnedSand hover:border hover:border-burnedSand duration-100"
         >
           <NuxtImg src="/img/email-logo.svg" />
           <span>
@@ -79,7 +79,7 @@ definePageMeta({
 
 <style scoped lang="postcss">
 .nav-item {
-    @apply flex gap-3 p-2 font-inconsolata font-medium border rounded-md;
+    @apply flex gap-3 p-2 font-inconsolata font-medium border rounded-md hover:bg-sand hover:text-burnedSand;
   }
 ul {
     @apply flex flex-row gap-3;
