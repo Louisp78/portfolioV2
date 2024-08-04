@@ -1,4 +1,10 @@
 <script lang="ts" setup>
+const route = useRoute()
+
+useHead({
+  meta: [{ property: 'og:title', content: `Portfolio - ${route.meta.title}` }],
+})
+
 const menuOpened = ref<boolean>(false)
 
 function handleBurgerMenu() {
@@ -17,10 +23,10 @@ function handleBurgerMenu() {
         </li>
         <li>
           <ul class="hidden lg:flex menu-item lg:pt-3">
-            <li><NuxtLink><h1>About me</h1></NuxtLink></li>
-            <li><NuxtLink><h1>Experiences</h1></NuxtLink></li>
-            <li><NuxtLink><h1>Educations</h1></NuxtLink></li>
-            <li><NuxtLink><h1>Projects</h1></NuxtLink></li>
+            <li><NuxtLink>About me</NuxtLink></li>
+            <li><NuxtLink>Experiences</NuxtLink></li>
+            <li><NuxtLink>Educations</NuxtLink></li>
+            <li><NuxtLink>Projects</NuxtLink></li>
           </ul>
         </li>
       </ul>
@@ -36,16 +42,16 @@ function handleBurgerMenu() {
       >
         <li>
           <NuxtLink>
-            <h1>About me</h1>
+            About me
           </NuxtLink>
         </li>
         <li>
           <NuxtLink>
-            <h1>Experiences</h1>
+            Experiences
           </NuxtLink>
         </li>
-        <li><NuxtLink><h1>Educations</h1></NuxtLink></li>
-        <li><NuxtLink><h1>Projects</h1></NuxtLink></li>
+        <li><NuxtLink>Educations</NuxtLink></li>
+        <li><NuxtLink>Projects</NuxtLink></li>
       </ul>
     </nav>
     <div class="border-red-800 border-3">
@@ -56,11 +62,8 @@ function handleBurgerMenu() {
 
 <style scoped lang="postcss">
 .menu-item {
-  h1 {
-    @apply text-2xl  duration-100 select-none;
-  }
   a {
-    @apply flex px-10 py-3 items-center text-moon hover:text-burnedSand hover:cursor-pointer;
+    @apply text-2xl duration-100 select-none flex px-10 py-3 items-center text-moon hover:text-burnedSand hover:cursor-pointer;
   }
 }
 nav {

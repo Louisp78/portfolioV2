@@ -12,8 +12,12 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'background-beach': 'url(\'public/img/background-beach.png\')',
+      },
       fontFamily: {
         sans: ['"Times New Roman"', ...defaultTheme.fontFamily.sans],
+        inconsolata: ['Inconsolata', ...defaultTheme.fontFamily.sans],
       },
     },
     colors: {
