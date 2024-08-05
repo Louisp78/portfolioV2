@@ -21,9 +21,11 @@ export default {
       },
     },
     colors: {
-      sand: '#F9D6BA',
+      sand: '#FFB36E',
       burnedSand: '#FF4D00',
       moon: '#5F5F5F',
+      white: '#FFFFFF',
+      black: '#000000',
     },
   },
   plugins: [],

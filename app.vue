@@ -32,7 +32,10 @@ h1 {
   @apply text-3xl;
 }
 h2 {
-  @apply text-xl;
+  @apply text-3xl;
+}
+h3 {
+  @apply text-2xl;
 }
 section {
   @apply px-5 lg:px-14;
