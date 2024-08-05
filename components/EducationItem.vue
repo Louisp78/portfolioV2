@@ -9,15 +9,17 @@ defineProps<{
 <template>
   <li>
     <h3>{{ vModel.title }}</h3>
-    <NuxtLink :to="vModel.companieLink" class="italic text-xl">
+    <NuxtLink
+      :to="vModel.companieLink"
+      class="companieAndLocation"
+    >
       {{ vModel.companie }}
     </NuxtLink>
-    <p v-if="vModel.description" class="text-lg">
+    <p
+      v-if="vModel.description"
+      class="text-lg"
+    >
       {{ vModel.description }}
     </p>
   </li>
 </template>
-
-<style scoped lang="postcss">
-
-</style>

@@ -7,10 +7,6 @@ defineProps<{ vModel: Skill }>()
 <template>
   <NuxtLink
     class="rounded-full bg-sand text-burnedSand font-inconsolata font-medium px-3"
-    @click="() => console.info('YOO')"
+    @click="vModel.onPress"
   >{{ vModel.title }}</NuxtLink>
 </template>
-
-<style>
-
-</style>

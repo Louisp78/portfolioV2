@@ -40,4 +40,9 @@ h3 {
 section {
   @apply px-5 lg:px-14;
 }
+
+/* Custom classes */
+.companieAndLocation {
+  @apply italic text-xl;
+}
 </style>

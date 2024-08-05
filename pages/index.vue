@@ -146,7 +146,7 @@ const educationList: Education[] = [
           <p>
             I quickly understand that regardless of the language, what I love is the creation that comes from it. My goal is to continuously push the limits of my skills to be able to solve problems that have an impact on the world. During my studies and through my early experiences, I became captivated by native and cross-platform mobile development. Mobile development offers me a great freedom of interaction with the user, which I particularly appreciate.
           </p>
-          <p class="text-white lg:text-black">
+          <p class="lg:text-black">
             Outside of computing, I live for the Ocean. Driven by a growing passion for marine life, my readings turn into scientific articles about manta rays. I love scuba diving or just snorkeling to observe the unparalleled calm and serenity of the Ocean!
           </p>
         </article>
@@ -167,7 +167,10 @@ const educationList: Education[] = [
         </div>
       </section>
     </div>
-    <div class="flex flex-col justify-between text-white 2xl:text-black gap-10 lg:flex-row pb-20">
+    <div
+      id="exp-and-edu"
+      class="flex flex-col justify-between text-white 2xl:text-black gap-10 lg:flex-row pb-20"
+    >
       <section class="text-center lg:text-left lg:w-full">
         <h2 class="pb-5 lg:pb-10">
           Experiences
