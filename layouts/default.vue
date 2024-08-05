@@ -23,9 +23,21 @@ function handleBurgerMenu() {
         </li>
         <li>
           <ul class="hidden lg:flex menu-item lg:pt-3">
-            <li><NuxtLink>About me</NuxtLink></li>
-            <li><NuxtLink>Experiences</NuxtLink></li>
-            <li><NuxtLink>Educations</NuxtLink></li>
+            <li>
+              <NuxtLink to="/#">
+                About me
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/#exp-and-edu">
+                Experiences
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/#exp-and-edu">
+                Educations
+              </NuxtLink>
+            </li>
             <li><NuxtLink>Projects</NuxtLink></li>
           </ul>
         </li>
