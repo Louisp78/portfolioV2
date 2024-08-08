@@ -14,7 +14,7 @@ function handleBurgerMenu() {
 
 <template>
   <div>
-    <nav>
+    <nav class="fixed w-full bg-softSand">
       <ul class="flex justify-center lg:justify-between items-center">
         <li class="z-10 ">
           <h1 class="text-3xl lg:text-5xl pt-3 lg:pl-3 ">
@@ -50,7 +50,7 @@ function handleBurgerMenu() {
       </a>
       <ul
         v-if="menuOpened"
-        class="menu-item absolute top-0 left-0 bg-sand w-screen h-screen flex flex-col justify-center items-center gap-10 lg:hidden"
+        class="menu-item absolute top-0 left-0 bg-softSand w-screen h-screen flex flex-col justify-center items-center gap-10 lg:hidden"
       >
         <li>
           <NuxtLink>
