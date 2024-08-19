@@ -15,10 +15,10 @@ defineProps<{
           {{ vModel.companie }}, {{ vModel.location }}
         </p>
       </div>
-      <p class="text-lg">
+      <p class="text-md md:text-lg">
         {{ vModel.description }}
       </p>
-      <div class="flex flex-wrap gap-3 justify-center lg:justify-start">
+      <div class="skillContainer lg:justify-start">
         <SkillLabel
           v-for="skill in vModel.skills"
           :key="skill.title"

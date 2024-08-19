@@ -17,7 +17,7 @@ defineProps<{
     </NuxtLink>
     <p
       v-if="vModel.description"
-      class="text-lg"
+      class="text-md md:text-lg"
     >
       {{ vModel.description }}
     </p>

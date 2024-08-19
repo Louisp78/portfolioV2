@@ -10,35 +10,54 @@ const menuOpened = ref<boolean>(false)
 function handleBurgerMenu() {
   menuOpened.value = !menuOpened.value
 }
+
+interface MenuItem {
+  title: string
+  link: string
+}
+
+const navList: MenuItem[] = [
+  {
+    title: 'About me',
+    link: '/#about-me',
+  },
+  {
+    title: 'Experiences',
+    link: '/#exp',
+  },
+  {
+    title: 'Educations',
+    link: '/#edu',
+
+  },
+  {
+    title: 'Projects',
+    link: '/#projects',
+  },
+]
 </script>
 
 <template>
   <div>
-    <nav>
+    <nav class="fixed w-full bg-softSand">
       <ul class="flex justify-center lg:justify-between items-center">
-        <li class="z-10 ">
+        <li class="z-10">
           <h1 class="text-3xl lg:text-5xl pt-3 lg:pl-3 ">
             Portfolio
           </h1>
         </li>
         <li>
           <ul class="hidden lg:flex menu-item lg:pt-3">
-            <li>
-              <NuxtLink to="/#">
-                About me
+            <li
+              v-for="navItem in navList"
+              :key="navItem.title"
+            >
+              <NuxtLink
+                :to="navItem.link"
+              >
+                {{ navItem.title }}
               </NuxtLink>
             </li>
-            <li>
-              <NuxtLink to="/#exp-and-edu">
-                Experiences
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/#exp-and-edu">
-                Educations
-              </NuxtLink>
-            </li>
-            <li><NuxtLink>Projects</NuxtLink></li>
           </ul>
         </li>
       </ul>
@@ -46,29 +65,39 @@ function handleBurgerMenu() {
         class="absolute top-0 left-0 p-3 mt-2 z-10 hover:cursor-pointer lg:hidden"
         @click="handleBurgerMenu"
       >
-        <Icon :name="menuOpened ? 'material-symbols:close-rounded' : 'material-symbols:menu-rounded'" />
+        <Icon
+          :name="menuOpened ? 'material-symbols:close-rounded' : 'material-symbols:menu-rounded'"
+          size="20"
+        />
       </a>
       <ul
         v-if="menuOpened"
-        class="menu-item absolute top-0 left-0 bg-sand w-screen h-screen flex flex-col justify-center items-center gap-10 lg:hidden"
+        class="menu-item absolute top-0 left-0 bg-softSand w-screen h-screen flex flex-col justify-center items-center gap-10 lg:hidden"
       >
-        <li>
-          <NuxtLink>
-            About me
+        <li
+          v-for="navItem in navList"
+          :key="navItem.title"
+        >
+          <NuxtLink
+            :to="navItem.link"
+            @click="handleBurgerMenu"
+          >
+            {{ navItem.title }}
           </NuxtLink>
         </li>
-        <li>
-          <NuxtLink>
-            Experiences
-          </NuxtLink>
-        </li>
-        <li><NuxtLink>Educations</NuxtLink></li>
-        <li><NuxtLink>Projects</NuxtLink></li>
       </ul>
     </nav>
-    <div class="border-red-800 border-3">
-      <slot />
-    </div>
+    <slot />
+    <footer class="bg-softSand border-t-2 flex items-center py-3 flex-col gap-2">
+      <span class="text-sm">A website made with 💚 and a pinch of Nuxt.js</span>
+      <NuxtLink
+        to="https://github.com/Louisp78/portfolioV2"
+        target="_blank"
+        class="text-sm underline hover:text-burnedSand"
+      >
+        View project on Github
+      </NuxtLink>
+    </footer>
   </div>
 </template>
 
