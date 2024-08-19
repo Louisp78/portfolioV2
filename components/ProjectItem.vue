@@ -22,7 +22,10 @@ defineProps<{ vModel: Project }>()
           {{ vModel.description }}
         </p>
         <div class="flex justify-center">
-          <PlayBtn :v-model="vModel" />
+          <PlayBtn
+            v-if="vModel.isGame"
+            :link="vModel.link"
+          />
         </div>
       </div>
     </div>
@@ -37,7 +40,10 @@ defineProps<{ vModel: Project }>()
         {{ vModel.description }}
       </p>
       <div class="flex justify-center">
-        <PlayBtn :v-model="vModel" />
+        <PlayBtn
+          v-if="vModel.isGame"
+          :link="vModel.link"
+        />
       </div>
     </div>
   </section>

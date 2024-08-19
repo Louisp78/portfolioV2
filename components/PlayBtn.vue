@@ -1,15 +1,12 @@
 <script lang="ts" setup>
-import type Project from '~~/types/Project'
-
-defineProps<{ vModel: Project }>()
+defineProps<{ link: string }>()
 </script>
 
 <template>
   <NuxtLink
-    v-if="vModel.isGame"
     target="_blank"
     class="button mt-5"
-    :to="vModel.link"
+    :to="link"
   >
     <NuxtImg
       src="/img/play-icon.svg"
