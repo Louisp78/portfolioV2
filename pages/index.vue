@@ -6,6 +6,9 @@ import type Project from '~/types/Project'
 definePageMeta({
   title: 'Louis Place Mobile Software Engineer',
 })
+
+const { isUnderMd } = useScreenSize()
+
 const experiencesList: Experience[] = [
   {
     title: 'Mobile Lead Developer',
@@ -156,7 +159,7 @@ const projectList: Project[] = [
     title: '🍜 SudoSumo',
     link: 'https://louisp78.github.io/sudosumo/',
     imgSrc: '/img/sudosumo.png',
-    description: 'Web application in ReactJs / Typescript for Sudoku with a hand-implemented solver using human solving techniques.',
+    description: 'Web application in React.js / Typescript for Sudoku with a hand-implemented solver using human solving techniques.',
     skills: [
       {
         title: 'React.js',
@@ -171,11 +174,26 @@ const projectList: Project[] = [
     isGame: true,
   },
 ]
+
+const allSkillList = computed(() => {
+  let allSkill = projectList.map(elt => elt.skills).flat()
+  allSkill = allSkill.concat(experiencesList.map(elt => elt.skills).flat())
+  allSkill = allSkill.concat([
+    {
+      title: 'R',
+    },
+    {
+      title: 'Python',
+    },
+  ])
+  allSkill = Array.from(new Map(allSkill.map(item => [item.title, item])).values())
+  return allSkill
+})
 </script>
 
 <template>
   <!-- TODO: fix logo nuxt img for responsivity -->
-  <div>
+  <div id="about-me">
     <div class="bg-background-beach bg-cover bg-no-repeat pt-20">
       <div class="flex flex-col lg:flex-row-reverse lg:justify-between pb-20">
         <section class="flex flex-col items-center mt-12 min-w-fit">
@@ -234,7 +252,7 @@ const projectList: Project[] = [
             </p>
           </article>
           <div class="flex flex-col items-center gap-3 text-center lg:text-left lg:items-start">
-            <p class="font-inconsolata font-medium">
+            <p class="hidden md:block font-inconsolata font-medium">
               To contact me, please reach out here...
             </p>
             <!-- TODO : Add a tooltip for the btn with my email adress -->
@@ -250,11 +268,12 @@ const projectList: Project[] = [
           </div>
         </section>
       </div>
-      <div
-        id="exp-and-edu"
-        class="flex flex-col justify-between text-white gap-10 lg:flex-row pb-20 bg-custom-gradient"
-      >
+      <div class="flex flex-col justify-between text-white gap-10 lg:flex-row pb-20 bg-custom-gradient">
         <section class="text-center lg:text-left lg:w-full">
+          <div
+            :id="isUnderMd ? 'exp' : 'exp edu'"
+            class="relative -top-20"
+          />
           <h2 class="pb-5 lg:pb-10">
             Experiences
           </h2>
@@ -267,6 +286,10 @@ const projectList: Project[] = [
           </ul>
         </section>
         <section class="lg:w-full">
+          <div
+            :id="isUnderMd ? 'edu' : ''"
+            class="relative -top-20"
+          />
           <h2 class="pb-5 text-center lg:pb-10 lg:text-right">
             Education
           </h2>
@@ -281,8 +304,8 @@ const projectList: Project[] = [
       </div>
     </div>
     <section
-      id="project"
-      class="bg-white text-center pb-20"
+      id="projects"
+      class="bg-white text-center pb-28 md:pb-20"
     >
       <h2 class="py-16">
         Projects
@@ -302,10 +325,9 @@ const projectList: Project[] = [
       </h2>
       <div class="skillContainer">
         <SkillLabel
-          id="react-native"
-          :v-model="{
-            title: 'React Native',
-          }"
+          v-for="skill in allSkillList"
+          :key="skill.title"
+          :v-model="skill"
         />
       </div>
     </section>
@@ -324,7 +346,7 @@ const projectList: Project[] = [
   @apply flex flex-col items-center lg:items-end lg:text-right gap-10 md:px-20 lg:px-0;
 }
 .projectList {
-  @apply flex flex-col gap-10;
+  @apply flex flex-col gap-24 md:gap-10;
 }
 
 ul {

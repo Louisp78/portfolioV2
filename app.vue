@@ -14,7 +14,7 @@ useSeoMeta({
 
 <template>
   <div>
-    <NuxtLayout class="">
+    <NuxtLayout>
       <NuxtRouteAnnouncer />
       <NuxtPage />
     </NuxtLayout>

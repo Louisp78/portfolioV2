@@ -15,7 +15,7 @@ defineProps<{
           {{ vModel.companie }}, {{ vModel.location }}
         </p>
       </div>
-      <p class="text-lg">
+      <p class="text-md md:text-lg">
         {{ vModel.description }}
       </p>
       <div class="skillContainer lg:justify-start">
