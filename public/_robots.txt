@@ -1,0 +1,6 @@
+# General settings for all bots
+User-agent: *
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://www.louisplace.com/sitemap.xml
