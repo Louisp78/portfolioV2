@@ -42,7 +42,7 @@ const navList: MenuItem[] = [
     <nav class="fixed w-full bg-softSand z-10">
       <ul class="flex justify-center lg:justify-between items-center">
         <li class="z-10">
-          <h1 class="text-3xl lg:text-5xl pt-3 lg:pl-3 ">
+          <h1 class="text-3xl lg:text-5xl pt-3 lg:pl-3 animElt-slideLeft">
             Portfolio
           </h1>
         </li>
@@ -51,6 +51,7 @@ const navList: MenuItem[] = [
             <li
               v-for="navItem in navList"
               :key="navItem.title"
+              class="animElt-slideRight"
             >
               <NuxtLink
                 :to="navItem.link"
@@ -77,6 +78,7 @@ const navList: MenuItem[] = [
         <li
           v-for="navItem in navList"
           :key="navItem.title"
+          class="animElt-slideBottom"
         >
           <NuxtLink
             :to="navItem.link"

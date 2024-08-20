@@ -2,6 +2,7 @@
 import type Project from '~~/types/Project'
 
 defineProps<{ vModel: Project }>()
+const { slideOnObs } = useSlideRightObsAnim()
 </script>
 
 <template>
@@ -29,7 +30,7 @@ defineProps<{ vModel: Project }>()
         </div>
       </div>
     </div>
-    <div class="flex justify-center py-10 md:py-0 md:max-w-[40%]">
+    <div class="flex justify-center py-10 md:py-0 md:max-w-[40%] opacity-0" ref="slideOnObs">
       <NuxtImg
         format="webp"
         :src="vModel.imgSrc"

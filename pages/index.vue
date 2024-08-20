@@ -315,7 +315,9 @@ const allSkillList = computed(() => {
           <h2 class="pb-5 text-center lg:pb-10 lg:text-right">
             Education
           </h2>
-          <ul class="eduList text-center">
+          <ul
+            class="eduList text-center"
+          >
             <EducationItem
               v-for="education in educationList"
               :key="education.title"

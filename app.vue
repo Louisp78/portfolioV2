@@ -57,4 +57,21 @@ section {
 .button {
   @apply flex gap-2 p-3 font-inconsolata font-medium bg-sand rounded-md w-fit hover:text-burnedSand hover:border hover:border-burnedSand duration-100;
 }
+
+/* Animation classes */
+.animIni-slideRight {
+  @apply opacity-0 -translate-x-[100%];
+}
+.animElt-slideRight {
+  @apply animIni-slideRight animate-slideRight;
+}
+.animElt-slideLeft {
+  @apply opacity-0 translate-x-[100%] animate-slideLeft;
+}
+.animIni-slideBottom {
+  @apply opacity-0 -translate-y-[50%];
+}
+.animElt-slideBottom {
+  @apply animIni-slideBottom animate-slideBottom;
+}
 </style>
