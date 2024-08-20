@@ -5,8 +5,10 @@ defineProps<{ vModel: Skill }>()
 </script>
 
 <template>
-  <NuxtLink
-    class="rounded-full bg-sand text-burnedSand font-inconsolata font-medium px-3"
+  <div
+    class="rounded-full bg-softSand text-black border-burnedSand border-2 font-inconsolata font-medium px-3"
     @click="vModel.onPress"
-  >{{ vModel.title }}</NuxtLink>
+  >
+    {{ vModel.title }}
+  </div>
 </template>

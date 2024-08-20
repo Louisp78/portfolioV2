@@ -10,6 +10,12 @@ useSeoMeta({
   ogUrl: 'https://localhost:3000/',
   twitterCard: 'summary_large_image',
 })
+
+useHead({
+  htmlAttrs: {
+    lang: 'en',
+  },
+})
 </script>
 
 <template>
@@ -43,7 +49,7 @@ section {
 
 /* Custom classes */
 .companieAndLocation {
-  @apply italic text-xl;
+  @apply italic text-xl flex justify-center gap-2;
 }
 .skillContainer {
  @apply flex flex-wrap gap-3 justify-center;

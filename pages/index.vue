@@ -3,11 +3,11 @@ import type Experience from '~/types/Experience'
 import type Education from '~/types/Education'
 import type Project from '~/types/Project'
 
+const contactEmail = 'placelouis@gmail.com'
+
 definePageMeta({
   title: 'Louis Place Mobile Software Engineer',
 })
-
-const { isUnderMd } = useScreenSize()
 
 const experiencesList: Experience[] = [
   {
@@ -86,10 +86,12 @@ const educationList: Education[] = [
   {
     title: 'CMAS One Star Diver',
     companie: 'Blue Water Diving Center, MAU',
+    companieLink: 'https://maps.app.goo.gl/6uhak8rajU8MWnm68',
   },
   {
     title: 'Python Basics for Data Science',
     companie: 'Edx certificate PY0101EN: Python Basics for Data Science',
+    companieLink: 'https://courses.edx.org/certificates/692e878ca8584309a7f9b3e31d36445a',
   },
   {
     title: 'Scientific General Baccalaureate',
@@ -100,7 +102,8 @@ const projectList: Project[] = [
   {
     title: 'LeHibou App',
     link: '',
-    imgSrc: '/img/lehibou-demo.png',
+    imgSrc: '/img/lehibou.png',
+    imgAlt: 'Two screenshots of the Lehibou App: the first shows the login screen, and the second displays the iOS widget for freelance availability.',
     description: 'Mobile application in React Native using Expo, Maestro, with testing through Jest and MSW, including full deployment on iOS and Android app stores. The application also includes a native iOS widget written in Swift. Agile environment implementing the SCRUM methodology.',
     skills: [
       {
@@ -121,6 +124,7 @@ const projectList: Project[] = [
     title: 'LivLink',
     link: '',
     imgSrc: '/img/livlink2.png',
+    imgAlt: 'Three screenshots of the LivLink App: the first shows the contacts list, and the second and third display the \'Circle Call\' feature.',
     description: 'Android Kotlin application for telephony and communication aimed at isolated individuals. Back-end developed with Java Spring Boot. One-year client project in an agile organization, evaluated through presentations and deliverables.',
     skills: [
       {
@@ -138,7 +142,8 @@ const projectList: Project[] = [
     title: 'Studeam',
     description: 'Mobile application for collaborative work and organization of group work sessions. Developed in React Native with a Java Spring Boot back-end. One-year project with deliverables and presentations. Group project involving 4 team members.',
     link: '',
-    imgSrc: '',
+    imgSrc: '/img/studeam1.png',
+    imgAlt: 'Two screenshots of the Studeam App: the first shows a list of group working sessions, and the second displays the login screen.',
     skills: [
       {
         title: 'React Native',
@@ -159,6 +164,7 @@ const projectList: Project[] = [
     title: '🍜 SudoSumo',
     link: 'https://louisp78.github.io/sudosumo/',
     imgSrc: '/img/sudosumo.png',
+    imgAlt: 'Desktop screenshot of the SudoSumo app displaying a sudoku puzzle on the screen.',
     description: 'Web application in React.js / Typescript for Sudoku with a hand-implemented solver using human solving techniques.',
     skills: [
       {
@@ -198,13 +204,14 @@ const allSkillList = computed(() => {
       <div class="flex flex-col lg:flex-row-reverse lg:justify-between pb-20">
         <section class="flex flex-col items-center mt-12 min-w-fit">
           <NuxtImg
+            format="webp"
             src="/img/me.png"
             class="rounded-full mb-7"
             sizes="200px lg:300px"
             :modifiers="{ rotate: null }"
             alt="Photo of me"
           />
-          <nav>
+          <nav class="flex flex-col items-center gap-3">
             <ul>
               <li>
                 <NuxtLink
@@ -212,9 +219,9 @@ const allSkillList = computed(() => {
                   target="_blank"
                   class="nav-item"
                 >
-                  <NuxtImg
-                    src="/img/linkedin-logo.svg"
-                    alt="Linkedin"
+                  <Icon
+                    name="entypo-social:linkedin-with-circle"
+                    size="24"
                   />
                   <span>louis-place</span>
                 </NuxtLink>
@@ -225,14 +232,26 @@ const allSkillList = computed(() => {
                   target="_blank"
                   class="nav-item"
                 >
-                  <NuxtImg
-                    src="/img/github-logo.svg"
-                    alt="Github"
+                  <Icon
+                    name="carbon:logo-github"
+                    size="24"
                   />
                   <span>Louisp78</span>
                 </NuxtLink>
               </li>
             </ul>
+            <NuxtLink
+              to="/cv-louis-place.pdf"
+              target="_blank"
+              class="nav-item w-fit"
+              external
+            >
+              <Icon
+                name="mdi:resume"
+                size="24"
+              />
+              <span>Get my resume</span>
+            </NuxtLink>
           </nav>
         </section>
         <section class="mt-10 text-center lg:text-left lg:max-w-3xl">
@@ -257,10 +276,13 @@ const allSkillList = computed(() => {
             </p>
             <!-- TODO : Add a tooltip for the btn with my email adress -->
             <NuxtLink
-              to="mailto:louis.place@epita.fr"
+              :to="`mailto:${contactEmail}`"
               class="button"
             >
-              <NuxtImg src="/img/email-logo.svg" />
+              <Icon
+                name="ic:outline-email"
+                size="24"
+              />
               <span>
                 Send me an email
               </span>
@@ -271,7 +293,7 @@ const allSkillList = computed(() => {
       <div class="flex flex-col justify-between text-white gap-10 lg:flex-row pb-20 bg-custom-gradient">
         <section class="text-center lg:text-left lg:w-full">
           <div
-            :id="isUnderMd ? 'exp' : 'exp edu'"
+            id="exp"
             class="relative -top-20"
           />
           <h2 class="pb-5 lg:pb-10">
@@ -287,7 +309,7 @@ const allSkillList = computed(() => {
         </section>
         <section class="lg:w-full">
           <div
-            :id="isUnderMd ? 'edu' : ''"
+            id="edu"
             class="relative -top-20"
           />
           <h2 class="pb-5 text-center lg:pb-10 lg:text-right">
@@ -337,7 +359,7 @@ const allSkillList = computed(() => {
 
 <style scoped lang="postcss">
 .nav-item {
-    @apply flex gap-3 p-2 font-inconsolata font-medium border rounded-md hover:bg-sand hover:text-burnedSand;
+    @apply flex justify-center items-center gap-3 p-2 font-inconsolata font-medium border rounded-md hover:bg-sand hover:text-burnedSand;
   }
 .expList {
   @apply flex flex-col items-center gap-10 md:px-20 lg:px-0 lg:pl-12 pb-10;
