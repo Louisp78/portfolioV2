@@ -14,6 +14,7 @@ const div = resolveComponent('div')
     <component
       :is="vModel.companieLink ? nuxtLink : div"
       :to="vModel.companieLink"
+      target="_blank"
       class="companieAndLocation"
     >
       {{ vModel.companie }}
