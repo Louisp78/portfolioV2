@@ -8,7 +8,6 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/sitemap',
     '@nuxtjs/seo',
-    '@nuxtjs/robots',
   ],
   css: ['~/assets/css/main.css'],
   eslint: {
@@ -24,5 +23,9 @@ export default defineNuxtConfig({
   },
   nitro: {
     compressPublicAssets: true,
+  },
+  site: {
+    url: 'https://louisplace.com',
+    name: 'Louis Place Louis Place - Mobile Software Engineer & Marine Biology Enthusiast Portfolio',
   },
 })
