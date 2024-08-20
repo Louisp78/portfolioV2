@@ -5,7 +5,7 @@ defineProps<{ vModel: Project }>()
 </script>
 
 <template>
-  <section class="md:flex md:flex-row-reverse md:justify-between md:text-left md:items-start md:min-h-[60vh]">
+  <section class="md:flex md:flex-row-reverse md:justify-start md:gap-36 md:text-left md:items-start md:min-h-[60vh]">
     <div class="md:max-w-[50%] md:pl-15">
       <header class="flex flex-col gap-3 justify-center items-center md:justify-start md:items-start">
         <h3>{{ vModel.title }}</h3>
@@ -31,7 +31,9 @@ defineProps<{ vModel: Project }>()
     </div>
     <div class="flex justify-center py-10 md:py-0 md:max-w-[40%]">
       <NuxtImg
+        format="webp"
         :src="vModel.imgSrc"
+        :alt="vModel.imgAlt"
         height="400"
       />
     </div>

@@ -8,9 +8,9 @@ defineProps<{ link: string }>()
     class="button mt-5"
     :to="link"
   >
-    <NuxtImg
-      src="/img/play-icon.svg"
-      width="20"
+    <Icon
+      name="solar:play-line-duotone"
+      size="24"
     />
     <span>Play Now</span>
   </NuxtLink>

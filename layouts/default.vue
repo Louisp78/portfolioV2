@@ -39,7 +39,7 @@ const navList: MenuItem[] = [
 
 <template>
   <div>
-    <nav class="fixed w-full bg-softSand">
+    <nav class="fixed w-full bg-softSand z-10">
       <ul class="flex justify-center lg:justify-between items-center">
         <li class="z-10">
           <h1 class="text-3xl lg:text-5xl pt-3 lg:pl-3 ">
@@ -61,7 +61,7 @@ const navList: MenuItem[] = [
           </ul>
         </li>
       </ul>
-      <a
+      <div
         class="absolute top-0 left-0 p-3 mt-2 z-10 hover:cursor-pointer lg:hidden"
         @click="handleBurgerMenu"
       >
@@ -69,7 +69,7 @@ const navList: MenuItem[] = [
           :name="menuOpened ? 'material-symbols:close-rounded' : 'material-symbols:menu-rounded'"
           size="20"
         />
-      </a>
+      </div>
       <ul
         v-if="menuOpened"
         class="menu-item absolute top-0 left-0 bg-softSand w-screen h-screen flex flex-col justify-center items-center gap-10 lg:hidden"
@@ -97,6 +97,7 @@ const navList: MenuItem[] = [
       >
         View project on Github
       </NuxtLink>
+      <span class="hidden">{{ 'Thank you Raph for what you teach me ;)' }}</span>
     </footer>
   </div>
 </template>

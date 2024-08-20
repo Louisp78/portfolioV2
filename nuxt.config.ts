@@ -15,4 +15,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  nitro: {
+    compressPublicAssets: true,
+  },
 })
