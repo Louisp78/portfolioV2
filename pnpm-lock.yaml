@@ -852,7 +852,7 @@ packages:
     engines: {node: ^14.18.0 || >=16.10.0}
     peerDependencies:
       vue: ^3.3.4
-
+      
   '@nuxtjs/robots@4.1.1':
     resolution: {integrity: sha512-CaPYOzwPbg7ri1LsB7XMbM2P0vSsgW805JBgqq8MWvUdGrTdwgVpesc5PY8zpXZCJNCqKFRFuhZfUTUzGeGO/w==}
 

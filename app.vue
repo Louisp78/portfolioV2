@@ -49,7 +49,7 @@ section {
 
 /* Custom classes */
 .companieAndLocation {
-  @apply italic text-xl flex justify-center gap-2;
+  @apply italic text-xl flex justify-center md:justify-end gap-2;
 }
 .skillContainer {
  @apply flex flex-wrap gap-3 justify-center;
