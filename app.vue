@@ -57,4 +57,15 @@ section {
 .button {
   @apply flex gap-2 p-3 font-inconsolata font-medium bg-sand rounded-md w-fit hover:text-burnedSand hover:border hover:border-burnedSand duration-100;
 }
+
+/* Animation classes */
+.animElt-slideRight {
+  @apply opacity-0 -translate-x-[100%] animate-slideRight;
+}
+.animElt-slideLeft {
+  @apply opacity-0 translate-x-[100%] animate-slideLeft;
+}
+.animElt-slideBottom {
+  @apply opacity-0 -translate-y-[50%] animate-slideBottom;
+}
 </style>
