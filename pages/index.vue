@@ -14,7 +14,7 @@ const experiencesList: Experience[] = [
     title: 'Mobile Lead Developer',
     companie: 'LeHibou',
     location: 'Mauritius',
-    description: 'Development of a Google App Script tool using Excel as an advanced tool. Database analysis with Google Data Studio using PostgreSQL. Team testing and development of a web application in ReactJs. Lead developer of an automated data collection tool.',
+    description: 'Maintainer and lead developer of the mobile application in React Native using Expo, Maestro, and tests with Jest, MSW, including full deployment to the iOS and Android stores. Agile environment applying the SCRUM methodology. Team development of the web application in NuxtJs.',
     skills: [
       {
         title: 'React Native',
@@ -42,7 +42,7 @@ const experiencesList: Experience[] = [
     title: 'Data Analyst',
     location: 'Paris',
     companie: 'Spliit',
-    description: 'Maintainer and lead developer of the mobile application in React Native using Expo, Maestro, and tests with Jest, MSW, including full deployment to the iOS and Android stores. Agile environment applying the SCRUM methodology. Team development of the web application in NuxtJs.',
+    description: 'Development of a Google App Script tool using Excel as an advanced tool. Database analysis with Google Data Studio using PostgreSQL. Team testing and development of a web application in ReactJs. Lead developer of an automated data collection tool.',
     skills: [
       {
         title: 'Excel',
