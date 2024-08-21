@@ -59,19 +59,13 @@ section {
 }
 
 /* Animation classes */
-.animIni-slideRight {
-  @apply opacity-0 -translate-x-[100%];
-}
 .animElt-slideRight {
-  @apply animIni-slideRight animate-slideRight;
+  @apply opacity-0 -translate-x-[100%] animate-slideRight;
 }
 .animElt-slideLeft {
   @apply opacity-0 translate-x-[100%] animate-slideLeft;
 }
-.animIni-slideBottom {
-  @apply opacity-0 -translate-y-[50%];
-}
 .animElt-slideBottom {
-  @apply animIni-slideBottom animate-slideBottom;
+  @apply opacity-0 -translate-y-[50%] animate-slideBottom;
 }
 </style>
