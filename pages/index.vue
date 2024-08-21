@@ -18,23 +18,18 @@ const experiencesList: Experience[] = [
     skills: [
       {
         title: 'React Native',
-        onPress: () => console.info('Yo'),
       },
       {
         title: 'Expo',
-        onPress: () => console.info('Yolo'),
       },
       {
         title: 'Nuxt.js',
-        onPress: () => console.info('Yolo'),
       },
       {
         title: 'Typescript',
-        onPress: () => console.info('Yolo'),
       },
       {
         title: 'Swift',
-        onPress: () => console.info('Yolo'),
       },
     ],
   },
@@ -46,27 +41,21 @@ const experiencesList: Experience[] = [
     skills: [
       {
         title: 'Excel',
-        onPress: () => console.info(),
       },
       {
         title: 'Google App Script',
-        onPress: () => console.info(),
       },
       {
         title: 'PostgreSQL',
-        onPress: () => console.info(),
       },
       {
         title: 'Typescript',
-        onPress: () => {},
       },
       {
         title: 'Google Data Studio',
-        onPress: () => {},
       },
       {
         title: 'React.js',
-        onPress: () => {},
       },
     ],
   },
@@ -80,7 +69,7 @@ const educationList: Education[] = [
   },
   {
     title: 'Dual Bachelor\'s Degree in Computer Science',
-    companie: 'University of Paris-Est Créteil, FRA',
+    companie: 'University of Paris-Est Créteil, FR',
     companieLink: 'https://www.u-pec.fr',
   },
   {
@@ -90,12 +79,12 @@ const educationList: Education[] = [
   },
   {
     title: 'Python Basics for Data Science',
-    companie: 'Edx certificate PY0101EN: Python Basics for Data Science',
+    companie: 'Edx certificate PY0101EN: Python Basics for Data Science',
     companieLink: 'https://courses.edx.org/certificates/692e878ca8584309a7f9b3e31d36445a',
   },
   {
     title: 'Scientific General Baccalaureate',
-    companie: 'High School Blanche de Castille, Versailles FRA',
+    companie: 'High School Blanche de Castille, Versailles FR',
   },
 ]
 const projectList: Project[] = [
@@ -177,6 +166,7 @@ const projectList: Project[] = [
         title: 'Sudoku solver algorithms',
       },
     ],
+    //TODO: delete this property and create btnLink and btnText properties
     isGame: true,
   },
 ]

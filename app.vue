@@ -55,7 +55,7 @@ section {
  @apply flex flex-wrap gap-3 justify-center;
 }
 .button {
-  @apply flex gap-2 p-3 font-inconsolata font-medium bg-sand rounded-md w-fit hover:text-burnedSand hover:border hover:border-burnedSand duration-100;
+  @apply flex gap-2 p-3 font-inconsolata font-medium bg-sand rounded-md w-fit hover:text-burnedSand hover:bg-opacity-0 hover:border hover:border-burnedSand duration-100;
 }
 
 /* Animation classes */
