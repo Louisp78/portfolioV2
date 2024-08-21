@@ -14,27 +14,22 @@ const experiencesList: Experience[] = [
     title: 'Mobile Lead Developer',
     companie: 'LeHibou',
     location: 'Mauritius',
-    description: 'Development of a Google App Script tool using Excel as an advanced tool. Database analysis with Google Data Studio using PostgreSQL. Team testing and development of a web application in ReactJs. Lead developer of an automated data collection tool.',
+    description: 'Maintainer and lead developer of the mobile application in React Native using Expo, Maestro, and tests with Jest, MSW, including full deployment to the iOS and Android stores. Agile environment applying the SCRUM methodology. Team development of the web application in NuxtJs.',
     skills: [
       {
         title: 'React Native',
-        onPress: () => console.info('Yo'),
       },
       {
         title: 'Expo',
-        onPress: () => console.info('Yolo'),
       },
       {
         title: 'Nuxt.js',
-        onPress: () => console.info('Yolo'),
       },
       {
         title: 'Typescript',
-        onPress: () => console.info('Yolo'),
       },
       {
         title: 'Swift',
-        onPress: () => console.info('Yolo'),
       },
     ],
   },
@@ -42,31 +37,25 @@ const experiencesList: Experience[] = [
     title: 'Data Analyst',
     location: 'Paris',
     companie: 'Spliit',
-    description: 'Maintainer and lead developer of the mobile application in React Native using Expo, Maestro, and tests with Jest, MSW, including full deployment to the iOS and Android stores. Agile environment applying the SCRUM methodology. Team development of the web application in NuxtJs.',
+    description: 'Development of a Google App Script tool using Excel as an advanced tool. Database analysis with Google Data Studio using PostgreSQL. Team testing and development of a web application in ReactJs. Lead developer of an automated data collection tool.',
     skills: [
       {
         title: 'Excel',
-        onPress: () => console.info(),
       },
       {
         title: 'Google App Script',
-        onPress: () => console.info(),
       },
       {
         title: 'PostgreSQL',
-        onPress: () => console.info(),
       },
       {
         title: 'Typescript',
-        onPress: () => {},
       },
       {
         title: 'Google Data Studio',
-        onPress: () => {},
       },
       {
         title: 'React.js',
-        onPress: () => {},
       },
     ],
   },
@@ -80,7 +69,7 @@ const educationList: Education[] = [
   },
   {
     title: 'Dual Bachelor\'s Degree in Computer Science',
-    companie: 'University of Paris-Est Créteil, FRA',
+    companie: 'University of Paris-Est Créteil, FR',
     companieLink: 'https://www.u-pec.fr',
   },
   {
@@ -90,12 +79,12 @@ const educationList: Education[] = [
   },
   {
     title: 'Python Basics for Data Science',
-    companie: 'Edx certificate PY0101EN: Python Basics for Data Science',
+    companie: 'Edx certificate PY0101EN: Python Basics for Data Science',
     companieLink: 'https://courses.edx.org/certificates/692e878ca8584309a7f9b3e31d36445a',
   },
   {
     title: 'Scientific General Baccalaureate',
-    companie: 'High School Blanche de Castille, Versailles FRA',
+    companie: 'High School Blanche de Castille, Versailles FR',
   },
 ]
 const projectList: Project[] = [
@@ -177,6 +166,7 @@ const projectList: Project[] = [
         title: 'Sudoku solver algorithms',
       },
     ],
+    //TODO: delete this property and create btnLink and btnText properties
     isGame: true,
   },
 ]
