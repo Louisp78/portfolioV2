@@ -4,5 +4,8 @@ module.exports = {
       target: 'filesystem',
       outputDir: 'lhci_results',
     },
+    assert: {
+      preset: 'lighthouse:recommended',
+    },
   },
 }

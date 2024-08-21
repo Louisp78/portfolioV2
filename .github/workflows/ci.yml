@@ -13,11 +13,23 @@ jobs:
       LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }} # Set environment variable using GitHub Secret
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js 22.x
-        uses: actions/setup-node@v3
+      - name: Checkout
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          node-version: 22.x
+          node-version: "20"
+          cache: npm
+      - name: Restore cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            dist
+            .nuxt
+          key: ${{ runner.os }}-nuxt-build-${{ hashFiles('dist') }}
+          restore-keys: |
+            ${{ runner.os }}-nuxt-build-
+
       - name: npm install 
         run: |
           npm install
@@ -31,7 +43,7 @@ jobs:
           npm install -g @lhci/cli
           lhci autorun
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: build-artifact # Name of the artifact
+          name: lhci-reports-${{ github.sha }} # Name of the artifact
           path: lhci_results # Path to the folder or files you want to upload
