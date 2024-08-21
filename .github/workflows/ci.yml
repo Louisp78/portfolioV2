@@ -9,6 +9,9 @@ jobs:
   lhci:
     name: Lighthouse
     runs-on: ubuntu-latest
+    env:
+      LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }} # Set environment variable using GitHub Secret
+
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js 22.x
