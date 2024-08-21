@@ -33,16 +33,11 @@ export default {
           '0%': { transform: '-translateY(50%)', opacity: 0 },
           '100%': { transform: 'translateY(0%)', opacity: 1 },
         },
-        growingMenu: {
-          '0%': {transform: 'height(0%)'},
-          '100%': {transform: 'height(100%)'},
-        },
       },
       animation: {
         slideLeft: 'slideLeft 1s ease-in-out forwards',
         slideRight: 'slideRight 1s ease-in-out forwards',
         slideBottom: 'slideBottom 1s ease-in-out forwards',
-        growingMenu: 'growingMenu 1s ease-in-out forwards',
       },
     },
     colors: {
