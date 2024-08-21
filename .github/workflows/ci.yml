@@ -15,10 +15,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 22.x
-      - name: npm install, build
+      - name: npm install, generate 
         run: |
           npm install
-          npm run build
+          npm run generate
+          mv .output dist
       - name: run Lighthouse CI
         run: |
           npm install -g @lhci/cli
