@@ -264,7 +264,7 @@ const allSkillList = computed(() => {
             <p class="hidden md:block font-inconsolata font-medium">
               To contact me, please reach out here...
             </p>
-            <div class="flex items-center gap-3">
+            <div class="flex flex-col md:flex-row items-center gap-3">
               <!-- TODO : Add a tooltip for the btn with my email adress -->
               <NuxtLink
                 :to="`mailto:${contactEmail}`"
