@@ -47,6 +47,8 @@ export default {
       moon: '#5F5F5F',
       white: '#FFFFFF',
       black: '#000000',
+      green: '#00FF51',
+      darkGreen: '#81B928',
     },
   },
   plugins: [],
