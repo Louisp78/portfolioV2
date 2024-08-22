@@ -166,7 +166,7 @@ const projectList: Project[] = [
         title: 'Sudoku solver algorithms',
       },
     ],
-    //TODO: delete this property and create btnLink and btnText properties
+    // TODO: delete this property and create btnLink and btnText properties
     isGame: true,
   },
 ]
@@ -247,7 +247,7 @@ const allSkillList = computed(() => {
         <section class="mt-10 text-center lg:text-left lg:max-w-3xl">
           <header class="pb-5">
             <h2>👋 Hello, I'm Louis</h2>
-            <h3>a Mobile Software Engineer & a Marine Biology enthusiast</h3>
+            <h3>a Mobile / Web Software Engineer & a Marine Biology enthusiast</h3>
           </header>
           <article class="flex flex-col gap-5 mb-5 lg:mb-10 lg:w-fit">
             <p>
@@ -264,19 +264,39 @@ const allSkillList = computed(() => {
             <p class="hidden md:block font-inconsolata font-medium">
               To contact me, please reach out here...
             </p>
-            <!-- TODO : Add a tooltip for the btn with my email adress -->
-            <NuxtLink
-              :to="`mailto:${contactEmail}`"
-              class="button"
-            >
-              <Icon
-                name="ic:outline-email"
-                size="24"
-              />
-              <span>
-                Send me an email
+            <div class="flex items-center gap-3">
+              <!-- TODO : Add a tooltip for the btn with my email adress -->
+              <NuxtLink
+                :to="`mailto:${contactEmail}`"
+                class="button"
+              >
+                <Icon
+                  name="ic:outline-email"
+                  size="24"
+                />
+                <span>
+                  Send me an email
+                </span>
+              </NuxtLink>
+              <span class="font-inconsolata font-medium">
+                or
               </span>
-            </NuxtLink>
+              <NuxtLink
+                to="https://www.malt.fr/profile/louisplace"
+                target="_blank"
+                class="flex flex-row items-center gap-2 px-3 border-2 rounded-md bg-softSand border-burnedSand"
+              >
+                <span class="relative w-3">
+                  <span class="animate-ping absolute -top-1 inline-flex h-3 w-3 rounded-full bg-darkGreen opacity-80" />
+                  <span class="absolute -top-1 inline-flex h-3 w-3 rounded-full bg-darkGreen" />
+                </span>
+                <span class="font-inconsolata font-medium">Hire me on </span>
+                <Icon
+                  name="simple-icons:malt"
+                  size="45"
+                />
+              </NuxtLink>
+            </div>
           </div>
         </section>
       </div>
