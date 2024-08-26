@@ -6,7 +6,7 @@ import type Project from '~/types/Project'
 const contactEmail = 'placelouis@gmail.com'
 
 definePageMeta({
-  title: 'Louis Place Mobile Software Engineer',
+  title: 'Louis Place Mobile / Web Software Engineer',
 })
 
 const experiencesList: Experience[] = [
@@ -14,7 +14,7 @@ const experiencesList: Experience[] = [
     title: 'Mobile Lead Developer',
     companie: 'LeHibou',
     location: 'Mauritius',
-    description: 'Maintainer and lead developer of the mobile application in React Native using Expo, Maestro, and tests with Jest, MSW, including full deployment to the iOS and Android stores. Agile environment applying the SCRUM methodology. Team development of the web application in NuxtJs.',
+    description: 'Maintainer and Lead Developer of a mobile application built with React Native using Expo, Maestro, and Jest for testing, with full deployment to both iOS and Android stores. Operated in an international team based in Mauritius, collaborating with colleagues from diverse cultural backgrounds. Worked in an Agile environment, following SCRUM methodology. Additionally, played a key role in the development of a web application using Nuxt.js.',
     skills: [
       {
         title: 'React Native',
@@ -37,7 +37,7 @@ const experiencesList: Experience[] = [
     title: 'Data Analyst',
     location: 'Paris',
     companie: 'Spliit',
-    description: 'Development of a Google App Script tool using Excel as an advanced tool. Database analysis with Google Data Studio using PostgreSQL. Team testing and development of a web application in ReactJs. Lead developer of an automated data collection tool.',
+    description: 'Development of a Google App Script tool using Excel as an advanced tool. Database analysis with Google Data Studio using PostgreSQL. Team testing and development of a web application in React.js. Lead developer of an automated data collection tool.',
     skills: [
       {
         title: 'Excel',
@@ -93,7 +93,7 @@ const projectList: Project[] = [
     link: '',
     imgSrc: '/img/lehibou.png',
     imgAlt: 'Two screenshots of the Lehibou App: the first shows the login screen, and the second displays the iOS widget for freelance availability.',
-    description: 'Mobile application in React Native using Expo, Maestro, with testing through Jest and MSW, including full deployment on iOS and Android app stores. The application also includes a native iOS widget written in Swift. Agile environment implementing the SCRUM methodology.',
+    description: 'Developed a mobile application in React Native using Expo, with comprehensive testing through Jest and Maestro. The project included full deployment on both iOS and Android app stores, as well as the creation of a native iOS widget written in Swift. Additionally, I implemented DevOps practices using GitLab CI for continuous integration and deployment. Worked in an Agile environment, adhering to the SCRUM methodology.',
     skills: [
       {
         title: 'React Native',
@@ -114,7 +114,7 @@ const projectList: Project[] = [
     link: '',
     imgSrc: '/img/livlink2.png',
     imgAlt: 'Three screenshots of the LivLink App: the first shows the contacts list, and the second and third display the \'Circle Call\' feature.',
-    description: 'Android Kotlin application for telephony and communication aimed at isolated individuals. Back-end developed with Java Spring Boot. One-year client project in an agile organization, evaluated through presentations and deliverables.',
+    description: 'Developed an Android application in Kotlin focused on telephony and communication for isolated individuals, designed to enhance connectivity in remote areas. The back-end was built using Java Spring Boot, ensuring robust and scalable server-side functionality. This was a year-long client project, executed within an Agile framework, with progress regularly assessed through presentations and deliverables.',
     skills: [
       {
         title: 'Android',
@@ -129,7 +129,7 @@ const projectList: Project[] = [
   },
   {
     title: 'Studeam',
-    description: 'Mobile application for collaborative work and organization of group work sessions. Developed in React Native with a Java Spring Boot back-end. One-year project with deliverables and presentations. Group project involving 4 team members.',
+    description: 'Developed a mobile application designed for collaborative work and the organization of group sessions, leveraging React Native for the front end and Java Spring Boot for the back end. This year-long project, executed as part of a team of four, included regular deliverables and presentations to track progress and ensure alignment with client requirements.',
     link: '',
     imgSrc: '/img/studeam1.png',
     imgAlt: 'Two screenshots of the Studeam App: the first shows a list of group working sessions, and the second displays the login screen.',
@@ -154,7 +154,7 @@ const projectList: Project[] = [
     link: 'https://louisp78.github.io/sudosumo/',
     imgSrc: '/img/sudosumo.png',
     imgAlt: 'Desktop screenshot of the SudoSumo app displaying a sudoku puzzle on the screen.',
-    description: 'Web application in React.js / Typescript for Sudoku with a hand-implemented solver using human solving techniques.',
+    description: 'Developed a web application for Sudoku using React.js and TypeScript, featuring a custom-built solver that employs human solving techniques. This project integrates advanced algorithms to mimic manual solving strategies, offering an engaging and educational experience for users.',
     skills: [
       {
         title: 'React.js',
@@ -167,7 +167,7 @@ const projectList: Project[] = [
       },
     ],
     // TODO: delete this property and create btnLink and btnText properties
-    isGame: true,
+    isGame: false,
   },
 ]
 
@@ -231,7 +231,7 @@ const allSkillList = computed(() => {
               </li>
             </ul>
             <NuxtLink
-              to="/cv-louis-place.pdf"
+              to="/cv-louis-place-en.pdf"
               target="_blank"
               class="nav-item w-fit"
               external
@@ -247,7 +247,7 @@ const allSkillList = computed(() => {
         <section class="mt-10 text-center lg:text-left lg:max-w-3xl">
           <header class="pb-5">
             <h2>👋 Hello, I'm Louis</h2>
-            <h3>a Mobile / Web Software Engineer & a Marine Biology enthusiast</h3>
+            <h3>a Mobile / Web Software Engineer & an Oceanography enthusiast</h3>
           </header>
           <article class="flex flex-col gap-5 mb-5 lg:mb-10 lg:w-fit">
             <p>
@@ -257,7 +257,7 @@ const allSkillList = computed(() => {
               I quickly understand that regardless of the language, what I love is the creation that comes from it. My goal is to continuously push the limits of my skills to be able to solve problems that have an impact on the world. During my studies and through my early experiences, I became captivated by native and cross-platform mobile development. Mobile development offers me a great freedom of interaction with the user, which I particularly appreciate.
             </p>
             <p>
-              Outside of computing, I live for the Ocean. Driven by a growing passion for marine life, my readings turn into scientific articles about manta rays. I love scuba diving or just snorkeling to observe the unparalleled calm and serenity of the Ocean!
+              Outside of computing, I live for the Ocean. Driven by a growing passion for marine life and oceanography, my readings turn into scientific articles about manta rays. I love scuba diving or just snorkeling to observe the unparalleled calm and serenity of the Ocean!
             </p>
           </article>
           <div class="flex flex-col items-center gap-3 text-center lg:text-left lg:items-start">
