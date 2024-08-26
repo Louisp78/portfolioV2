@@ -1,11 +1,12 @@
 <script setup lang="ts">
 // TODO: find implement OG with the corresponding plugin
-// TODO: Get the robots.txt file
+
+const meJobTarget: string = 'Mobile Software Engineer & Oceanography Enthusiast'
 useSeoMeta({
-  title: 'Louis Place - Mobile Software Engineer & Marine Biology Enthusiast Portfolio',
-  ogTitle: 'Louis Place - Mobile Software Engineer & Marine Biology Enthusiast Portfolio',
-  description: 'Welcome to Louis Place\'s portfolio. I am a Mobile Software Engineer and Marine Biology Enthusiast. Explore my projects, skills, and contact information to learn more about my work and passions.',
-  ogDescription: 'Explore the portfolio of Louis Place, a skilled Mobile Software Engineer with a passion for Marine Biology. Check out my projects and learn more about my work.',
+  title: `Louis Place - ${meJobTarget} Portfolio`,
+  ogTitle: `Louis Place - ${meJobTarget} Portfolio`,
+  description: `Welcome to Louis Place's portfolio. I am a ${meJobTarget}. Explore my projects, skills, and contact information to learn more about my work and passions.`,
+  ogDescription: 'Explore the portfolio of Louis Place, a skilled Mobile Software Engineer with a passion for Oceanography. Check out my projects and learn more about my work.',
   ogType: 'website',
   ogUrl: 'https://localhost:3000/',
   twitterCard: 'summary_large_image',
