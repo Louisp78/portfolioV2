@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-defineProps<{ link: string }>()
+defineProps<{ link: string, title: string }>()
 </script>
 
 <template>
@@ -9,9 +9,9 @@ defineProps<{ link: string }>()
     :to="link"
   >
     <Icon
-      name="solar:play-line-duotone"
+      name="solar:link-bold"
       size="24"
     />
-    <span>Play Now</span>
+    <span>{{ title }}</span>
   </NuxtLink>
 </template>

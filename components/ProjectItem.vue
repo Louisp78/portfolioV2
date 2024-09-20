@@ -23,14 +23,18 @@ const { slideOnObs } = useSlideRightObsAnim()
           {{ vModel.description }}
         </p>
         <div class="flex justify-center">
-          <PlayBtn
-            v-if="vModel.isGame"
+          <ProjectBtn
+            v-if="vModel.link"
             :link="vModel.link"
+            :title="vModel.btnTitle"
           />
         </div>
       </div>
     </div>
-    <div class="flex justify-center py-10 md:py-0 md:max-w-[40%] opacity-0" ref="slideOnObs">
+    <div
+      ref="slideOnObs"
+      class="flex justify-center py-10 md:py-0 md:max-w-[40%] opacity-0"
+    >
       <NuxtImg
         format="webp"
         :src="vModel.imgSrc"
@@ -43,9 +47,10 @@ const { slideOnObs } = useSlideRightObsAnim()
         {{ vModel.description }}
       </p>
       <div class="flex justify-center">
-        <PlayBtn
-          v-if="vModel.isGame"
+        <ProjectBtn
+          v-if="vModel.link"
           :link="vModel.link"
+          :title="vModel.btnTitle"
         />
       </div>
     </div>

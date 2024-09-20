@@ -151,7 +151,8 @@ const projectList: Project[] = [
   },
   {
     title: '🍜 SudoSumo',
-    link: 'https://louisp78.github.io/sudosumo/',
+    link: '/sudosumo',
+    btnTitle: 'More details',
     imgSrc: '/img/sudosumo.png',
     imgAlt: 'Desktop screenshot of the SudoSumo app displaying a sudoku puzzle on the screen.',
     description: 'Developed a web application for Sudoku using React.js and TypeScript, featuring a custom-built solver that employs human solving techniques. This project integrates advanced algorithms to mimic manual solving strategies, offering an engaging and educational experience for users.',
@@ -167,7 +168,6 @@ const projectList: Project[] = [
       },
     ],
     // TODO: delete this property and create btnLink and btnText properties
-    isGame: false,
   },
 ]
 
