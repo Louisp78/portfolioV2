@@ -27,6 +27,7 @@ const { slideOnObs } = useSlideRightObsAnim()
             v-if="vModel.link"
             :link="vModel.link"
             :title="vModel.btnTitle"
+            :target="vModel.target"
           />
         </div>
       </div>
@@ -51,6 +52,7 @@ const { slideOnObs } = useSlideRightObsAnim()
           v-if="vModel.link"
           :link="vModel.link"
           :title="vModel.btnTitle"
+          :target="vModel.target"
         />
       </div>
     </div>

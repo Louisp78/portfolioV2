@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-defineProps<{ link: string, title: string }>()
+defineProps<{ link: string, title: string, target: string | undefined }>()
 </script>
 
 <template>
   <NuxtLink
-    target="_blank"
+    :target="target"
     class="button mt-5"
     :to="link"
   >
