@@ -8,10 +8,11 @@ defineProps<{ link: string, title: string }>()
     class="button mt-5"
     :to="link"
   >
+
+    <span>{{ title }}</span>
     <Icon
-      name="solar:link-bold"
+      name="solar:arrow-right-linear"
       size="24"
     />
-    <span>{{ title }}</span>
   </NuxtLink>
 </template>
