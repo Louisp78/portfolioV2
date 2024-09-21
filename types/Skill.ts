@@ -3,5 +3,5 @@ export default interface Skill {
   onPress?: (() => void) | undefined
 }
 
-//const mapSkill: Map<string, Skill> = new Map<string, Skill>()
-//map.set('react-native', {title: 'React Native', onPress: () => {}})
+// const mapSkill: Map<string, Skill> = new Map<string, Skill>()
+// map.set('react-native', {title: 'React Native', onPress: () => {}})

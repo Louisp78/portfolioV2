@@ -42,9 +42,11 @@ const navList: MenuItem[] = [
     <nav class="fixed w-full bg-softSand z-10">
       <ul class="flex justify-center lg:justify-between items-center">
         <li class="z-10">
-          <h1 class="text-3xl lg:text-5xl pt-3 lg:pl-3 animElt-slideLeft">
-            Portfolio
-          </h1>
+          <NuxtLink to="/">
+            <h1 class="text-3xl lg:text-5xl pt-3 lg:pl-3 animElt-slideLeft">
+              Portfolio
+            </h1>
+          </NuxtLink>
         </li>
         <li>
           <ul class="hidden lg:flex menu-item lg:pt-3">

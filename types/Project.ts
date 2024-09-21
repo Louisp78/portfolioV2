@@ -1,11 +1,12 @@
-import type Skill from '~/types/Skill'
+import type Skill from "~/types/Skill";
 
 export default interface Project {
-  title: string
-  link: string
-  imgSrc: string
-  imgAlt: string
-  description: string
-  skills: Skill[]
-  isGame?: boolean
+  title: string;
+  link?: string;
+  btnTitle?: string;
+  target?: string;
+  imgSrc: string;
+  imgAlt: string;
+  description: string;
+  skills: Skill[];
 }

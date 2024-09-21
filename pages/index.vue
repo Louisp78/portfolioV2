@@ -90,8 +90,10 @@ const educationList: Education[] = [
 const projectList: Project[] = [
   {
     title: 'LeHibou App',
-    link: '',
+    link: 'https://apps.apple.com/fr/app/lehibou-freelance-it/id6468558589',
+    btnTitle: 'Download on App Store',
     imgSrc: '/img/lehibou.png',
+    target: '_blank',
     imgAlt: 'Two screenshots of the Lehibou App: the first shows the login screen, and the second displays the iOS widget for freelance availability.',
     description: 'Developed a mobile application in React Native using Expo, with comprehensive testing through Jest and Maestro. The project included full deployment on both iOS and Android app stores, as well as the creation of a native iOS widget written in Swift. Additionally, I implemented DevOps practices using GitLab CI for continuous integration and deployment. Worked in an Agile environment, adhering to the SCRUM methodology.',
     skills: [
@@ -106,6 +108,50 @@ const projectList: Project[] = [
       },
       {
         title: 'Typescript',
+      },
+    ],
+  },
+  {
+    title: '🍜 SudoSumo',
+    link: '/sudosumo',
+    btnTitle: 'More details',
+    imgSrc: '/img/sudosumo.png',
+    imgAlt: 'Desktop screenshot of the SudoSumo app displaying a sudoku puzzle on the screen.',
+    description: 'Developed a web application for Sudoku using React.js and TypeScript, featuring a custom-built solver that employs human solving techniques. This project integrates advanced algorithms to mimic manual solving strategies, offering an engaging and educational experience for users.',
+    skills: [
+      {
+        title: 'Next.js',
+      },
+      {
+        title: 'React.js',
+      },
+      {
+        title: 'Typescript',
+      },
+      {
+        title: 'TailwindCSS',
+      },
+      {
+        title: 'Java',
+      },
+      {
+        title: 'Spring boot',
+      },
+      {
+        title: 'AWS EC2',
+      },
+      {
+        title: 'AWS RDS',
+      },
+      {
+        title: 'Docker',
+      },
+      {
+        title: 'OAuth2',
+      },
+
+      {
+        title: 'Sudoku solver algorithms',
       },
     ],
   },
@@ -149,35 +195,12 @@ const projectList: Project[] = [
 
     ],
   },
-  {
-    title: '🍜 SudoSumo',
-    link: 'https://louisp78.github.io/sudosumo/',
-    imgSrc: '/img/sudosumo.png',
-    imgAlt: 'Desktop screenshot of the SudoSumo app displaying a sudoku puzzle on the screen.',
-    description: 'Developed a web application for Sudoku using React.js and TypeScript, featuring a custom-built solver that employs human solving techniques. This project integrates advanced algorithms to mimic manual solving strategies, offering an engaging and educational experience for users.',
-    skills: [
-      {
-        title: 'React.js',
-      },
-      {
-        title: 'Typescript',
-      },
-      {
-        title: 'Sudoku solver algorithms',
-      },
-    ],
-    // TODO: delete this property and create btnLink and btnText properties
-    isGame: false,
-  },
 ]
 
 const allSkillList = computed(() => {
   let allSkill = projectList.map(elt => elt.skills).flat()
   allSkill = allSkill.concat(experiencesList.map(elt => elt.skills).flat())
   allSkill = allSkill.concat([
-    {
-      title: 'R',
-    },
     {
       title: 'Python',
     },
