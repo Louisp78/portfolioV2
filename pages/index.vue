@@ -117,7 +117,7 @@ const projectList: Project[] = [
     btnTitle: 'More details',
     imgSrc: '/img/sudosumo.png',
     imgAlt: 'Desktop screenshot of the SudoSumo app displaying a sudoku puzzle on the screen.',
-    description: 'Developed a web application for Sudoku using React.js and TypeScript, featuring a custom-built solver that employs human solving techniques. This project integrates advanced algorithms to mimic manual solving strategies, offering an engaging and educational experience for users.',
+    description: 'SudoSumo is a full-stack Sudoku app that combines a Next.js frontend with a Java Spring Boot backend. Styled with TailwindCSS and secured using OAuth2, the app benefits from server-side rendering for enhanced security. The backend, organized with Domain-Driven Design (DDD), communicates with a PostgreSQL database hosted on AWS. The app is deployed using AWS EC2 and a serverless provider for scalability and high availability.',
     skills: [
       {
         title: 'Next.js',
