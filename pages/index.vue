@@ -270,7 +270,7 @@ const allSkillList = computed(() => {
         <section class="mt-10 text-center lg:text-left lg:max-w-3xl">
           <header class="pb-5">
             <h2>👋 Hello, I'm Louis</h2>
-            <h3>a Mobile / Web Software Engineer & an Oceanography enthusiast</h3>
+            <h3>a junior full-stack software engineer</h3>
           </header>
           <article class="flex flex-col gap-5 mb-5 lg:mb-10 lg:w-fit">
             <p>
