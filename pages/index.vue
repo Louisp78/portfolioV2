@@ -254,7 +254,7 @@ const allSkillList = computed(() => {
               </li>
             </ul>
             <NuxtLink
-              to="/cv-louis-place-en.pdf"
+              to="/cv.pdf"
               target="_blank"
               class="nav-item w-fit"
               external
