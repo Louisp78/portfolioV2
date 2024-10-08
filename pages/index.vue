@@ -11,7 +11,7 @@ definePageMeta({
 
 const experiencesList: Experience[] = [
   {
-    title: 'Mobile Lead Developer',
+    title: 'Mobile Lead Engineer Intern',
     companie: 'LeHibou',
     location: 'Mauritius',
     description: 'Maintainer and Lead Developer of a mobile application built with React Native using Expo, Maestro, and Jest for testing, with full deployment to both iOS and Android stores. Operated in an international team based in Mauritius, collaborating with colleagues from diverse cultural backgrounds. Worked in an Agile environment, following SCRUM methodology. Additionally, played a key role in the development of a web application using Nuxt.js.',
@@ -34,7 +34,7 @@ const experiencesList: Experience[] = [
     ],
   },
   {
-    title: 'Data Analyst',
+    title: 'Data Analyst Intern',
     location: 'Paris',
     companie: 'Spliit',
     description: 'Development of a Google App Script tool using Excel as an advanced tool. Database analysis with Google Data Studio using PostgreSQL. Team testing and development of a web application in React.js. Lead developer of an automated data collection tool.',
