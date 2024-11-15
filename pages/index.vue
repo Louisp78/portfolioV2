@@ -89,6 +89,36 @@ const educationList: Education[] = [
 ]
 const projectList: Project[] = [
   {
+    title: 'MaConsigne Apps - an Expo migration story',
+    link: 'https://maconsigne.com/',
+    btnTitle: 'Visit the website',
+    imgSrc: '/img/maconsigne.png',
+    target: '_blank',
+    imgAlt: 'Three screenshots of the MaConsigne App',
+    description: 'Imagine taking two bare React Native old apps, dusting them off, and giving them a shiny new home in Expo SDK 51—this was my mission with MaConsigne. From wrangling dependencies to ensuring everything ran smoothly in its new Expo-powered environment, it was like moving houses but for apps (and with fewer boxes to unpack).To top it off, I set up a sleek CI/CD pipeline with EAS, automating builds and deployments so releases now glide out effortlessly. The result? Two modernized apps ready to conquer the mobile world, all while keeping things snappy and stress-free for the devs. 🚀',
+    skills: [
+      {
+        title: 'React Native',
+      },
+      {
+        title: 'Expo & Co',
+      },
+      {
+        title: 'Tailwind',
+      },
+      {
+        title: 'Redux',
+      },
+      {
+        title: 'EAS',
+      },
+      {
+        title: 'CI/CD',
+      },
+
+    ],
+  },
+  {
     title: 'LeHibou App',
     link: 'https://apps.apple.com/fr/app/lehibou-freelance-it/id6468558589',
     btnTitle: 'Download on App Store',
