@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const route = useRoute()
-
+const { setLocale } = useI18n()
 useHead({
   meta: [{ property: 'og:title', content: `Portfolio - ${route.meta.title}` }],
 })
@@ -60,6 +60,22 @@ const navList: MenuItem[] = [
               >
                 {{ navItem.title }}
               </NuxtLink>
+            </li>
+            <li
+              class="animElt-slideRight flex flex-row gap-3 pr-3"
+            >
+              <button
+                class="underline"
+                @click="setLocale('fr')"
+              >
+                fr
+              </button>
+              <button
+                class="underline"
+                @click="setLocale('en')"
+              >
+                en
+              </button>
             </li>
           </ul>
         </li>
