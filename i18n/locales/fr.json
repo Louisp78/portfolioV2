@@ -1,0 +1,36 @@
+{
+  "get-my-resume": "Voir mon cv",
+  "hello-im-louis": "👋 Salut, je suis Louis",
+  "job-title": "Ingénieur logiciel fullstack",
+  "story-starting": "Toute cette histoire commence à l'âge de 13 ans, le jour où j'ai eu mon premier ordinateur. J'ai commencé à développer, faisant mes premiers pas avec Python en créant des programmes de calculatrice et des jeux à embranchements. Finalement, après avoir obtenu mon baccalauréat scientifique, j'ai naturellement intégré EPITA.",
+  "story-gain-exp": "J'ai rapidement compris que, peu importe le langage, ce que j'aime, c'est la création qui en découle. Mon objectif est de repousser sans cesse les limites de mes compétences afin de résoudre des problèmes ayant un impact sur le monde. Pendant mes études et grâce à mes premières expériences, je me suis passionné pour le développement mobile natif et multiplateforme. Le développement mobile m'offre une grande liberté d'interaction avec l'utilisateur, ce que j'apprécie particulièrement.",
+  "story-ocean": "En dehors de l’informatique, je vis pour l’Océan. Porté par une passion grandissante pour la vie marine et l’océanographie, mes lectures se transforment en articles scientifiques sur les raies manta. J’adore faire de la plongée sous-marine ou simplement du snorkeling pour observer le calme et la sérénité incomparables de l’Océan !",
+  "to-contact": "Pour me contacter, veuillez m’écrire ici…",
+  "send-me-an-email": "Envoyer un email",
+  "or": "ou",
+  "hire-me-on": "Engagez-moi sur",
+  "experiences-title": "Expériences",
+  "projects-title": "Projets",
+  "my-toolkit": "Mes outils",
+  "menu": {},
+  "about-me-title": "À propos",
+  "education-title": "Éducation",
+  "mauritius": "Île Maurice",
+  "lehibou": {
+    "job-title": "Stagiaire Lead Développeur Mobile",
+    "description": "Responsable de la maintenance et Développeur Principal d’une application mobile construite avec React Native utilisant Expo, Maestro et Jest pour les tests, avec un déploiement complet sur les stores iOS et Android. A travaillé au sein d’une équipe internationale basée à l’île Maurice, collaborant avec des collègues de différentes origines culturelles. A évolué dans un environnement Agile, suivant la méthodologie SCRUM. De plus, a joué un rôle clé dans le développement d’une application web utilisant Nuxt.js."
+  },
+  "spliit": {
+    "description": "Développement d’un outil Google App Script utilisant Excel comme outil avancé. Analyse de base de données avec Google Data Studio utilisant PostgreSQL. Tests en équipe et développement d’une application web en React.js. Développeur principal d’un outil de collecte de données automatisé.",
+    "job-title": "Stagiaire en Analyse de Données"
+  },
+  "epita-mti": "Spécialité MTI, Multimédia et Technologies de l’Information.",
+  "upec-dual-bachelor": "Double diplôme de Bachelor en Informatique",
+  "upec": "Université de Paris-Est Créteil, FR",
+  "cmas-one-star-diver": "Plongeur CMAS Niveau 1",
+  "blue-water-diving-center-mau": "Blue Water Diving, MAU",
+  "python-basics-for-data-science": "Python Basics for Data Science",
+  "bac-s": "Baccalauréat Scientifique",
+  "school": "Lycée Blanche de Castille, Le Chesnay, FR",
+  "master-of-computer-science": "Diplôme d’Ingénieur en Informatique"
+}

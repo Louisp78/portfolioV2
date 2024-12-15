@@ -1,0 +1,36 @@
+{
+  "get-my-resume": "Get my resume",
+  "hello-im-louis": "👋 Hello, I'm Louis",
+  "job-title": "a junior full-stack software engineer",
+  "story-starting": "This whole story begins at the age of 13, the day I got my first computer. I started developing, taking my first steps with Python by creating calculator programs and branching games. Finally, after obtaining my science high school diploma, I logically ended up at EPITA.",
+  "story-gain-exp": "I quickly understand that regardless of the language, what I love is the creation that comes from it. My goal is to continuously push the limits of my skills to be able to solve problems that have an impact on the world. During my studies and through my early experiences, I became captivated by native and cross-platform mobile development. Mobile development offers me a great freedom of interaction with the user, which I particularly appreciate.",
+  "story-ocean": "Outside of computing, I live for the Ocean. Driven by a growing passion for marine life and oceanography, my readings turn into scientific articles about manta rays. I love scuba diving or just snorkeling to observe the unparalleled calm and serenity of the Ocean!",
+  "to-contact": "To contact me, please reach out here...",
+  "send-me-an-email": "Send me an email",
+  "or": "or",
+  "hire-me-on": "Hire me on",
+  "experiences-title": "Experiences",
+  "education-title": "Education",
+  "projects-title": "Projects",
+  "my-toolkit": "My Toolkit",
+  "menu": {},
+  "about-me-title": "About me",
+  "lehibou": {
+    "job-title": "Mobile Lead Engineer Intern",
+    "description": "Maintainer and Lead Developer of a mobile application built with React Native using Expo, Maestro, and Jest for testing, with full deployment to both iOS and Android stores. Operated in an international team based in Mauritius, collaborating with colleagues from diverse cultural backgrounds. Worked in an Agile environment, following SCRUM methodology. Additionally, played a key role in the development of a web application using Nuxt.js."
+  },
+  "mauritius": "Mauritius",
+  "spliit": {
+    "job-title": "Data Analyst Intern",
+    "description": "Development of a Google App Script tool using Excel as an advanced tool. Database analysis with Google Data Studio using PostgreSQL. Team testing and development of a web application in React.js. Lead developer of an automated data collection tool."
+  },
+  "master-of-computer-science": "Master of Computer Science",
+  "epita-mti": "Major MTI, Multimedia and Information Technologies.",
+  "upec-dual-bachelor": "Dual Bachelor\\'s Degree in Computer Science",
+  "upec": "University of Paris-Est Créteil, FR",
+  "cmas-one-star-diver": "CMAS One Star Diver",
+  "blue-water-diving-center-mau": "Blue Water Diving Center, MAU",
+  "python-basics-for-data-science": "Python Basics for Data Science",
+  "bac-s": "Scientific General Baccalaureate",
+  "school": "High School Blanche de Castille, Le Chesnay, FR"
+}

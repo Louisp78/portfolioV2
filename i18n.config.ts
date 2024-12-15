@@ -1,11 +1,4 @@
-import * as en from './locales/en.json'
-import * as fr from './locales/fr.json'
-
-export default defineI18nConfig(() => ({
+export default defineI18nConfig(async () => ({
   legacy: false,
   locale: 'en',
-  messages: {
-    en: en,
-    fr: fr,
-  },
 }))
