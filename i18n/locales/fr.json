@@ -1,7 +1,7 @@
 {
   "get-my-resume": "Voir mon cv",
   "hello-im-louis": "👋 Salut, je suis Louis",
-  "job-title": "Ingénieur logiciel fullstack",
+  "job-title": "un développeur d'applications mobiles fullstack",
   "story-starting": "Toute cette histoire commence à l'âge de 13 ans, le jour où j'ai eu mon premier ordinateur. J'ai commencé à développer, faisant mes premiers pas avec Python en créant des programmes de calculatrice et des jeux à embranchements. Finalement, après avoir obtenu mon baccalauréat scientifique, j'ai naturellement intégré EPITA.",
   "story-gain-exp": "J'ai rapidement compris que, peu importe le langage, ce que j'aime, c'est la création qui en découle. Mon objectif est de repousser sans cesse les limites de mes compétences afin de résoudre des problèmes ayant un impact sur le monde. Pendant mes études et grâce à mes premières expériences, je me suis passionné pour le développement mobile natif et multiplateforme. Le développement mobile m'offre une grande liberté d'interaction avec l'utilisateur, ce que j'apprécie particulièrement.",
   "story-ocean": "En dehors de l’informatique, je vis pour l’Océan. Porté par une passion grandissante pour la vie marine et l’océanographie, mes lectures se transforment en articles scientifiques sur les raies manta. J’adore faire de la plongée sous-marine ou simplement du snorkeling pour observer le calme et la sérénité incomparables de l’Océan !",
@@ -32,5 +32,34 @@
   "python-basics-for-data-science": "Python Basics for Data Science",
   "bac-s": "Baccalauréat Scientifique",
   "school": "Lycée Blanche de Castille, Le Chesnay, FR",
-  "master-of-computer-science": "Diplôme d’Ingénieur en Informatique"
+  "master-of-computer-science": "Diplôme d’Ingénieur en Informatique",
+  "projects": {
+    "maconsigne": {
+      "description": "Imaginez prendre deux anciennes applications React Native, les dépoussiérer et leur offrir un tout nouveau foyer dans Expo SDK 51—c’était ma mission avec MaConsigne. De la gestion des dépendances à l’assurance que tout fonctionne parfaitement dans son nouvel environnement propulsé par Expo, c’était comme déménager, mais pour des applications (et avec moins de cartons à déballer). Pour couronner le tout, j’ai mis en place un pipeline CI/CD élégant avec EAS, automatisant les builds et les déploiements afin que les versions sortent désormais sans effort. Le résultat ? Deux applications modernisées prêtes à conquérir le monde mobile, tout en gardant les choses rapides et sans stress pour les développeurs. 🚀",
+      "img-alt": "Trois captures d’écran de l’application MaConsigne",
+      "title": "MaConsigne Apps - une histoire de migration vers Expo"
+    },
+    "lehibou-app": {
+      "title": "Application LeHibou",
+      "description": "Imaginez ceci : j’ai pris une application mobile, y ai contribué en utilisant React Native et Expo, et l’ai lancée sur les stores iOS et Android avec 4 versions sur 6 mois — un véritable défi. En cours de route, j’ai effectué des tests approfondis avec Jest et Maestro pour m’assurer que tout fonctionnait parfaitement. Mais je ne me suis pas arrêté là. J’ai créé un élégant widget iOS natif en Swift pour permettre aux freelances de régler leur disponibilité. Pour couronner le tout, j’ai mis en place un pipeline CI/CD avec GitLab CI pour automatiser les déploiements et garantir que tout fonctionne de manière fluide. Tout cela a été réalisé dans un environnement Agile, en suivant de près la méthodologie SCRUM. Le résultat ? Une application parfaitement peaufinée et performante, prête à conquérir le marché de l’intermédiation de services entre freelances et entreprises, avec des déploiements fluides et sans tracas pour les développeurs. 🚀"
+    },
+    "sudosumo": {
+      "description": "SudoSumo est une application Sudoku full-stack qui associe un frontend Next.js à un backend Java Spring Boot. Stylée avec TailwindCSS et sécurisée grâce à OAuth2, l’application profite du rendu côté serveur pour améliorer sa sécurité. Le backend, conçu selon la méthodologie Domain-Driven Design (DDD), interagit avec une base de données PostgreSQL hébergée sur AWS. L’application est déployée sur AWS EC2 et utilise un fournisseur serverless pour assurer sa scalabilité et garantir une haute disponibilité."
+    },
+    "livlink": {
+      "description": "Développement d’une application Android en Kotlin axée sur la téléphonie et la communication pour les personnes isolées, conçue pour améliorer la connectivité dans les zones reculées. Le back-end a été développé avec Java Spring Boot, garantissant une fonctionnalité côté serveur robuste et évolutive. Il s’agissait d’un projet client d’une durée d’un an, réalisé dans un cadre Agile, avec des évaluations régulières des progrès via des présentations et des livrables."
+    },
+    "studeam": {
+      "description": "Développement d’une application mobile conçue pour le travail collaboratif et l’organisation de séances de groupe, en utilisant React Native pour le frontend et Java Spring Boot pour le backend. Ce projet d’une durée d’un an, réalisé au sein d’une équipe de quatre personnes, comprenait des livrables réguliers et des présentations pour suivre les progrès et garantir l’alignement avec les exigences du client.",
+      "img-alt": "Deux captures d’écran de l’application Studeam : la première montre une liste de séances de travail en groupe, et la seconde affiche l’écran de connexion."
+    }
+  },
+  "visit-the-website": "Visiter le site",
+  "download-on-app-store": "Télécharger sur l'App Store",
+  "seo": {
+    "index-title": "Louis Place Développeur Mobile / Web"
+  },
+  "more-details": "Voir plus",
+  "footer-credits": "Un site créé avec du 💚 et une pincée de Nuxt.js",
+  "view-project-on-github": "Voir le projet sur Github"
 }

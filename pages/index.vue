@@ -3,6 +3,8 @@ import type Experience from '~/types/Experience'
 import type Education from '~/types/Education'
 import type Project from '~/types/Project'
 
+const { t } = useI18n()
+
 const contactEmail = 'placelouis@gmail.com'
 
 definePageMeta({
@@ -11,10 +13,10 @@ definePageMeta({
 
 const experiencesList: Experience[] = [
   {
-    title: 'Mobile Lead Engineer Intern',
+    title: t('lehibou.job-title'),
     companie: 'LeHibou',
-    location: 'Mauritius',
-    description: 'Maintainer and Lead Developer of a mobile application built with React Native using Expo, Maestro, and Jest for testing, with full deployment to both iOS and Android stores. Operated in an international team based in Mauritius, collaborating with colleagues from diverse cultural backgrounds. Worked in an Agile environment, following SCRUM methodology. Additionally, played a key role in the development of a web application using Nuxt.js.',
+    location: t('mauritius'),
+    description: t('lehibou.description'),
     skills: [
       {
         title: 'React Native',
@@ -34,10 +36,10 @@ const experiencesList: Experience[] = [
     ],
   },
   {
-    title: 'Data Analyst Intern',
+    title: t('spliit.job-title'),
     location: 'Paris',
     companie: 'Spliit',
-    description: 'Development of a Google App Script tool using Excel as an advanced tool. Database analysis with Google Data Studio using PostgreSQL. Team testing and development of a web application in React.js. Lead developer of an automated data collection tool.',
+    description: t('spliit.description'),
     skills: [
       {
         title: 'Excel',
@@ -62,40 +64,40 @@ const experiencesList: Experience[] = [
 ]
 const educationList: Education[] = [
   {
-    title: 'Master of Computer Science',
+    title: t('master-of-computer-science'),
     companie: 'EPITA, FR',
     companieLink: 'https://www.epita.fr',
-    description: 'Major MTI, Multimedia and Information Technologies.',
+    description: t('epita-mti'),
   },
   {
-    title: 'Dual Bachelor\'s Degree in Computer Science',
-    companie: 'University of Paris-Est Créteil, FR',
+    title: t('upec-dual-bachelor'),
+    companie: t('upec'),
     companieLink: 'https://www.u-pec.fr',
   },
   {
-    title: 'CMAS One Star Diver',
-    companie: 'Blue Water Diving Center, MAU',
+    title: t('cmas-one-star-diver'),
+    companie: t('blue-water-diving-center-mau'),
     companieLink: 'https://maps.app.goo.gl/6uhak8rajU8MWnm68',
   },
   {
-    title: 'Python Basics for Data Science',
+    title: t('python-basics-for-data-science'),
     companie: 'Edx certificate PY0101EN: Python Basics for Data Science',
     companieLink: 'https://courses.edx.org/certificates/692e878ca8584309a7f9b3e31d36445a',
   },
   {
-    title: 'Scientific General Baccalaureate',
-    companie: 'High School Blanche de Castille, Versailles FR',
+    title: t('bac-s'),
+    companie: t('school'),
   },
 ]
 const projectList: Project[] = [
   {
-    title: 'MaConsigne Apps - an Expo migration story',
+    title: t('projects.maconsigne.title'),
     link: 'https://maconsigne.com/',
-    btnTitle: 'Visit the website',
+    btnTitle: t('visit-the-website'),
     imgSrc: '/img/maconsigne.png',
     target: '_blank',
-    imgAlt: 'Three screenshots of the MaConsigne App',
-    description: 'Imagine taking two bare React Native old apps, dusting them off, and giving them a shiny new home in Expo SDK 51—this was my mission with MaConsigne. From wrangling dependencies to ensuring everything ran smoothly in its new Expo-powered environment, it was like moving houses but for apps (and with fewer boxes to unpack).To top it off, I set up a sleek CI/CD pipeline with EAS, automating builds and deployments so releases now glide out effortlessly. The result? Two modernized apps ready to conquer the mobile world, all while keeping things snappy and stress-free for the devs. 🚀',
+    imgAlt: t('projects.maconsigne.img-alt'),
+    description: t('projects.maconsigne.description'),
     skills: [
       {
         title: 'React Native',
@@ -119,13 +121,13 @@ const projectList: Project[] = [
     ],
   },
   {
-    title: 'LeHibou App',
+    title: t('projects.lehibou-app.title'),
     link: 'https://apps.apple.com/fr/app/lehibou-freelance-it/id6468558589',
-    btnTitle: 'Download on App Store',
+    btnTitle: t('download-on-app-store'),
     imgSrc: '/img/lehibou.png',
     target: '_blank',
     imgAlt: 'Two screenshots of the Lehibou App: the first shows the login screen, and the second displays the iOS widget for freelance availability.',
-    description: 'Developed a mobile application in React Native using Expo, with comprehensive testing through Jest and Maestro. The project included full deployment on both iOS and Android app stores, as well as the creation of a native iOS widget written in Swift. Additionally, I implemented DevOps practices using GitLab CI for continuous integration and deployment. Worked in an Agile environment, adhering to the SCRUM methodology.',
+    description: t('projects.lehibou-app.description'),
     skills: [
       {
         title: 'React Native',
@@ -144,10 +146,10 @@ const projectList: Project[] = [
   {
     title: '🍜 SudoSumo',
     link: '/sudosumo',
-    btnTitle: 'More details',
+    btnTitle: t('more-details'),
     imgSrc: '/img/sudosumo.png',
     imgAlt: 'Desktop screenshot of the SudoSumo app displaying a sudoku puzzle on the screen.',
-    description: 'SudoSumo is a full-stack Sudoku app that combines a Next.js frontend with a Java Spring Boot backend. Styled with TailwindCSS and secured using OAuth2, the app benefits from server-side rendering for enhanced security. The backend, organized with Domain-Driven Design (DDD), communicates with a PostgreSQL database hosted on AWS. The app is deployed using AWS EC2 and a serverless provider for scalability and high availability.',
+    description: t('projects.sudosumo.description'),
     skills: [
       {
         title: 'Next.js',
@@ -190,7 +192,7 @@ const projectList: Project[] = [
     link: '',
     imgSrc: '/img/livlink2.png',
     imgAlt: 'Three screenshots of the LivLink App: the first shows the contacts list, and the second and third display the \'Circle Call\' feature.',
-    description: 'Developed an Android application in Kotlin focused on telephony and communication for isolated individuals, designed to enhance connectivity in remote areas. The back-end was built using Java Spring Boot, ensuring robust and scalable server-side functionality. This was a year-long client project, executed within an Agile framework, with progress regularly assessed through presentations and deliverables.',
+    description: t('projects.livlink.description'),
     skills: [
       {
         title: 'Android',
@@ -205,10 +207,10 @@ const projectList: Project[] = [
   },
   {
     title: 'Studeam',
-    description: 'Developed a mobile application designed for collaborative work and the organization of group sessions, leveraging React Native for the front end and Java Spring Boot for the back end. This year-long project, executed as part of a team of four, included regular deliverables and presentations to track progress and ensure alignment with client requirements.',
+    description: t('projects.studeam.description'),
     link: '',
     imgSrc: '/img/studeam1.png',
-    imgAlt: 'Two screenshots of the Studeam App: the first shows a list of group working sessions, and the second displays the login screen.',
+    imgAlt: t('projects.studeam.img-alt'),
     skills: [
       {
         title: 'React Native',
@@ -293,29 +295,29 @@ const allSkillList = computed(() => {
                 name="mdi:resume"
                 size="24"
               />
-              <span>Get my resume</span>
+              <span>{{ $t('get-my-resume') }}</span>
             </NuxtLink>
           </nav>
         </section>
         <section class="mt-10 text-center lg:text-left lg:max-w-3xl">
           <header class="pb-5">
-            <h2>👋 Hello, I'm Louis</h2>
-            <h3>a junior full-stack software engineer</h3>
+            <h2>{{ $t('hello-im-louis') }}</h2>
+            <h3>{{ $t('job-title') }}</h3>
           </header>
           <article class="flex flex-col gap-5 mb-5 lg:mb-10 lg:w-fit">
             <p>
-              This whole story begins at the age of 13, the day I got my first computer. I started developing, taking my first steps with Python by creating calculator programs and branching games. Finally, after obtaining my science high school diploma, I logically ended up at EPITA.
+              {{ $t('story-starting') }}
             </p>
             <p>
-              I quickly understand that regardless of the language, what I love is the creation that comes from it. My goal is to continuously push the limits of my skills to be able to solve problems that have an impact on the world. During my studies and through my early experiences, I became captivated by native and cross-platform mobile development. Mobile development offers me a great freedom of interaction with the user, which I particularly appreciate.
+              {{ $t('story-gain-exp') }}
             </p>
             <p>
-              Outside of computing, I live for the Ocean. Driven by a growing passion for marine life and oceanography, my readings turn into scientific articles about manta rays. I love scuba diving or just snorkeling to observe the unparalleled calm and serenity of the Ocean!
+              {{ $t('story-ocean') }}
             </p>
           </article>
           <div class="flex flex-col items-center gap-3 text-center lg:text-left lg:items-start">
             <p class="hidden md:block font-inconsolata font-medium">
-              To contact me, please reach out here...
+              {{ $t('to-contact') }}
             </p>
             <div class="flex flex-col md:flex-row items-center gap-3">
               <!-- TODO : Add a tooltip for the btn with my email adress -->
@@ -328,11 +330,11 @@ const allSkillList = computed(() => {
                   size="24"
                 />
                 <span>
-                  Send me an email
+                  {{ $t('send-me-an-email') }}
                 </span>
               </NuxtLink>
               <span class="font-inconsolata font-medium">
-                or
+                {{ $t('or') }}
               </span>
               <NuxtLink
                 to="https://www.malt.fr/profile/louisplace"
@@ -343,7 +345,7 @@ const allSkillList = computed(() => {
                   <span class="animate-ping absolute -top-1 inline-flex h-3 w-3 rounded-full bg-darkGreen opacity-80" />
                   <span class="absolute -top-1 inline-flex h-3 w-3 rounded-full bg-darkGreen" />
                 </span>
-                <span class="font-inconsolata font-medium">Hire me on </span>
+                <span class="font-inconsolata font-medium">{{ $t('hire-me-on') }} </span>
                 <Icon
                   name="simple-icons:malt"
                   size="45"
@@ -360,7 +362,7 @@ const allSkillList = computed(() => {
             class="relative -top-20"
           />
           <h2 class="pb-5 lg:pb-10">
-            Experiences
+            {{ $t('experiences-title') }}
           </h2>
           <ul class="expList">
             <ExperienceItem
@@ -376,7 +378,7 @@ const allSkillList = computed(() => {
             class="relative -top-20"
           />
           <h2 class="pb-5 text-center lg:pb-10 lg:text-right">
-            Education
+            {{ $t('education-title') }}
           </h2>
           <ul class="eduList text-center">
             <EducationItem
@@ -393,7 +395,7 @@ const allSkillList = computed(() => {
       class="bg-white text-center pb-28 md:pb-20"
     >
       <h2 class="py-16">
-        Projects
+        {{ $t('projects-title') }}
       </h2>
       <ul class="projectList">
         <li
@@ -406,7 +408,7 @@ const allSkillList = computed(() => {
     </section>
     <section class="text-center pb-10">
       <h2 class="pb-5">
-        My Toolkit
+        {{ $t('my-toolkit') }}
       </h2>
       <div class="skillContainer">
         <SkillLabel

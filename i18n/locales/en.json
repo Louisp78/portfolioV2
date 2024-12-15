@@ -32,5 +32,34 @@
   "blue-water-diving-center-mau": "Blue Water Diving Center, MAU",
   "python-basics-for-data-science": "Python Basics for Data Science",
   "bac-s": "Scientific General Baccalaureate",
-  "school": "High School Blanche de Castille, Le Chesnay, FR"
+  "school": "High School Blanche de Castille, Le Chesnay, FR",
+  "projects": {
+    "maconsigne": {
+      "description": "Imagine taking two bare React Native old apps, dusting them off, and giving them a shiny new home in Expo SDK 51—this was my mission with MaConsigne. From wrangling dependencies to ensuring everything ran smoothly in its new Expo-powered environment, it was like moving houses but for apps (and with fewer boxes to unpack).To top it off, I set up a sleek CI/CD pipeline with EAS, automating builds and deployments so releases now glide out effortlessly. The result? Two modernized apps ready to conquer the mobile world, all while keeping things snappy and stress-free for the devs. 🚀",
+      "title": "MaConsigne Apps - an Expo migration story",
+      "img-alt": "Three screenshots of the MaConsigne App"
+    },
+    "lehibou-app": {
+      "title": "LeHibou App",
+      "description": "Imagine this: I took a mobile app, contributed to it using React Native and Expo, and launched it on both iOS and Android stores with 4 versions over 6 months — no small feat. Along the way, I ran thorough tests with Jest and Maestro to ensure everything ran smoothly. But I didn’t stop there. I built a sleek native iOS widget in Swift to help freelancers manage their availability. To top it off, I set up a CI/CD pipeline using GitLab CI to automate deployments and ensure everything runs seamlessly. All of this was done in an Agile environment, closely following the SCRUM methodology. The result? A perfectly polished and high-performing app, ready to take on the world, with smooth deployments and zero hassle for the developers. 🚀"
+    },
+    "sudosumo": {
+      "description": "SudoSumo is a full-stack Sudoku app that combines a Next.js frontend with a Java Spring Boot backend. Styled with TailwindCSS and secured using OAuth2, the app benefits from server-side rendering for enhanced security. The backend, organized with Domain-Driven Design (DDD), communicates with a PostgreSQL database hosted on AWS. The app is deployed using AWS EC2 and a serverless provider for scalability and high availability."
+    },
+    "livlink": {
+      "description": "Developed an Android application in Kotlin focused on telephony and communication for isolated individuals, designed to enhance connectivity in remote areas. The back-end was built using Java Spring Boot, ensuring robust and scalable server-side functionality. This was a year-long client project, executed within an Agile framework, with progress regularly assessed through presentations and deliverables."
+    },
+    "studeam": {
+      "description": "Developed a mobile application designed for collaborative work and the organization of group sessions, leveraging React Native for the front end and Java Spring Boot for the back end. This year-long project, executed as part of a team of four, included regular deliverables and presentations to track progress and ensure alignment with client requirements.",
+      "img-alt": "Two screenshots of the Studeam App: the first shows a list of group working sessions, and the second displays the login screen."
+    }
+  },
+  "visit-the-website": "Visit the website",
+  "download-on-app-store": "Download on App Store",
+  "seo": {
+    "index-title": "Louis Place Mobile / Web Software Engineer"
+  },
+  "more-details": "More details",
+  "footer-credits": "A website made with 💚 and a pinch of Nuxt.js",
+  "view-project-on-github": "View project on Github"
 }

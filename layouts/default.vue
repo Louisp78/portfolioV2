@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const route = useRoute()
-const { setLocale } = useI18n()
+const { setLocale, t } = useI18n()
 useHead({
   meta: [{ property: 'og:title', content: `Portfolio - ${route.meta.title}` }],
 })
@@ -18,20 +18,20 @@ interface MenuItem {
 
 const navList: MenuItem[] = [
   {
-    title: 'About me',
+    title: t('about-me-title'),
     link: '/#about-me',
   },
   {
-    title: 'Experiences',
+    title: t('experiences-title'),
     link: '/#exp',
   },
   {
-    title: 'Educations',
+    title: t('education-title'),
     link: '/#edu',
 
   },
   {
-    title: 'Projects',
+    title: t('projects-title'),
     link: '/#projects',
   },
 ]
@@ -109,7 +109,7 @@ const navList: MenuItem[] = [
     </nav>
     <slot />
     <footer class="bg-softSand border-t-2 flex items-center py-3 flex-col gap-2">
-      <span class="text-sm">A website made with 💚 and a pinch of Nuxt.js</span>
+      <span class="text-sm">{{ $t('footer-credits') }}</span>
       <NuxtLink
         to="https://github.com/Louisp78/portfolioV2"
         target="_blank"
@@ -117,7 +117,6 @@ const navList: MenuItem[] = [
       >
         View project on Github
       </NuxtLink>
-      <span class="hidden">{{ 'Thank you Raph for what you teach me ;)' }}</span>
     </footer>
   </div>
 </template>
