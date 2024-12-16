@@ -31,6 +31,7 @@ export default defineNuxtConfig({
       { code: 'en', language: 'en-US', file: 'en.json' },
       { code: 'fr', language: 'fr-FR', file: 'fr.json' },
     ],
+    baseUrl: 'https://louisplace.com',
     vueI18n: './i18n.config.ts',
     defaultLocale: 'en',
     strategy: 'prefix_and_default',
