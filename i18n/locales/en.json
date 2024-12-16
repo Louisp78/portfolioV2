@@ -57,9 +57,15 @@
   "visit-the-website": "Visit the website",
   "download-on-app-store": "Download on App Store",
   "seo": {
-    "index-title": "Louis Place Mobile / Web Software Engineer"
+    "index-title": "Louis Place Mobile / Web Software Engineer",
+    "description": "Welcome to Louis Place’s portfolio! As a mobile software engineer, I invite you to explore my innovative projects, technical expertise, and the passions that drive my work. Dive in to discover how I bring ideas to life and connect with me to collaborate or learn more."
   },
   "more-details": "More details",
   "footer-credits": "A website made with 💚 and a pinch of Nuxt.js",
-  "view-project-on-github": "View project on Github"
+  "view-project-on-github": "View project on Github",
+  "sudosumo": {
+    "title": "SudoSumo Infrastructure Technical Specifications"
+  },
+  "sudosumo-architecture-diagram": "Sudosumo architecture diagram",
+  "job-title-only": "Mobile Software Engineer & Oceanography Enthusiast"
 }
