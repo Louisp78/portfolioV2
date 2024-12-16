@@ -1,5 +1,7 @@
 <script lang="ts" setup>
-import type Experience from '~/types/Experience'
+import { educationListFactory } from '~/data/educations'
+import { experiencesListFactory } from '~/data/experiences'
+import { projectListFactory } from '~/data/projects'
 import type Education from '~/types/Education'
 import type Project from '~/types/Project'
 
@@ -11,227 +13,13 @@ definePageMeta({
   title: 'seo.index-title',
 })
 
-const experiencesList: Experience[] = [
-  {
-    title: t('lehibou.job-title'),
-    companie: 'LeHibou',
-    location: t('mauritius'),
-    description: t('lehibou.description'),
-    skills: [
-      {
-        title: 'React Native',
-      },
-      {
-        title: 'Expo',
-      },
-      {
-        title: 'Nuxt.js',
-      },
-      {
-        title: 'Typescript',
-      },
-      {
-        title: 'Swift',
-      },
-    ],
-  },
-  {
-    title: t('spliit.job-title'),
-    location: 'Paris',
-    companie: 'Spliit',
-    description: t('spliit.description'),
-    skills: [
-      {
-        title: 'Excel',
-      },
-      {
-        title: 'Google App Script',
-      },
-      {
-        title: 'PostgreSQL',
-      },
-      {
-        title: 'Typescript',
-      },
-      {
-        title: 'Google Data Studio',
-      },
-      {
-        title: 'React.js',
-      },
-    ],
-  },
-]
-const educationList: Education[] = [
-  {
-    title: t('master-of-computer-science'),
-    companie: 'EPITA, FR',
-    companieLink: 'https://www.epita.fr',
-    description: t('epita-mti'),
-  },
-  {
-    title: t('upec-dual-bachelor'),
-    companie: t('upec'),
-    companieLink: 'https://www.u-pec.fr',
-  },
-  {
-    title: t('cmas-one-star-diver'),
-    companie: t('blue-water-diving-center-mau'),
-    companieLink: 'https://maps.app.goo.gl/6uhak8rajU8MWnm68',
-  },
-  {
-    title: t('python-basics-for-data-science'),
-    companie: 'Edx certificate PY0101EN: Python Basics for Data Science',
-    companieLink: 'https://courses.edx.org/certificates/692e878ca8584309a7f9b3e31d36445a',
-  },
-  {
-    title: t('bac-s'),
-    companie: t('school'),
-  },
-]
-const projectList: Project[] = [
-  {
-    title: t('projects.maconsigne.title'),
-    link: 'https://maconsigne.com/',
-    btnTitle: t('visit-the-website'),
-    imgSrc: '/img/maconsigne.png',
-    target: '_blank',
-    imgAlt: t('projects.maconsigne.img-alt'),
-    description: t('projects.maconsigne.description'),
-    skills: [
-      {
-        title: 'React Native',
-      },
-      {
-        title: 'Expo & Co',
-      },
-      {
-        title: 'Tailwind',
-      },
-      {
-        title: 'Redux',
-      },
-      {
-        title: 'EAS',
-      },
-      {
-        title: 'CI/CD',
-      },
-
-    ],
-  },
-  {
-    title: t('projects.lehibou-app.title'),
-    link: 'https://apps.apple.com/fr/app/lehibou-freelance-it/id6468558589',
-    btnTitle: t('download-on-app-store'),
-    imgSrc: '/img/lehibou.png',
-    target: '_blank',
-    imgAlt: 'Two screenshots of the Lehibou App: the first shows the login screen, and the second displays the iOS widget for freelance availability.',
-    description: t('projects.lehibou-app.description'),
-    skills: [
-      {
-        title: 'React Native',
-      },
-      {
-        title: 'Expo',
-      },
-      {
-        title: 'Swift',
-      },
-      {
-        title: 'Typescript',
-      },
-    ],
-  },
-  {
-    title: '🍜 SudoSumo',
-    link: '/sudosumo',
-    btnTitle: t('more-details'),
-    imgSrc: '/img/sudosumo.png',
-    imgAlt: 'Desktop screenshot of the SudoSumo app displaying a sudoku puzzle on the screen.',
-    description: t('projects.sudosumo.description'),
-    skills: [
-      {
-        title: 'Next.js',
-      },
-      {
-        title: 'React.js',
-      },
-      {
-        title: 'Typescript',
-      },
-      {
-        title: 'TailwindCSS',
-      },
-      {
-        title: 'Java',
-      },
-      {
-        title: 'Spring boot',
-      },
-      {
-        title: 'AWS EC2',
-      },
-      {
-        title: 'AWS RDS',
-      },
-      {
-        title: 'Docker',
-      },
-      {
-        title: 'OAuth2',
-      },
-
-      {
-        title: 'Sudoku solver algorithms',
-      },
-    ],
-  },
-  {
-    title: 'LivLink',
-    link: '',
-    imgSrc: '/img/livlink2.png',
-    imgAlt: 'Three screenshots of the LivLink App: the first shows the contacts list, and the second and third display the \'Circle Call\' feature.',
-    description: t('projects.livlink.description'),
-    skills: [
-      {
-        title: 'Android',
-      },
-      {
-        title: 'Kotlin',
-      },
-      {
-        title: 'Java Spring Boot',
-      },
-    ],
-  },
-  {
-    title: 'Studeam',
-    description: t('projects.studeam.description'),
-    link: '',
-    imgSrc: '/img/studeam1.png',
-    imgAlt: t('projects.studeam.img-alt'),
-    skills: [
-      {
-        title: 'React Native',
-      },
-      {
-        title: 'Typescript',
-      },
-      {
-        title: 'Java Spring Boot',
-      },
-      {
-        title: 'Neo4j',
-      },
-
-    ],
-  },
-]
+const expList = experiencesListFactory(t)
+const educationList: Education[] = educationListFactory(t)
+const projectList: Project[] = projectListFactory(t)
 
 const allSkillList = computed(() => {
   let allSkill = projectList.map(elt => elt.skills).flat()
-  allSkill = allSkill.concat(experiencesList.map(elt => elt.skills).flat())
+  allSkill = allSkill.concat(expList.map(elt => elt.skills).flat())
   allSkill = allSkill.concat([
     {
       title: 'Python',
@@ -307,10 +95,11 @@ const allSkillList = computed(() => {
           <article class="flex flex-col gap-5 mb-5 lg:mb-10 lg:w-fit">
             <div>
               <p>
-                👋 <b>Ingénieur mobile passionné</b>, je conçoit des applications mobiles complète, performante et durable afin quels puisse être facilement évoluer vers le concept que vous avez imaginez 💡
+                👨‍💻 <b>Ingénieur mobile passionné</b>, je conçoit des applications mobiles complète, performante et durable afin quels puisse être facilement évoluer vers le concept que vous avez imaginez 💡
               </p>
               <p>
                 Expérimenté en <b>React Native</b>, je maîtrise également les environnements natifs iOS (<b>Swift</b>) et Android (<b>Kotlin</b>) pour répondre à des besoins techniques pointus et garantir des expériences utilisateur optimales.
+                De plus, je suis également capable de concevoir des backends robustes dans l’écosystème <b>Node.js</b> ou avec <b>Java Spring Boot</b>, ce qui fait de moi un profil complet, capable de prendre en charge l’ensemble du processus de développement d’une application.
               </p>
             </div>
             <AccordionComponent>
@@ -435,7 +224,7 @@ const allSkillList = computed(() => {
           </h2>
           <ul class="expList">
             <ExperienceItem
-              v-for="expItem in experiencesList"
+              v-for="expItem in expList"
               :key="expItem.title"
               :v-model="expItem"
             />
