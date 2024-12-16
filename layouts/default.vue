@@ -35,6 +35,7 @@ const navList: MenuItem[] = [
     link: '/#projects',
   },
 ]
+console.log(locale)
 </script>
 
 <template>
@@ -62,19 +63,14 @@ const navList: MenuItem[] = [
               </NuxtLink>
             </li>
             <li
-              class="animElt-slideRight flex flex-row gap-3 pr-3"
+              class="animElt-slideRight flex flex-row gap-3 pr-3 items-center"
             >
               <button
-                class="underline"
-                @click="setLocale('fr')"
+                class="w-fit h-fit rounded-full flex flex-row gap-2 items-center px-2 border-2 border-burnedSand"
+                @click="$i18n.locale === 'fr' ? setLocale('en') : setLocale('fr')"
               >
-                fr
-              </button>
-              <button
-                class="underline"
-                @click="setLocale('en')"
-              >
-                en
+                <p>{{ $i18n.locale === 'fr' ? 'FR' : 'US' }}</p>
+                <Icon :name="$i18n.locale === 'fr' ? 'circle-flags:fr' : 'circle-flags:us'" />
               </button>
             </li>
           </ul>
