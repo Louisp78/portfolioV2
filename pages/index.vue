@@ -8,8 +8,17 @@ const { t } = useI18n()
 const contactEmail = 'placelouis@gmail.com'
 
 definePageMeta({
-  title: 'Louis Place Mobile / Web Software Engineer',
+  title: 'seo.index-title',
 })
+
+const openedSection = ref<number>(-1)
+
+function switchSection(nb: number) {
+  if (openedSection.value === nb)
+    openedSection.value = -1
+  else
+    openedSection.value = nb
+}
 
 const experiencesList: Experience[] = [
   {
@@ -305,15 +314,87 @@ const allSkillList = computed(() => {
             <h3>{{ $t('job-title') }}</h3>
           </header>
           <article class="flex flex-col gap-5 mb-5 lg:mb-10 lg:w-fit">
-            <p>
-              {{ $t('story-starting') }}
-            </p>
-            <p>
-              {{ $t('story-gain-exp') }}
-            </p>
-            <p>
-              {{ $t('story-ocean') }}
-            </p>
+            <div>
+              <p>
+                👋 <b>Ingénieur mobile passionné</b>, je conçoit des applications mobiles complète, performante et durable afin quels puisse être facilement évoluer vers le concept que vous avez imaginez 💡
+              </p>
+              <p>
+                Expérimenté en <b>React Native</b>, je maîtrise également les environnements natifs iOS (<b>Swift</b>) et Android (<b>Kotlin</b>) pour répondre à des besoins techniques pointus et garantir des expériences utilisateur optimales.
+              </p>
+            </div>
+            <AccordionComponent>
+              <template #title>
+                <h4>
+                  🌟 Comment je peux vous être utile ?
+                </h4>
+              </template>
+              <template #body>
+                <ol
+                  class="flex flex-col gap-1 pl-10 list-disc "
+                >
+                  <li>
+                    Développement mobile Android/iOS avec React Native, Swift ou Kotlin.
+                  </li>
+                  <li>
+                    Développement de back-ends robustes (Java Spring Boot, Node.js, Express).
+                  </li>
+                  <li>Mise en place de pipelines CI/CD fiables pour automatiser les déploiements.</li>
+                  <li>Conception de design UI / UX d'écrans.</li>
+                  <li>Audits techniques et optimisations de codebases existantes.</li>
+                </ol>
+              </template>
+            </AccordionComponent>
+            <AccordionComponent>
+              <template #title>
+                <h4>
+                  🚀 Exemples de réalisations
+                </h4>
+              </template>
+              <template #body>
+                <div class="flex flex-col gap-5 pb-3">
+                  <ol class="flex flex-col gap-1 pl-10 list-disc">
+                    <li>
+                      Migration de deux applications Bare React Native vers l’environnement Expo SDK avec automatisation des builds et déploiements.
+                    </li>
+                    <li>
+                      Développement d’une application de téléphonie et communication pour des populations isolées, avec un back-end sécurisé en Java Spring Boot.
+                    </li>
+                    <li>
+                      Conception, design et création d'un widget natif iOS pour une application React Native.
+                    </li>
+                  </ol>
+                  <div class="flex flex-row justify-center">
+                    <NuxtLink
+                      to="#projects"
+                      class="nav-item w-fit text-sm"
+                    >
+                      Voir plus
+                    </NuxtLink>
+                  </div>
+                </div>
+              </template>
+            </AccordionComponent>
+            <AccordionComponent>
+              <template #title>
+                <h4>
+                  🫵 Pourquoi travailler avec moi ?
+                </h4>
+              </template>
+              <template #body>
+                <ol class="flex flex-col gap-1 list-disc pl-10">
+                  <li>
+                    <b>Passion et expertise :</b> Mon intérêt constant pour l’innovation et les nouvelles technologies me permet de proposer des solutions modernes et performantes. Je veille quotidiennement à me tenir informé des évolutions des technologies que j’utilise.
+                  </li>
+                  <li>
+                    <b>Design et conception :</b> Grâce à une solide maîtrise des principes de design UI et UX, je suis en mesure d’apporter une valeur ajoutée significative à la création et à l’optimisation de votre application.
+                  </li>
+                  <li>
+                    <b>Flexibilité et pragmatisme :</b> J’adapte mes approches selon vos priorités, en allouant les ressources et le temps de manière proportionnée à l’importance de chaque fonctionnalité.
+                  </li>
+                  <li><b>Expérience internationale :</b> Habitué à travailler avec des équipes dispersées, je maîtrise les outils et méthodologies pour un remote efficace.</li>
+                </ol>
+              </template>
+            </AccordionComponent>
           </article>
           <div class="flex flex-col items-center gap-3 text-center lg:text-left lg:items-start">
             <p class="hidden md:block font-inconsolata font-medium">
@@ -438,5 +519,15 @@ const allSkillList = computed(() => {
 
 ul {
     @apply flex flex-row gap-3;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: max-height opacity 0.5s ease-in-out;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-to, .fade-leave-from {
+  opacity: 1;
 }
 </style>

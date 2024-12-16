@@ -6,15 +6,15 @@ const frontRepoUrl: string = 'https://github.com/Louisp78/sudosumo-v2'
 <template>
   <main class="flex flex-grow flex-col gap-3 items-center text-center w-full pt-20 px-5 pb-20">
     <h1 class="text-2xl md:text-3xl md:pt-5">
-      SudoSumo Infrastructure Technical Specifications
+      {{ $t('sudosumo.title') }}
     </h1>
     <div class="px-0 md:px-5 lg:px-7">
       <NuxtImg
         src="/img/sudosumo_arch_diagram.svg"
-        alt="Sudosumo architecture diagram"
+        :alt="$t('sudosumo-architecture-diagram')"
       />
       <p class="text-moon">
-        Sudosumo architecture diagram
+        {{ $t('sudosumo-architecture-diagram') }}
       </p>
     </div>
 

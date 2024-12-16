@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const route = useRoute()
-const { setLocale, t } = useI18n()
+const { setLocale, t, locale } = useI18n()
 useHead({
   meta: [{ property: 'og:title', content: `Portfolio - ${route.meta.title}` }],
 })
@@ -115,7 +115,7 @@ const navList: MenuItem[] = [
         target="_blank"
         class="text-sm underline hover:text-burnedSand"
       >
-        View project on Github
+        {{ $t('view-project-on-github') }}
       </NuxtLink>
     </footer>
   </div>
