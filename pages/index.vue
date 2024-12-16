@@ -388,9 +388,6 @@ const allSkillList = computed(() => {
             </AccordionComponent>
           </article>
           <div class="flex flex-col items-center gap-3 text-center lg:text-left lg:items-start">
-            <p class="hidden md:block font-inconsolata font-medium">
-              {{ $t('to-contact') }}
-            </p>
             <div class="flex flex-col md:flex-row items-center gap-3">
               <!-- TODO : Add a tooltip for the btn with my email adress -->
               <NuxtLink
