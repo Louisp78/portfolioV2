@@ -1,21 +1,25 @@
 <script setup lang="ts">
 // TODO: find implement OG with the corresponding plugin
+const { t } = useI18n()
 
-const meJobTarget: string = 'Mobile Software Engineer & Oceanography Enthusiast'
+const meJobTarget: string = t('job-title-only')
 useSeoMeta({
   title: `Louis Place - ${meJobTarget} Portfolio`,
   ogTitle: `Louis Place - ${meJobTarget} Portfolio`,
-  description: `Welcome to Louis Place's portfolio. I am a ${meJobTarget}. Explore my projects, skills, and contact information to learn more about my work and passions.`,
-  ogDescription: 'Explore the portfolio of Louis Place, a skilled Mobile Software Engineer with a passion for Oceanography. Check out my projects and learn more about my work.',
+  description: t('seo.description'),
+  ogDescription: t('seo.description'),
   ogType: 'website',
-  ogUrl: 'https://localhost:3000/',
   twitterCard: 'summary_large_image',
 })
 
+const i18nHead = useLocaleHead()
+
 useHead({
   htmlAttrs: {
-    lang: 'en',
+    lang: i18nHead.value.htmlAttrs!.lang,
   },
+  link: [...(i18nHead.value.link || [])],
+  meta: [...(i18nHead.value.meta || [])],
 })
 </script>
 
