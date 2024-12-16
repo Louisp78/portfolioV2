@@ -11,15 +11,6 @@ definePageMeta({
   title: 'seo.index-title',
 })
 
-const openedSection = ref<number>(-1)
-
-function switchSection(nb: number) {
-  if (openedSection.value === nb)
-    openedSection.value = -1
-  else
-    openedSection.value = nb
-}
-
 const experiencesList: Experience[] = [
   {
     title: t('lehibou.job-title'),
