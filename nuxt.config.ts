@@ -20,7 +20,7 @@ export default defineNuxtConfig({
   },
   site: {
     url: 'https://louisplace.com',
-    name: 'Louis Place Louis Place - Mobile Software Engineer & Marine Biology Enthusiast Portfolio',
+    name: 'Louis Place Louis Place - Mobile Software Engineer Portfolio',
     indexable: true,
   },
   seo: {
