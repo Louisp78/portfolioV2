@@ -52,6 +52,13 @@ section {
   @apply px-5 lg:px-14;
 }
 
+textarea {
+  @apply block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+}
+input {
+  @apply block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
+}
+
 /* Custom classes */
 .companieAndLocation {
   @apply italic text-xl flex justify-center md:justify-end gap-2;
@@ -59,6 +66,9 @@ section {
 .skillContainer {
  @apply flex flex-wrap gap-3 justify-center;
 }
+.btn-primary {
+    @apply flex justify-center items-center gap-3 p-2 font-inconsolata font-medium border border-black rounded-md hover:bg-sand hover:text-burnedSand;
+  }
 .button {
   @apply flex gap-2 p-3 font-inconsolata font-medium bg-sand rounded-md w-fit hover:text-burnedSand hover:bg-opacity-0 hover:border hover:border-burnedSand duration-100;
 }
