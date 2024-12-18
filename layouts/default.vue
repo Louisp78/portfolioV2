@@ -40,7 +40,7 @@ console.log(locale)
 
 <template>
   <div>
-    <nav class="fixed w-full bg-softSand z-10">
+    <nav class="fixed w-full bg-softSand z-10 border-b-2 border-black">
       <ul class="flex justify-center lg:justify-between items-center">
         <li class="z-10">
           <NuxtLink to="/">
@@ -122,8 +122,5 @@ console.log(locale)
   a {
     @apply text-2xl duration-100 select-none flex px-10 py-3 items-center text-moon hover:text-burnedSand hover:cursor-pointer;
   }
-}
-nav {
-  @apply border-b-2;
 }
 </style>
