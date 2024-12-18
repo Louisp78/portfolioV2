@@ -22,7 +22,7 @@ const toggle = async () => {
 
 <template>
   <div
-    class="bg-softSand cursor-pointer rounded"
+    class="bg-softSand bg-opacity-80 hover:bg-opacity-100 cursor-pointer rounded"
     @click="toggle"
   >
     <div class="overflow-hidden mb-3">
@@ -33,11 +33,10 @@ const toggle = async () => {
           Default Title
         </slot>
         <Icon
-          name="ic:baseline-keyboard-arrow-down"
+          :name="isOpen ? 'ic:baseline-keyboard-arrow-up': 'ic:baseline-keyboard-arrow-down'"
           size="32"
         />
       </div>
-      <!-- Body with dynamic height transition -->
       <div
         ref="accordionBody"
         class="transition-[height] duration-300 ease-in-out overflow-hidden pl-3 pr-3"
