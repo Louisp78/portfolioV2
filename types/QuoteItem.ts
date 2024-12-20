@@ -6,6 +6,6 @@ export default class QuoteItem {
   constructor() {
     this.description = ''
     this.duration = 0
-    this.quantity = 0
+    this.quantity = 1
   }
 }
