@@ -2,19 +2,15 @@
 import { z } from 'zod'
 import QuoteItem from '~/types/QuoteItem'
 
-const runtimeConfig = useRuntimeConfig()
-
-const TOKEN = runtimeConfig.mailtrapToken
-const SENDER_EMAIL = 'quote@louisplace.com'
-const RECIPIENT_EMAIL = 'louis.place@epita.fr'
-
 const clientEmail = ref<string>('')
+const clientName = ref<string>('')
 const projectName = ref<string>('')
 const projectDescription = ref<string>('')
 const itemList = ref<QuoteItem[]>([new QuoteItem()])
 const errors = ref<Record<string, string>>({})
 
 const formSchema = z.object({
+  clientName: z.string().nonempty({ message: 'Le nom du client est requis.' }),
   clientEmail: z.string().email({ message: 'Email invalide.' }),
   projectName: z.string().nonempty({ message: 'Le nom du projet est requis.' }),
   projectDescription: z.string(),
@@ -53,13 +49,9 @@ function validateItemField(index: number, field: keyof QuoteItem, value: any) {
   }
 }
 
-function handleAddItem() {
-  itemList.value.push(new QuoteItem())
-}
-function handleClose() {
-  emit('close')
-}
-async function handleSubmit() {
+function validateAll() {
+  validateField('clientName', clientName.value)
+  validateField('clientEmail', clientEmail.value)
   validateField('projectName', projectName.value)
   validateField('projectDescription', projectDescription.value)
   validateField('clientEmail', clientEmail.value)
@@ -68,86 +60,33 @@ async function handleSubmit() {
     validateItemField(index, 'duration', elt.duration)
     validateItemField(index, 'quantity', elt.quantity)
   })
+}
 
-  console.log('Sending an email : ', process.env.MAILTRAP_TOKEN)
+function handleAddItem() {
+  itemList.value.push(new QuoteItem())
+}
+function handleClose() {
+  emit('close')
+}
 
-  const htmlContent = `
-    <!DOCTYPE html>
-    <html lang="fr">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Nouvelle Demande de Devis</title>
-    </head>
-    <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-      <h1 style="color: #4CAF50;">Nouvelle Demande de Devis</h1>
-      <p>Une nouvelle demande de devis a été soumise via votre portfolio :</p>
-
-      <h2>Informations Projet</h2>
-      <p><strong>Nom du projet :</strong> ${projectName.value}</p>
-      <p><strong>Description :</strong> ${projectDescription.value || 'Aucune description fournie.'}</p>
-
-      <h2>Détails de la Mission</h2>
-      <ul style="list-style: none; padding: 0;">
-        ${itemList.value.map((item: QuoteItem) => `
-          <li style="margin-bottom: 20px;">
-            <p><strong>Détail de l'élément :</strong> ${item.description}</p>
-            <p><strong>Durée :</strong> ${item.duration} heure(s)</p>
-            <p><strong>Quantité :</strong> ${item.quantity}</p>
-          </li>
-        `).join('')}
-      </ul>
-
-      <h3>Estimation Totale : ${total.value} €</h3>
-      <p style="font-size: 12px; color: #999;">Note : Cette estimation est indicative et non contractuelle.</p>
-    </body>
-    </html>
-  `
-  const textContent = `
-    Nouvelle Demande de Devis
-
-    Informations Projet :
-    Nom du projet : ${projectName.value}
-    Description : ${projectDescription.value || 'Aucune description fournie.'}
-
-    Détails de la Mission :
-    ${itemList.value.map((item: QuoteItem, index: number) => `
-      - Élément ${index + 1} :
-        - Description : ${item.description}
-        - Durée : ${item.duration} heure(s)
-        - Quantité : ${item.quantity}
-    `).join('')}
-
-    Estimation Totale : ${total.value} €
-
-    Note : Cette estimation est indicative et non contractuelle.
-  `
+async function handleSubmit() {
+  validateAll()
 
   try {
-    await fetch('https://send.api.mailtrap.io/api/send', {
+    await $fetch('/api/send-email', {
       method: 'POST',
-      headers: {
-        'Api-Token': TOKEN,
+      body: {
+        clientName: clientName.value,
+        clientEmail: clientEmail.value,
+        projectName: projectName.value,
+        projectDescription: projectDescription.value,
+        itemList: itemList.value,
+        total: total.value,
       },
-      body: JSON.stringify({
-        from: {
-          email: SENDER_EMAIL,
-          name: 'Quote Bot',
-        },
-        to: [
-          {
-            email: RECIPIENT_EMAIL,
-            name: 'Louis Place',
-          },
-        ],
-        subject: projectName.value,
-        text: textContent,
-        html: htmlContent,
-      }),
-    }).catch(e => console.error(e))
+    })
   }
-  catch (e) {
-    console.error(e)
+  catch (err) {
+    console.error(err)
   }
 }
 
@@ -193,6 +132,22 @@ const emit = defineEmits<{
               1. Informations projet
             </h3>
             <form class="flex flex-col gap-2">
+              <div>
+                <label for="client-name">Votre Nom</label>
+                <input
+                  v-model="clientName"
+                  type="text"
+                  placeholder="Jean Dupont"
+                  :class="errors.clientName ? 'border-red-500 border-2' : ''"
+                  @blur="validateField('clientName', clientName)"
+                >
+                <p
+                  v-if="errors.clientName"
+                  class="text-red-500"
+                >
+                  {{ errors.clientName }}
+                </p>
+              </div>
               <div>
                 <label for="client-email">Votre Email</label>
                 <input
@@ -241,6 +196,7 @@ const emit = defineEmits<{
           <section class="w-full flex flex-col gap-5">
             <h3>2. Détailler la mission</h3>
             <button
+              type="button"
               class="w-full flex flex-row gap-2 items-center border rounded px-2 py-3"
               @click="handleAddItem"
             >
