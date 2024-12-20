@@ -36,4 +36,7 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
     strategy: 'prefix_and_default',
   },
+  runtimeConfig: {
+    mailtrapToken: process.env.NUXT_MAILTRAP_TOKEN,
+  },
 })
