@@ -25,7 +25,10 @@
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
+    "@types/nodemailer": "^6.4.17",
     "autoprefixer": "^10.4.19",
+    "nodemailer": "^6.9.16",
+    "nuxt-nodemailer": "^1.1.2",
     "postcss": "^8.4.39",
     "tailwindcss": "^3.4.6"
   },

@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['@nuxt/eslint', '@nuxt/icon', '@nuxt/image', '@nuxtjs/sitemap', '@nuxtjs/seo', '@nuxtjs/i18n'],
+  modules: ['@nuxt/eslint', '@nuxt/icon', '@nuxt/image', '@nuxtjs/sitemap', '@nuxtjs/seo', '@nuxtjs/i18n', 'nuxt-nodemailer'],
   css: ['~/assets/css/main.css'],
   eslint: {
     config: {
@@ -36,7 +36,13 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
     strategy: 'prefix_and_default',
   },
-  runtimeConfig: {
-    mailtrapToken: process.env.NUXT_MAILTRAP_TOKEN,
+  nodemailer: {
+    from: '"Quote Bot" <quote@louisplace.com>',
+    host: 'sandbox.smtp.mailtrap.io',
+    port: 2525,
+    auth: {
+      user: process.env.NUXT_MAILTRAP_USER,
+      pass: process.env.NUXT_MAILTRAP_PASS,
+    },
   },
 })
