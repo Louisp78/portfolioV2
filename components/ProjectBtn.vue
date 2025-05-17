@@ -8,7 +8,6 @@ defineProps<{ link: string, title: string, target: string | undefined }>()
     class="button mt-5"
     :to="link"
   >
-
     <span>{{ title }}</span>
     <Icon
       name="solar:arrow-right-linear"

@@ -5,6 +5,16 @@ import { projectListFactory } from '~/data/projects'
 import type Education from '~/types/Education'
 import type Project from '~/types/Project'
 
+useHead({
+  script: [
+    {
+      src: 'https://www.google.com/recaptcha/api.js',
+      async: true,
+      defer: true,
+    },
+  ],
+})
+
 const { t } = useI18n()
 
 const contactEmail = 'placelouis@gmail.com'
@@ -25,7 +35,9 @@ const allSkillList = computed(() => {
       title: 'Python',
     },
   ])
-  allSkill = Array.from(new Map(allSkill.map(item => [item.title, item])).values())
+  allSkill = Array.from(
+    new Map(allSkill.map(item => [item.title, item])).values(),
+  )
   return allSkill
 })
 </script>
@@ -56,7 +68,7 @@ const allSkillList = computed(() => {
                   >
                     <Icon
                       name="entypo-social:linkedin-with-circle"
-                      size="24"
+                      :size="ICON_SIZE"
                     />
                     <span>louis-place</span>
                   </NuxtLink>
@@ -69,7 +81,7 @@ const allSkillList = computed(() => {
                   >
                     <Icon
                       name="carbon:logo-github"
-                      size="24"
+                      :size="ICON_SIZE"
                     />
                     <span>Louisp78</span>
                   </NuxtLink>
@@ -83,7 +95,7 @@ const allSkillList = computed(() => {
               >
                 <Icon
                   name="mdi:resume"
-                  size="24"
+                  :size="ICON_SIZE"
                 />
                 <span>{{ $t('get-my-resume') }}</span>
               </NuxtLink>
@@ -97,52 +109,69 @@ const allSkillList = computed(() => {
             <article class="flex flex-col gap-5 mb-5 lg:mb-10 lg:w-fit">
               <div>
                 <p>
-                  👨‍💻 <b>Ingénieur mobile passionné</b>, je conçoit des applications mobiles complète, performante et durable afin quels puisse être facilement évoluer vers le concept que vous avez imaginez 💡
+                  👨‍💻 <b>Ingénieur mobile passionné</b>, je conçoit des
+                  applications mobiles complète, performante et durable afin
+                  quels puisse être facilement évoluer vers le concept que vous
+                  avez imaginez 💡
                 </p>
                 <p>
-                  Expérimenté en <b>React Native</b>, je maîtrise également les environnements natifs iOS (<b>Swift</b>) et Android (<b>Kotlin</b>) pour répondre à des besoins techniques pointus et garantir des expériences utilisateur optimales.
-                  De plus, je suis également capable de concevoir des backends robustes dans l’écosystème <b>Node.js</b> ou avec <b>Java Spring Boot</b>, ce qui fait de moi un profil complet, capable de prendre en charge l’ensemble du processus de développement d’une application.
+                  Expérimenté en <b>React Native</b>, je maîtrise également les
+                  environnements natifs iOS (<b>Swift</b>) et Android
+                  (<b>Kotlin</b>) pour répondre à des besoins techniques pointus
+                  et garantir des expériences utilisateur optimales. De plus, je
+                  suis également capable de concevoir des backends robustes dans
+                  l’écosystème <b>Node.js</b> ou avec <b>Java Spring Boot</b>,
+                  ce qui fait de moi un profil complet, capable de prendre en
+                  charge l’ensemble du processus de développement d’une
+                  application.
                 </p>
               </div>
               <AccordionComponent>
                 <template #title>
-                  <h4>
-                    🌟 Comment je peux vous être utile ?
-                  </h4>
+                  <h4>🌟 Comment je peux vous être utile ?</h4>
                 </template>
                 <template #body>
-                  <ol
-                    class="flex flex-col gap-1 pl-10 list-disc pr-5"
-                  >
+                  <ol class="flex flex-col gap-1 pl-10 list-disc pr-5">
                     <li>
-                      Développement mobile Android/iOS avec React Native, Swift ou Kotlin.
+                      Développement mobile Android/iOS avec React Native, Swift
+                      ou Kotlin.
                     </li>
                     <li>
-                      Développement de back-ends robustes (Java Spring Boot, Node.js, Express).
+                      Développement de back-ends robustes (Java Spring Boot,
+                      Node.js, Express).
                     </li>
-                    <li>Mise en place de pipelines CI/CD fiables pour automatiser les déploiements.</li>
+                    <li>
+                      Mise en place de pipelines CI/CD fiables pour automatiser
+                      les déploiements.
+                    </li>
                     <li>Conception de design UI / UX d'écrans.</li>
-                    <li>Audits techniques et optimisations de codebases existantes.</li>
+                    <li>
+                      Audits techniques et optimisations de codebases
+                      existantes.
+                    </li>
                   </ol>
                 </template>
               </AccordionComponent>
               <AccordionComponent>
                 <template #title>
-                  <h4>
-                    🚀 Exemples de réalisations
-                  </h4>
+                  <h4>🚀 Exemples de réalisations</h4>
                 </template>
                 <template #body>
                   <div class="flex flex-col gap-5 pb-3">
                     <ol class="flex flex-col gap-1 pl-10 pr-5 list-disc">
                       <li>
-                        Migration de deux applications Bare React Native vers l’environnement Expo SDK avec automatisation des builds et déploiements.
+                        Migration de deux applications Bare React Native vers
+                        l’environnement Expo SDK avec automatisation des builds
+                        et déploiements.
                       </li>
                       <li>
-                        Développement d’une application de téléphonie et communication pour des populations isolées, avec un back-end sécurisé en Java Spring Boot.
+                        Développement d’une application de téléphonie et
+                        communication pour des populations isolées, avec un
+                        back-end sécurisé en Java Spring Boot.
                       </li>
                       <li>
-                        Conception, design et création d'un widget natif iOS pour une application React Native.
+                        Conception, design et création d'un widget natif iOS
+                        pour une application React Native.
                       </li>
                     </ol>
                     <div class="flex flex-row justify-center">
@@ -158,27 +187,41 @@ const allSkillList = computed(() => {
               </AccordionComponent>
               <AccordionComponent>
                 <template #title>
-                  <h4>
-                    🫵 Pourquoi travailler avec moi ?
-                  </h4>
+                  <h4>🫵 Pourquoi travailler avec moi ?</h4>
                 </template>
                 <template #body>
                   <ol class="flex flex-col gap-1 list-disc pl-10 pr-5">
                     <li>
-                      <b>Passion et expertise :</b> Mon intérêt constant pour l’innovation et les nouvelles technologies me permet de proposer des solutions modernes et performantes. Je veille quotidiennement à me tenir informé des évolutions des technologies que j’utilise.
+                      <b>Passion et expertise :</b> Mon intérêt constant pour
+                      l’innovation et les nouvelles technologies me permet de
+                      proposer des solutions modernes et performantes. Je veille
+                      quotidiennement à me tenir informé des évolutions des
+                      technologies que j’utilise.
                     </li>
                     <li>
-                      <b>Design et conception :</b> Grâce à une solide maîtrise des principes de design UI et UX, je suis en mesure d’apporter une valeur ajoutée significative à la création et à l’optimisation de votre application.
+                      <b>Design et conception :</b> Grâce à une solide maîtrise
+                      des principes de design UI et UX, je suis en mesure
+                      d’apporter une valeur ajoutée significative à la création
+                      et à l’optimisation de votre application.
                     </li>
                     <li>
-                      <b>Flexibilité et pragmatisme :</b> J’adapte mes approches selon vos priorités, en allouant les ressources et le temps de manière proportionnée à l’importance de chaque fonctionnalité.
+                      <b>Flexibilité et pragmatisme :</b> J’adapte mes approches
+                      selon vos priorités, en allouant les ressources et le
+                      temps de manière proportionnée à l’importance de chaque
+                      fonctionnalité.
                     </li>
-                    <li><b>Expérience internationale :</b> Habitué à travailler avec des équipes dispersées, je maîtrise les outils et méthodologies pour un remote efficace.</li>
+                    <li>
+                      <b>Expérience internationale :</b> Habitué à travailler
+                      avec des équipes dispersées, je maîtrise les outils et
+                      méthodologies pour un remote efficace.
+                    </li>
                   </ol>
                 </template>
               </AccordionComponent>
             </article>
-            <div class="flex flex-col items-center gap-3 text-center lg:text-left lg:items-start">
+            <div
+              class="flex flex-col items-center gap-3 text-center lg:text-left lg:items-start"
+            >
               <div class="flex flex-col md:flex-row items-center gap-3">
                 <!-- TODO : Add a tooltip for the btn with my email adress -->
                 <NuxtLink
@@ -187,7 +230,7 @@ const allSkillList = computed(() => {
                 >
                   <Icon
                     name="ic:outline-email"
-                    size="24"
+                    :size="ICON_SIZE"
                   />
                   <span>
                     {{ $t('send-me-an-email') }}
@@ -202,10 +245,15 @@ const allSkillList = computed(() => {
                   class="flex flex-row items-center gap-2 px-3 border-2 rounded-md bg-softSand border-burnedSand"
                 >
                   <span class="relative w-3">
-                    <span class="animate-ping absolute -top-1 inline-flex h-3 w-3 rounded-full bg-darkGreen opacity-80" />
-                    <span class="absolute -top-1 inline-flex h-3 w-3 rounded-full bg-darkGreen" />
+                    <span
+                      class="animate-ping absolute -top-1 inline-flex h-3 w-3 rounded-full bg-darkGreen opacity-80"
+                    />
+                    <span
+                      class="absolute -top-1 inline-flex h-3 w-3 rounded-full bg-darkGreen"
+                    />
                   </span>
-                  <span class="font-inconsolata font-medium">{{ $t('hire-me-on') }} </span>
+                  <span class="font-inconsolata font-medium">{{ $t('hire-me-on') }}
+                  </span>
                   <Icon
                     name="simple-icons:malt"
                     size="45"
@@ -215,7 +263,9 @@ const allSkillList = computed(() => {
             </div>
           </section>
         </div>
-        <div class="flex flex-col justify-between text-white gap-10 lg:flex-row pb-20 bg-custom-gradient">
+        <div
+          class="flex flex-col justify-between text-white gap-10 lg:flex-row pb-20 bg-custom-gradient"
+        >
           <section class="text-center lg:text-left lg:w-full">
             <div
               id="exp"
@@ -279,25 +329,25 @@ const allSkillList = computed(() => {
         </div>
       </section>
     </div>
-  <!-- TODO : Afficher un bouton "me contacter" lorsque l'utilisateur arrive à la dernière section de lecture -->
+    <!-- TODO : Afficher un bouton "me contacter" lorsque l'utilisateur arrive à la dernière section de lecture -->
   </div>
 </template>
 
 <style scoped lang="postcss">
-.btn-primary {
+  .btn-primary {
     @apply flex justify-center items-center gap-3 p-2 font-inconsolata font-medium border border-black rounded-md hover:bg-sand hover:text-burnedSand;
   }
-.expList {
-  @apply flex flex-col items-center gap-10 md:px-20 lg:px-0 lg:pl-12 pb-10;
-}
-.eduList {
-  @apply flex flex-col items-center lg:items-end lg:text-right gap-10 md:px-20 lg:px-0;
-}
-.projectList {
-  @apply flex flex-col gap-24 md:gap-10;
-}
+  .expList {
+    @apply flex flex-col items-center gap-10 md:px-20 lg:px-0 lg:pl-12 pb-10;
+  }
+  .eduList {
+    @apply flex flex-col items-center lg:items-end lg:text-right gap-10 md:px-20 lg:px-0;
+  }
+  .projectList {
+    @apply flex flex-col gap-24 md:gap-10;
+  }
 
-ul {
+  ul {
     @apply flex flex-row gap-3;
-}
+  }
 </style>

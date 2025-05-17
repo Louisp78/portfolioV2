@@ -2,7 +2,15 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['@nuxt/eslint', '@nuxt/icon', '@nuxt/image', '@nuxtjs/sitemap', '@nuxtjs/seo', '@nuxtjs/i18n', 'nuxt-nodemailer'],
+  modules: [
+    '@nuxt/eslint',
+    '@nuxt/icon',
+    '@nuxt/image',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/seo',
+    '@nuxtjs/i18n',
+    'nuxt-nodemailer',
+  ],
   css: ['~/assets/css/main.css'],
   eslint: {
     config: {

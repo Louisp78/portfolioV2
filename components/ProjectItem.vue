@@ -6,9 +6,13 @@ const { slideOnObs } = useSlideRightObsAnim()
 </script>
 
 <template>
-  <section class="md:flex md:flex-row-reverse md:justify-start md:gap-36 md:text-left md:items-start md:min-h-[60vh]">
+  <section
+    class="md:flex md:flex-row-reverse md:justify-start md:gap-36 md:text-left md:items-start md:min-h-[60vh]"
+  >
     <div class="md:max-w-[50%] md:pl-15">
-      <header class="flex flex-col gap-3 justify-center items-center md:justify-start md:items-start">
+      <header
+        class="flex flex-col gap-3 justify-center items-center md:justify-start md:items-start"
+      >
         <h3>{{ vModel.title }}</h3>
         <div class="skillContainer md:!justify-start">
           <SkillLabel

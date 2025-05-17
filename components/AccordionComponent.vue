@@ -33,7 +33,11 @@ const toggle = async () => {
           Default Title
         </slot>
         <Icon
-          :name="isOpen ? 'ic:baseline-keyboard-arrow-up': 'ic:baseline-keyboard-arrow-down'"
+          :name="
+            isOpen
+              ? 'ic:baseline-keyboard-arrow-up'
+              : 'ic:baseline-keyboard-arrow-down'
+          "
           size="32"
         />
       </div>

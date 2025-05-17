@@ -1,6 +1,8 @@
 import type Experience from '~/types/Experience'
 
-export const experiencesListFactory = (t: (key: string) => string): Experience[] => [
+export const experiencesListFactory = (
+  t: (key: string) => string,
+): Experience[] => [
   {
     title: t('lehibou.job-title'),
     companie: 'LeHibou',

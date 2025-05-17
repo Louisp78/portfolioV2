@@ -37,7 +37,7 @@ onUnmounted(() => {
   <div>
     <button
       ref="floatingBtnBody"
-      class="z-10 fixed right-5 bottom-5 rounded-full bg-softSand border-2 border-sand flex flex-row items-center p-3 gap-3 text-black shadow h-16"
+      class="z-10 fixed right-5 bottom-5 rounded-full bg-softSand border-2 border-sand flex flex-row items-center p-3 text-black shadow h-12"
       @click="() => switchModalOpen()"
     >
       <p
@@ -49,12 +49,12 @@ onUnmounted(() => {
       <Icon
         class="text-black"
         name="material-symbols:request-quote-outline-rounded"
-        size="35"
+        :size="ICON_SIZE"
       />
     </button>
     <ModalQuote
       v-if="isModalOpen"
-      @close="() => isModalOpen = false"
+      @close="() => (isModalOpen = false)"
     />
   </div>
 </template>

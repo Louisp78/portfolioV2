@@ -1,29 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nouvelle Demande de Devis</title>
-</head>
-<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-  <h1 style="color: #4CAF50;">Nouvelle Demande de Devis</h1>
-  <p>Une nouvelle demande de devis a été soumise via votre portfolio :</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nouvelle Demande de Devis</title>
+  </head>
+  <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333">
+    <h1 style="color: #4caf50">Nouvelle Demande de Devis</h1>
+    <p>Une nouvelle demande de devis a été soumise via votre portfolio :</p>
 
-  <h2>Informations Client</h2>
-  <p><strong>Nom du client :</strong> {{clientName}}</p>
-  <p><strong>Email :</strong> {{clientEmail}}</p>
+    <h2>Informations Client</h2>
+    <p><strong>Nom du client :</strong> {{clientName}}</p>
+    <p><strong>Email :</strong> {{clientEmail}}</p>
 
+    <h2>Informations Projet</h2>
+    <p><strong>Nom du projet :</strong> {{projectName}}</p>
+    <p><strong>Description :</strong> {{projectDescription}}</p>
 
-  <h2>Informations Projet</h2>
-  <p><strong>Nom du projet :</strong> {{projectName}}</p>
-  <p><strong>Description :</strong> {{projectDescription}}</p>
+    <h2>Détails de la Mission</h2>
+    <ul style="list-style: none; padding: 0">
+      {{itemList}}
+    </ul>
 
-  <h2>Détails de la Mission</h2>
-  <ul style="list-style: none; padding: 0;">
-    {{itemList}}
-  </ul>
-
-  <h3>Estimation Totale : {{total}} €</h3>
-  <p style="font-size: 12px; color: #999;">Note : Cette estimation est indicative et non contractuelle.</p>
-</body>
+    <h3>Estimation Totale : {{total}} €</h3>
+    <p style="font-size: 12px; color: #999">
+      Note : Cette estimation est indicative et non contractuelle.
+    </p>
+  </body>
 </html>

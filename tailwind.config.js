@@ -14,7 +14,8 @@ export default {
     extend: {
       backgroundImage: {
         'background-beach': 'url(\'public/img/background-beach.webp\')',
-        'custom-gradient': 'linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #000 100%)',
+        'custom-gradient':
+          'linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #000 100%)',
       },
       fontFamily: {
         sans: ['"Times New Roman"', ...defaultTheme.fontFamily.sans],

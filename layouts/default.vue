@@ -2,7 +2,9 @@
 const route = useRoute()
 const { setLocale, t, locale } = useI18n()
 useHead({
-  meta: [{ property: 'og:title', content: `Portfolio - ${route.meta.title}` }],
+  meta: [
+    { property: 'og:title', content: `Portfolio - ${route.meta.title}` },
+  ],
 })
 
 const menuOpened = ref<boolean>(false)
@@ -28,7 +30,6 @@ const navList: MenuItem[] = [
   {
     title: t('education-title'),
     link: '/#edu',
-
   },
   {
     title: t('projects-title'),
@@ -56,9 +57,7 @@ console.log(locale)
               :key="navItem.title"
               class="animElt-slideRight"
             >
-              <NuxtLink
-                :to="navItem.link"
-              >
+              <NuxtLink :to="navItem.link">
                 {{ navItem.title }}
               </NuxtLink>
             </li>
@@ -67,10 +66,18 @@ console.log(locale)
             >
               <button
                 class="w-fit h-fit rounded-full flex flex-row gap-2 items-center px-2 border-2 border-burnedSand"
-                @click="$i18n.locale === 'fr' ? setLocale('en') : setLocale('fr')"
+                @click="
+                  $i18n.locale === 'fr' ? setLocale('en') : setLocale('fr')
+                "
               >
                 <p>{{ $i18n.locale === 'fr' ? 'FR' : 'US' }}</p>
-                <Icon :name="$i18n.locale === 'fr' ? 'circle-flags:fr' : 'circle-flags:us'" />
+                <Icon
+                  :name="
+                    $i18n.locale === 'fr'
+                      ? 'circle-flags:fr'
+                      : 'circle-flags:us'
+                  "
+                />
               </button>
             </li>
           </ul>
@@ -81,7 +88,11 @@ console.log(locale)
         @click="handleBurgerMenu"
       >
         <Icon
-          :name="menuOpened ? 'material-symbols:close-rounded' : 'material-symbols:menu-rounded'"
+          :name="
+            menuOpened
+              ? 'material-symbols:close-rounded'
+              : 'material-symbols:menu-rounded'
+          "
           size="20"
         />
       </div>
@@ -104,7 +115,9 @@ console.log(locale)
       </ul>
     </nav>
     <slot />
-    <footer class="bg-softSand border-t-2 flex items-center py-3 flex-col gap-2">
+    <footer
+      class="bg-softSand border-t-2 flex items-center py-3 flex-col gap-2"
+    >
       <span class="text-sm">{{ $t('footer-credits') }}</span>
       <NuxtLink
         to="https://github.com/Louisp78/portfolioV2"
@@ -118,9 +131,9 @@ console.log(locale)
 </template>
 
 <style scoped lang="postcss">
-.menu-item {
-  a {
-    @apply text-2xl duration-100 select-none flex px-10 py-3 items-center text-moon hover:text-burnedSand hover:cursor-pointer;
+  .menu-item {
+    a {
+      @apply text-2xl duration-100 select-none flex px-10 py-3 items-center text-moon hover:text-burnedSand hover:cursor-pointer;
+    }
   }
-}
 </style>

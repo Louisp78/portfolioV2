@@ -28,7 +28,6 @@ export const projectListFactory = (t: (key: string) => string): Project[] => [
       {
         title: 'CI/CD',
       },
-
     ],
   },
   {
@@ -37,7 +36,8 @@ export const projectListFactory = (t: (key: string) => string): Project[] => [
     btnTitle: t('download-on-app-store'),
     imgSrc: '/img/lehibou.png',
     target: '_blank',
-    imgAlt: 'Two screenshots of the Lehibou App: the first shows the login screen, and the second displays the iOS widget for freelance availability.',
+    imgAlt:
+      'Two screenshots of the Lehibou App: the first shows the login screen, and the second displays the iOS widget for freelance availability.',
     description: t('projects.lehibou-app.description'),
     skills: [
       {
@@ -59,7 +59,8 @@ export const projectListFactory = (t: (key: string) => string): Project[] => [
     link: '/sudosumo',
     btnTitle: t('more-details'),
     imgSrc: '/img/sudosumo.png',
-    imgAlt: 'Desktop screenshot of the SudoSumo app displaying a sudoku puzzle on the screen.',
+    imgAlt:
+      'Desktop screenshot of the SudoSumo app displaying a sudoku puzzle on the screen.',
     description: t('projects.sudosumo.description'),
     skills: [
       {
@@ -102,7 +103,8 @@ export const projectListFactory = (t: (key: string) => string): Project[] => [
     title: 'LivLink',
     link: '',
     imgSrc: '/img/livlink2.png',
-    imgAlt: 'Three screenshots of the LivLink App: the first shows the contacts list, and the second and third display the \'Circle Call\' feature.',
+    imgAlt:
+      'Three screenshots of the LivLink App: the first shows the contacts list, and the second and third display the \'Circle Call\' feature.',
     description: t('projects.livlink.description'),
     skills: [
       {
@@ -135,7 +137,6 @@ export const projectListFactory = (t: (key: string) => string): Project[] => [
       {
         title: 'Neo4j',
       },
-
     ],
   },
 ]

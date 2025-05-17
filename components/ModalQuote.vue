@@ -14,11 +14,21 @@ const formSchema = z.object({
   clientEmail: z.string().email({ message: 'Email invalide.' }),
   projectName: z.string().nonempty({ message: 'Le nom du projet est requis.' }),
   projectDescription: z.string(),
-  itemList: z.array(z.object({
-    description: z.string().nonempty({ message: 'Préciser une description.' }),
-    duration: z.number().gt(0, { message: 'Renseigner une durée valide (>0).' }),
-    quantity: z.number().gt(0, { message: 'Renseigner une quantité valide (>0).' }),
-  })).nonempty({ message: 'Au moins un élément est requis.' }),
+  itemList: z
+    .array(
+      z.object({
+        description: z
+          .string()
+          .nonempty({ message: 'Préciser une description.' }),
+        duration: z
+          .number()
+          .gt(0, { message: 'Renseigner une durée valide (>0).' }),
+        quantity: z
+          .number()
+          .gt(0, { message: 'Renseigner une quantité valide (>0).' }),
+      }),
+    )
+    .nonempty({ message: 'Au moins un élément est requis.' }),
 })
 
 type FormData = z.infer<typeof formSchema>
@@ -91,7 +101,10 @@ async function handleSubmit() {
 }
 
 const total = computed(() => {
-  return itemList.value.reduce((prev: number, elt: QuoteItem) => prev + elt.duration * elt.quantity * 50, 0)
+  return itemList.value.reduce(
+    (prev: number, elt: QuoteItem) => prev + elt.duration * elt.quantity * 50,
+    0,
+  )
 })
 
 const emit = defineEmits<{
@@ -106,7 +119,9 @@ const emit = defineEmits<{
     role="dialog"
     aria-modal="true"
   >
-    <div class="fixed inset-0 z-10 w-screen overflow-y-auto bg-black bg-opacity-30 flex justify-center items-center">
+    <div
+      class="fixed inset-0 z-10 w-screen overflow-y-auto bg-black bg-opacity-30 flex justify-center items-center"
+    >
       <form
         class="bg-white w-[50%] h-[70%] overflow-scroll flex flex-col gap-5 items-center px-5 py-10 rounded-xl shadow-lg relative"
       >
@@ -215,15 +230,21 @@ const emit = defineEmits<{
                   <label
                     for="message"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >Détail de l'élément {{ index+1 }}</label>
+                  >Détail de l'élément {{ index + 1 }}</label>
                   <textarea
                     v-model="item.description"
                     name="item-description"
                     rows="4"
                     class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Mise en place de l'architecture de l'application"
-                    :class="errors[`itemList.${index}.description`] ? 'border-red-500 border-2' : ''"
-                    @blur="validateItemField(index, 'description', item.description)"
+                    :class="
+                      errors[`itemList.${index}.description`]
+                        ? 'border-red-500 border-2'
+                        : ''
+                    "
+                    @blur="
+                      validateItemField(index, 'description', item.description)
+                    "
                   />
                   <p
                     v-if="errors[`itemList.${index}.description`]"
@@ -239,8 +260,14 @@ const emit = defineEmits<{
                         type="number"
                         min="0"
                         max="10"
-                        :class="errors[`itemList.${index}.duration`] ? 'border-red-500 border-2' : ''"
-                        @blur="validateItemField(index, 'duration', item.duration)"
+                        :class="
+                          errors[`itemList.${index}.duration`]
+                            ? 'border-red-500 border-2'
+                            : ''
+                        "
+                        @blur="
+                          validateItemField(index, 'duration', item.duration)
+                        "
                       >
                       <p
                         v-if="errors[`itemList.${index}.duration`]"
@@ -256,8 +283,14 @@ const emit = defineEmits<{
                         type="number"
                         min="0"
                         max="1000"
-                        :class="errors[`itemList.${index}.quantity`] ? 'border-red-500 border-2' : ''"
-                        @blur="validateItemField(index, 'quantity', item.quantity)"
+                        :class="
+                          errors[`itemList.${index}.quantity`]
+                            ? 'border-red-500 border-2'
+                            : ''
+                        "
+                        @blur="
+                          validateItemField(index, 'quantity', item.quantity)
+                        "
                       >
                       <p
                         v-if="errors[`itemList.${index}.quantity`]"
@@ -273,12 +306,19 @@ const emit = defineEmits<{
             <div class="flex flex-col gap-1">
               <h3>Estimation :</h3>
               <span>Total : {{ total }}€</span>
-              <span class="text-xs text-gray-500">Important : Les estimations générées via cet outil sont fournies à titre indicatif et n’ont aucune valeur contractuelle. Le devis final, incluant les éventuelles spécificités de votre projet, sera établi après discussion et validation mutuelle.</span>
+              <span class="text-xs text-gray-500">Important : Les estimations générées via cet outil sont
+                fournies à titre indicatif et n’ont aucune valeur contractuelle.
+                Le devis final, incluant les éventuelles spécificités de votre
+                projet, sera établi après discussion et validation
+                mutuelle.</span>
             </div>
             <div class="w-full flex flex-row justify-center">
               <button
-                class="btn-primary disabled:bg-slate-300 disabled:text-gray-700 disabled:hover:bg-slate-300 disabled:hover:text-gray-700"
+                class="g-recaptcha btn-primary disabled:bg-slate-300 disabled:text-gray-700 disabled:hover:bg-slate-300 disabled:hover:text-gray-700"
                 :disabled="isError"
+                data-sitekey="reCAPTCHA_site_key"
+                data-callback="onSubmit"
+                data-action="submit"
                 @click="handleSubmit"
               >
                 Enregister
