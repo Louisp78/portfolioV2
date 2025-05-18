@@ -4,26 +4,29 @@ import type Education from '~/types/Education'
 defineProps<{
   vModel: Education
 }>()
-const nuxtLink = resolveComponent('NuxtLink')
-const div = resolveComponent('div')
 </script>
 
 <template>
   <li>
     <h3>{{ vModel.title }}</h3>
-    <component
-      :is="vModel.companieLink ? nuxtLink : div"
-      :to="vModel.companieLink"
-      target="_blank"
-      class="companieAndLocation"
-    >
-      {{ vModel.companie }}
-      <Icon
-        v-if="vModel.companieLink"
-        name="clarity:link-line"
-        size="24"
-      />
-    </component>
+    <template v-if="vModel.companieLink">
+      <NuxtLink
+        :to="vModel.companieLink"
+        target="_blank"
+        class="companieAndLocation"
+      >
+        {{ vModel.companie }}
+        <Icon
+          name="clarity:link-line"
+          size="24"
+        />
+      </NuxtLink>
+    </template>
+    <template v-else>
+      <div class="companieAndLocation">
+        {{ vModel.companie }}
+      </div>
+    </template>
     <p
       v-if="vModel.description"
       class="text-md md:text-lg"

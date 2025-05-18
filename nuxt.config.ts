@@ -53,4 +53,10 @@ export default defineNuxtConfig({
       pass: process.env.NUXT_MAILTRAP_PASS,
     },
   },
+  runtimeConfig: {
+    recaptchaSecretKey: process.env.NUXT_RECAPTCHA_SECRET_KEY,
+    public: {
+      recaptchaSiteKey: process.env.NUXT_RECAPTCHA_SITE_KEY,
+    },
+  },
 })

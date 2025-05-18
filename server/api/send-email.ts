@@ -4,9 +4,13 @@ import type QuoteItem from '~/types/QuoteItem'
 import { CONTACT_EMAIL } from '~/constants'
 
 export default defineEventHandler(async (event) => {
+  const body = await readBody(event)
+
+  if (!validateRecaptcha(body.recaptchaToken))
+    return sendError(event, createError({ statusCode: 403, statusMessage: 'reCAPTCHA validation failed' }))
+
   const { sendMail } = useNodeMailer()
 
-  const body = await readBody(event)
   // Charger le fichier de template
   const templatePath = path.resolve('templates/quote-email.html')
   let htmlContent = await readFile(templatePath, 'utf-8')
@@ -61,9 +65,23 @@ export default defineEventHandler(async (event) => {
   `
 
   return sendMail({
-    subject: 'Nuxt + nodemailer',
+    subject: body.projectName,
     text: textContent,
     html: htmlContent,
     to: CONTACT_EMAIL,
   })
 })
+
+async function validateRecaptcha(token: string): Promise<boolean> {
+  try {
+    const response: RecaptchaResponse = await $fetch('/api/verify-recaptcha', {
+      method: 'POST',
+      body: { token },
+    })
+    return response.success
+  }
+  catch (error) {
+    console.error('reCAPTCHA error:', error)
+    return false
+  }
+}

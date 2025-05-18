@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { ICON_SIZE } from '~/constants'
+
 const isOpen = ref<boolean>(false)
 const isModalOpen = ref<boolean>(false)
-let intervalId: NodeJS.Timer | null = null
+let intervalId: ReturnType<typeof setInterval> | null = null
 
 const bodyWidth = ref('0px')
 const floatingBtnBody = ref<HTMLElement | null>(null)

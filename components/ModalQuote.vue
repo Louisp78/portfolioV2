@@ -1,7 +1,11 @@
 <script lang="ts" setup>
 import { z } from 'zod'
+import SpinnerComponent from './SpinnerComponent.vue'
 import QuoteItem from '~/types/QuoteItem'
 
+const { execute: executeRecaptcha } = useRecaptcha()
+
+const isLoading = ref(false)
 const clientEmail = ref<string>('')
 const clientName = ref<string>('')
 const projectName = ref<string>('')
@@ -37,29 +41,35 @@ const isError = computed(() => {
   return Object.values(errors.value).filter(elt => elt !== '').length > 0
 })
 
-function validateField<T extends keyof FormData>(field: T, value: any) {
+function validateField<T extends keyof FormData>(field: T, value: unknown) {
   try {
     formSchema.shape[field].parse(value)
     errors.value[field] = '' // Clear error if valid
   }
-  catch (err: any) {
-    errors.value[field] = err.issues[0].message // Set error message if invalid
+  catch (err) {
+    if (err instanceof z.ZodError) {
+      errors.value[field] = err.issues[0].message // Set error message if invalid
+    }
   }
-  console.log(Object.values(errors.value).filter(elt => elt !== ''))
 }
 
-function validateItemField(index: number, field: keyof QuoteItem, value: any) {
+function validateItemField(index: number, field: keyof QuoteItem, value: unknown) {
   try {
     // Dynamically validate the field based on the index and field name
-    formSchema.shape.itemList.element.shape[field].parse(value)
+    const schema = formSchema.shape.itemList.element as z.ZodObject<{
+      [K in keyof QuoteItem]: z.ZodTypeAny
+    }>
+    schema.shape[field].parse(value)
     errors.value[`itemList.${index}.${field}`] = '' // Clear error if valid
   }
-  catch (err: any) {
-    errors.value[`itemList.${index}.${field}`] = err.issues[0].message // Set error message if invalid
+  catch (err) {
+    if (err instanceof z.ZodError) {
+      errors.value[`itemList.${index}.${field}`] = err.issues[0].message
+    }
   }
 }
 
-function validateAll() {
+async function validateForm() {
   validateField('clientName', clientName.value)
   validateField('clientEmail', clientEmail.value)
   validateField('projectName', projectName.value)
@@ -79,13 +89,17 @@ function handleClose() {
   emit('close')
 }
 
-async function handleSubmit() {
-  validateAll()
-
+async function handleSubmit(event: Event) {
+  event.preventDefault()
+  isLoading.value = true
   try {
+    validateForm()
+    const token = await executeRecaptcha()
+
     await $fetch('/api/send-email', {
       method: 'POST',
       body: {
+        recaptchaResponse: token,
         clientName: clientName.value,
         clientEmail: clientEmail.value,
         projectName: projectName.value,
@@ -97,6 +111,10 @@ async function handleSubmit() {
   }
   catch (err) {
     console.error(err)
+  }
+  finally {
+    isLoading.value = false
+    handleClose()
   }
 }
 
@@ -227,6 +245,7 @@ const emit = defineEmits<{
                 :key="index"
               >
                 <form class="flex flex-col gap-2 border rounded p-3">
+                  <!-- TODO: Add a label for quantity and duration by hours -->
                   <label
                     for="message"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -313,12 +332,11 @@ const emit = defineEmits<{
                 mutuelle.</span>
             </div>
             <div class="w-full flex flex-row justify-center">
+              <SpinnerComponent v-if="isLoading" />
               <button
+                v-else
                 class="g-recaptcha btn-primary disabled:bg-slate-300 disabled:text-gray-700 disabled:hover:bg-slate-300 disabled:hover:text-gray-700"
                 :disabled="isError"
-                data-sitekey="reCAPTCHA_site_key"
-                data-callback="onSubmit"
-                data-action="submit"
                 @click="handleSubmit"
               >
                 Enregister

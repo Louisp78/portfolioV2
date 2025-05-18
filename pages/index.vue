@@ -4,11 +4,14 @@ import { experiencesListFactory } from '~/data/experiences'
 import { projectListFactory } from '~/data/projects'
 import type Education from '~/types/Education'
 import type Project from '~/types/Project'
+import { ICON_SIZE } from '~/constants'
+
+const runtimeConfig = useRuntimeConfig()
 
 useHead({
   script: [
     {
-      src: 'https://www.google.com/recaptcha/api.js',
+      src: 'https://www.google.com/recaptcha/api.js?render=' + runtimeConfig.public.recaptchaSiteKey,
       async: true,
       defer: true,
     },

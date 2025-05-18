@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// TODO: find implement OG with the corresponding plugin
 const { t } = useI18n()
 
 const meJobTarget: string = t('job-title-only')
@@ -82,5 +81,9 @@ useHead({
   }
   .animElt-slideBottom {
     @apply opacity-0 -translate-y-[50%] animate-slideBottom;
+  }
+
+  .grecaptcha-badge {
+      visibility: hidden;
   }
 </style>
