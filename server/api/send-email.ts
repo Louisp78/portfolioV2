@@ -6,8 +6,10 @@ import { CONTACT_EMAIL } from '~/constants'
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
 
-  if (!validateRecaptcha(body.recaptchaToken))
-    return sendError(event, createError({ statusCode: 403, statusMessage: 'reCAPTCHA validation failed' }))
+  const recaptchaCheck = await validateRecaptcha(body.recaptchaResponse)
+  if (!recaptchaCheck.success) {
+    return sendError(event, createError({ statusCode: 403, statusMessage: `reCAPTCHA validation failed : ${recaptchaCheck['error-codes']?.join(', ')}` }))
+  }
 
   const { sendMail } = useNodeMailer()
 
@@ -72,16 +74,17 @@ export default defineEventHandler(async (event) => {
   })
 })
 
-async function validateRecaptcha(token: string): Promise<boolean> {
+async function validateRecaptcha(token: string): Promise<Partial<RecaptchaResponse>> {
   try {
     const response: RecaptchaResponse = await $fetch('/api/verify-recaptcha', {
       method: 'POST',
       body: { token },
     })
-    return response.success
+    return response
   }
-  catch (error) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  catch (error: any) {
     console.error('reCAPTCHA error:', error)
-    return false
+    return { 'success': false, 'error-codes': error?.message ? [error?.message] : [] }
   }
 }
