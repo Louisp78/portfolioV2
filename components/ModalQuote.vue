@@ -143,15 +143,16 @@ const emit = defineEmits<{
       <form
         class="bg-white w-[50%] h-[70%] overflow-scroll flex flex-col gap-5 items-center px-5 py-10 rounded-xl shadow-lg relative"
       >
-        <button
-          class="absolute left-5 top-5"
-          @click="handleClose"
-        >
-          <Icon
-            name="ic:round-close"
-            size="24"
-          />
-        </button>
+        <div class="sticky w-full flex justify-start left-5 top-0">
+          <button
+            @click="handleClose"
+          >
+            <Icon
+              name="ic:round-close"
+              size="24"
+            />
+          </button>
+        </div>
 
         <div class="flex flex-col items-center">
           <h2>Obtenir mon devis</h2>
@@ -245,7 +246,6 @@ const emit = defineEmits<{
                 :key="index"
               >
                 <form class="flex flex-col gap-2 border rounded p-3">
-                  <!-- TODO: Add a label for quantity and duration by hours -->
                   <label
                     for="message"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -351,6 +351,6 @@ const emit = defineEmits<{
 
 <style scoped lang="postcss">
 label {
-  @apply block mb-2 text-sm font-medium text-gray-900 dark:text-white;
+  @apply block mb-2 text-gray-900 ;
 }
 </style>
