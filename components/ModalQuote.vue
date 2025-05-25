@@ -2,6 +2,7 @@
 import { z } from 'zod'
 import SpinnerComponent from './SpinnerComponent.vue'
 import QuoteItem from '~/types/QuoteItem'
+import { ICON_SIZE } from '~/constants'
 
 const { execute: executeRecaptcha } = useRecaptcha()
 
@@ -10,8 +11,9 @@ const clientEmail = ref<string>('')
 const clientName = ref<string>('')
 const projectName = ref<string>('')
 const projectDescription = ref<string>('')
-const itemList = ref<QuoteItem[]>([new QuoteItem()])
+const itemList = ref<QuoteItem[]>([])
 const errors = ref<Record<string, string>>({})
+const textareaRefs = ref<HTMLTextAreaElement[]>([])
 
 const formSchema = z.object({
   clientName: z.string().nonempty({ message: 'Le nom du client est requis.' }),
@@ -31,13 +33,13 @@ const formSchema = z.object({
           .number()
           .gt(0, { message: 'Renseigner une quantité valide (>0).' }),
       }),
-    )
-    .nonempty({ message: 'Au moins un élément est requis.' }),
+    ),
 })
 
 type FormData = z.infer<typeof formSchema>
 
 const isError = computed(() => {
+  console.log(errors.value)
   return Object.values(errors.value).filter(elt => elt !== '').length > 0
 })
 
@@ -82,9 +84,21 @@ async function validateForm() {
   })
 }
 
-function handleAddItem() {
+// TODO: add focus on the newly created item
+function handleAddItem(event: MouseEvent) {
+  event.preventDefault()
+
   itemList.value.push(new QuoteItem())
+  nextTick(() => {
+    const lastItemIndex = itemList.value.length - 1
+    if (textareaRefs.value[lastItemIndex]) {
+      textareaRefs.value[lastItemIndex].focus()
+      // Ensure the element is visible
+      textareaRefs.value[lastItemIndex].scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+  })
 }
+
 function handleClose() {
   emit('close')
 }
@@ -131,8 +145,10 @@ const emit = defineEmits<{
 </script>
 
 <template>
+  <!-- TODO: Split the component into two smaller compoenent: one for the form and one for tell the user infos are well sent -->
+  <!-- TODO: Add the possibility to delete an item + focus on the newly created item on create + items are not mandatory -->
   <div
-    class="relative z-10 font-inconsolata"
+    class="z-10 font-inconsolata"
     aria-labelledby="modal-title"
     role="dialog"
     aria-modal="true"
@@ -141,7 +157,7 @@ const emit = defineEmits<{
       class="fixed inset-0 z-10 w-screen overflow-y-auto bg-black bg-opacity-30 flex justify-center items-center"
     >
       <form
-        class="bg-white w-[50%] h-[70%] overflow-scroll flex flex-col gap-5 items-center px-5 py-10 rounded-xl shadow-lg relative"
+        class="bg-white w-[70%] h-[80%] overflow-scroll flex flex-col items-center px-5 pt-5 pb-10 rounded-xl shadow-lg"
       >
         <div class="sticky w-full flex justify-start left-5 top-0">
           <button
@@ -153,14 +169,13 @@ const emit = defineEmits<{
             />
           </button>
         </div>
-
-        <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center -mt-5 mb-5">
           <h2>Obtenir mon devis</h2>
           <p class="text-gray-500">
             Obtenez votre devis en 24h et une estimation dès maintenant.
           </p>
         </div>
-        <div class="flex flex-col items-start w-full">
+        <div class="flex flex-col items-start w-full mb-5">
           <section class="w-full pb-5">
             <h3 class="text-left pb-3">
               1. Informations projet
@@ -231,7 +246,7 @@ const emit = defineEmits<{
             <h3>2. Détailler la mission</h3>
             <button
               type="button"
-              class="w-full flex flex-row gap-2 items-center border rounded px-2 py-3"
+              class="w-full flex flex-row gap-2 items-center border rounded px-2 py-3 hover:bg-gray-100"
               @click="handleAddItem"
             >
               <Icon
@@ -242,19 +257,35 @@ const emit = defineEmits<{
             </button>
             <ul class="flex flex-col gap-3">
               <li
-                v-for="(item, index) in itemList"
+                v-for="(item, index) in [...itemList].reverse()"
                 :key="index"
               >
                 <form class="flex flex-col gap-2 border rounded p-3">
-                  <label
-                    for="message"
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >Détail de l'élément {{ index + 1 }}</label>
+                  <div class="flex justify-between">
+                    <label
+                      for="message"
+                      class="block mb-2 font-medium text-gray-900 dark:text-white"
+                    >Détail de l'élément {{ index + 1 }}</label>
+                    <button
+                      type="button"
+                      class="text-red-500 hover:text-red-700"
+                      @click="itemList.splice(index, 1)"
+                    >
+                      <Icon
+                        class="text-gray-500 hover:text-red-500"
+                        name="ic:round-cancel"
+                        :size="ICON_SIZE"
+                      />
+                    </button>
+                  </div>
+
+                  <!-- TODO: Change the ring focus color to burnedSand -->
                   <textarea
+                    :ref="el => { if (el) textareaRefs[index] = el as HTMLTextAreaElement }"
                     v-model="item.description"
                     name="item-description"
                     rows="4"
-                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:ring-0 focus:border-burnedSand focus:border-2"
                     placeholder="Mise en place de l'architecture de l'application"
                     :class="
                       errors[`itemList.${index}.description`]
@@ -322,7 +353,10 @@ const emit = defineEmits<{
                 </form>
               </li>
             </ul>
-            <div class="flex flex-col gap-1">
+            <div
+              v-if="itemList.length"
+              class="flex flex-col gap-1"
+            >
               <h3>Estimation :</h3>
               <span>Total : {{ total }}€</span>
               <span class="text-xs text-gray-500">Important : Les estimations générées via cet outil sont

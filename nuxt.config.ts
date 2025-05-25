@@ -41,8 +41,11 @@ export default defineNuxtConfig({
     ],
     baseUrl: 'https://louisplace.com',
     vueI18n: './i18n.config.ts',
+    compilation: {
+      strictMessage: false,
+    },
     defaultLocale: 'en',
-    strategy: 'prefix_and_default',
+    strategy: 'prefix',
   },
   nodemailer: {
     from: '"Quote Bot" <quote@louisplace.com>',

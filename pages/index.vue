@@ -48,6 +48,8 @@ const allSkillList = computed(() => {
 <template>
   <div>
     <!-- TODO: fix logo nuxt img for responsivity -->
+    <!-- TODO: Fix when switching language it jump to the top of the page -->
+    <!-- TODO: Clean locales not used -->
     <FloatingQuoteBtn />
     <div id="about-me">
       <div class="bg-background-beach bg-cover bg-no-repeat pt-20">
@@ -111,78 +113,40 @@ const allSkillList = computed(() => {
             </header>
             <article class="flex flex-col gap-5 mb-5 lg:mb-10 lg:w-fit">
               <div>
-                <p>
-                  👨‍💻 <b>Ingénieur mobile passionné</b>, je conçoit des
-                  applications mobiles complète, performante et durable afin
-                  quels puisse être facilement évoluer vers le concept que vous
-                  avez imaginez 💡
-                </p>
-                <p>
-                  Expérimenté en <b>React Native</b>, je maîtrise également les
-                  environnements natifs iOS (<b>Swift</b>) et Android
-                  (<b>Kotlin</b>) pour répondre à des besoins techniques pointus
-                  et garantir des expériences utilisateur optimales. De plus, je
-                  suis également capable de concevoir des backends robustes dans
-                  l’écosystème <b>Node.js</b> ou avec <b>Java Spring Boot</b>,
-                  ce qui fait de moi un profil complet, capable de prendre en
-                  charge l’ensemble du processus de développement d’une
-                  application.
-                </p>
+                <p v-html="$t('intro-what-am-i-doing')" />
+                <p v-html="$t('experience-description')" />
               </div>
               <AccordionComponent>
                 <template #title>
-                  <h4>🌟 Comment je peux vous être utile ?</h4>
+                  <h4>{{ $t('how-can-i-help') }}</h4>
                 </template>
                 <template #body>
                   <ol class="flex flex-col gap-1 pl-10 list-disc pr-5">
-                    <li>
-                      Développement mobile Android/iOS avec React Native, Swift
-                      ou Kotlin.
-                    </li>
-                    <li>
-                      Développement de back-ends robustes (Java Spring Boot,
-                      Node.js, Express).
-                    </li>
-                    <li>
-                      Mise en place de pipelines CI/CD fiables pour automatiser
-                      les déploiements.
-                    </li>
-                    <li>Conception de design UI / UX d'écrans.</li>
-                    <li>
-                      Audits techniques et optimisations de codebases
-                      existantes.
-                    </li>
+                    <li>{{ $t('how-can-i-help-list.item1') }}</li>
+                    <li>{{ $t('how-can-i-help-list.item2') }}</li>
+                    <li>{{ $t('how-can-i-help-list.item3') }}</li>
+                    <li>{{ $t('how-can-i-help-list.item4') }}</li>
+                    <li>{{ $t('how-can-i-help-list.item5') }}</li>
                   </ol>
                 </template>
               </AccordionComponent>
               <AccordionComponent>
                 <template #title>
-                  <h4>🚀 Exemples de réalisations</h4>
+                  <h4>{{ $t('achievements-examples') }}</h4>
                 </template>
                 <template #body>
                   <div class="flex flex-col gap-5 pb-3">
                     <ol class="flex flex-col gap-1 pl-10 pr-5 list-disc">
-                      <li>
-                        Migration de deux applications Bare React Native vers
-                        l’environnement Expo SDK avec automatisation des builds
-                        et déploiements.
-                      </li>
-                      <li>
-                        Développement d’une application de téléphonie et
-                        communication pour des populations isolées, avec un
-                        back-end sécurisé en Java Spring Boot.
-                      </li>
-                      <li>
-                        Conception, design et création d'un widget natif iOS
-                        pour une application React Native.
-                      </li>
+                      <li>{{ $t('achievements-list.item1') }}</li>
+                      <li>{{ $t('achievements-list.item2') }}</li>
+                      <li>{{ $t('achievements-list.item3') }}</li>
                     </ol>
                     <div class="flex flex-row justify-center">
                       <NuxtLink
                         to="#projects"
                         class="btn-primary w-fit text-sm"
                       >
-                        Voir plus
+                        {{ $t('see-more') }}
                       </NuxtLink>
                     </div>
                   </div>
@@ -190,33 +154,25 @@ const allSkillList = computed(() => {
               </AccordionComponent>
               <AccordionComponent>
                 <template #title>
-                  <h4>🫵 Pourquoi travailler avec moi ?</h4>
+                  <h4>{{ $t('why-work-with-me') }}</h4>
                 </template>
                 <template #body>
                   <ol class="flex flex-col gap-1 list-disc pl-10 pr-5">
                     <li>
-                      <b>Passion et expertise :</b> Mon intérêt constant pour
-                      l’innovation et les nouvelles technologies me permet de
-                      proposer des solutions modernes et performantes. Je veille
-                      quotidiennement à me tenir informé des évolutions des
-                      technologies que j’utilise.
+                      <b>{{ $t('why-work-with-me-list.passion.title') }}:</b>
+                      {{ $t('why-work-with-me-list.passion.description') }}
                     </li>
                     <li>
-                      <b>Design et conception :</b> Grâce à une solide maîtrise
-                      des principes de design UI et UX, je suis en mesure
-                      d’apporter une valeur ajoutée significative à la création
-                      et à l’optimisation de votre application.
+                      <b>{{ $t('why-work-with-me-list.design.title') }}:</b>
+                      {{ $t('why-work-with-me-list.design.description') }}
                     </li>
                     <li>
-                      <b>Flexibilité et pragmatisme :</b> J’adapte mes approches
-                      selon vos priorités, en allouant les ressources et le
-                      temps de manière proportionnée à l’importance de chaque
-                      fonctionnalité.
+                      <b>{{ $t('why-work-with-me-list.flexibility.title') }}:</b>
+                      {{ $t('why-work-with-me-list.flexibility.description') }}
                     </li>
                     <li>
-                      <b>Expérience internationale :</b> Habitué à travailler
-                      avec des équipes dispersées, je maîtrise les outils et
-                      méthodologies pour un remote efficace.
+                      <b>{{ $t('why-work-with-me-list.international.title') }}:</b>
+                      {{ $t('why-work-with-me-list.international.description') }}
                     </li>
                   </ol>
                 </template>

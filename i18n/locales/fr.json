@@ -1,9 +1,7 @@
 {
   "get-my-resume": "Voir mon cv",
   "hello-im-louis": "👋 Salut, je suis Louis",
-  "job-title": "un ingénieur logiciel fullstack",
-  "story-starting": "Toute cette histoire commence à l'âge de 13 ans, le jour où j'ai eu mon premier ordinateur. J'ai commencé à développer, faisant mes premiers pas avec Python en créant des programmes de calculatrice et des jeux à embranchements. Finalement, après avoir obtenu mon baccalauréat scientifique, j'ai naturellement intégré EPITA.",
-  "story-gain-exp": "J'ai rapidement compris que, peu importe le langage, ce que j'aime, c'est la création qui en découle. Mon objectif est de repousser sans cesse les limites de mes compétences afin de résoudre des problèmes ayant un impact sur le monde. Pendant mes études et grâce à mes premières expériences, je me suis passionné pour le développement mobile natif et multiplateforme. Le développement mobile m'offre une grande liberté d'interaction avec l'utilisateur, ce que j'apprécie particulièrement.",
+  "job-title": "un ingénieur logiciel mobile",
   "story-ocean": "En dehors de l’informatique, je vis pour l’Océan. Porté par une passion grandissante pour la vie marine et l’océanographie, mes lectures se transforment en articles scientifiques sur les raies manta. J’adore faire de la plongée sous-marine ou simplement du snorkeling pour observer le calme et la sérénité incomparables de l’Océan !",
   "to-contact": "Pour me contacter, veuillez m’écrire ici…",
   "send-me-an-email": "Envoyer un email",
@@ -12,7 +10,12 @@
   "experiences-title": "Expériences",
   "projects-title": "Projets",
   "my-toolkit": "Mes outils",
-  "menu": {},
+  "menu": {
+    "about-me": "À propos",
+    "experiences": "Expériences",
+    "education": "Formation",
+    "projects": "Projets"
+  },
   "about-me-title": "À propos",
   "education-title": "Éducation",
   "mauritius": "Île Maurice",
@@ -67,5 +70,137 @@
     "title": "Spécifications techniques de l'infrastructure SudoSumo"
   },
   "sudosumo-architecture-diagram": "Sudosumo diagramme d'architecture",
-  "job-title-only": "Développeur d'Applications Mobiles Fullstack"
+  "job-title-only": "Développeur d'Applications Mobiles Fullstack",
+  "intro-job": "Ingénieur mobile passionné",
+  "experience-description": "Mon expertise principale est en <b>React Native</b>. Je maîtrise également les environnements natifs iOS (<b>Swift</b>) et Android (<b>Java/Kotlin</b>) pour répondre à des besoins techniques pointus et garantir des expériences utilisateur optimales. De plus, je suis également capable de concevoir des backends robustes dans l'écosystème <b>Node.js</b> ou avec <b>Java Spring Boot</b>, ce qui fait de moi un profil complet, capable de prendre en charge l'ensemble du processus de développement d'une application.",
+  "intro-what-am-i-doing": "👨‍💻 <b>Ingénieur mobile passionné</b>, je conçoit des applications mobiles complète, performante et durable afin quels puisse être facilement évoluer vers le concept que vous avez imaginez 💡",
+  "how-can-i-help": "🌟 Comment je peux vous être utile ?",
+  "achievements-examples": "🚀 Exemples de réalisations",
+  "why-work-with-me": "🫵 Pourquoi travailler avec moi ?",
+  "how-can-i-help-list": {
+    "item1": "Développement mobile Android/iOS avec React Native, Swift ou Kotlin.",
+    "item2": "Développement de back-ends robustes (Java Spring Boot, Node.js, Express).",
+    "item3": "Mise en place de pipelines CI/CD fiables pour automatiser les déploiements.",
+    "item4": "Conception de design UI / UX d'écrans.",
+    "item5": "Audits techniques et optimisations de codebases existantes."
+  },
+  "achievements-list": {
+    "item1": "Migration de deux applications Bare React Native vers l'environnement Expo SDK avec automatisation des builds et déploiements.",
+    "item2": "Développement d'une application de téléphonie et communication pour des populations isolées, avec un back-end sécurisé en Java Spring Boot.",
+    "item3": "Conception, design et création d'un widget natif iOS pour une application React Native."
+  },
+  "why-work-with-me-list": {
+    "passion": {
+      "title": "Passion et expertise",
+      "description": "Mon intérêt constant pour l'innovation et les nouvelles technologies me permet de proposer des solutions modernes et performantes. Je veille quotidiennement à me tenir informé des évolutions des technologies que j'utilise."
+    },
+    "design": {
+      "title": "Design et conception",
+      "description": "Grâce à une solide maîtrise des principes de design UI et UX, je suis en mesure d'apporter une valeur ajoutée significative à la création et à l'optimisation de votre application."
+    },
+    "flexibility": {
+      "title": "Flexibilité et pragmatisme",
+      "description": "J'adapte mes approches selon vos priorités, en allouant les ressources et le temps de manière proportionnée à l'importance de chaque fonctionnalité."
+    },
+    "international": {
+      "title": "Expérience internationale",
+      "description": "Habitué à travailler avec des équipes dispersées, je maîtrise les outils et méthodologies pour un remote efficace."
+    }
+  },
+  "see-more": "Voir plus",
+  "sudosumo-tech": {
+    "frontend": {
+      "title": "1. Frontend",
+      "explore-repo": "Explorer le repo Frontend",
+      "framework": {
+        "label": "Framework",
+        "value": "Next.js (basé sur React.js avec TypeScript)."
+      },
+      "conception": {
+        "label": "Conception",
+        "value": "Figma."
+      },
+      "styling": {
+        "label": "Style",
+        "value": "TailwindCSS."
+      },
+      "rendering": {
+        "label": "Stratégie de rendu",
+        "value": "Rendu côté serveur (SSR) pour une meilleure sécurité, un cache efficace et une optimisation SEO."
+      },
+      "auth": {
+        "label": "Authentification",
+        "value": "OAuth2 via Auth.js avec Google comme fournisseur."
+      },
+      "deployment": {
+        "label": "Déploiement",
+        "value": "Déployé via un fournisseur serverless Netlify pour une mise à l'échelle automatique et une efficacité des coûts."
+      },
+      "security": {
+        "label": "Sécurité",
+        "value": "Configuration TLS pour une communication sécurisée entre le frontend et le backend."
+      }
+    },
+    "backend": {
+      "title": "2. Backend",
+      "explore-repo": "Explorer le repo Backend",
+      "technology": {
+        "label": "Technologie",
+        "value": "Java Spring Boot (API REST)."
+      },
+      "architecture": {
+        "label": "Architecture",
+        "details": {
+          "ddd": "Domain-Driven Design (DDD) pour une meilleure modularité, séparation des préoccupations et facilité de maintenance.",
+          "jakarta": "Construit avec Jakarta EE pour une scalabilité et une robustesse de niveau entreprise."
+        }
+      },
+      "security": {
+        "label": "Sécurité",
+        "value": "OAuth2 avec Google comme fournisseur d'identité ; utilise des tokens JWT pour une gestion sécurisée des sessions."
+      },
+      "db-interaction": {
+        "label": "Interaction avec la base de données",
+        "value": "API REST pour la communication frontend ; tâches cron additionnelles planifiées pour les mises à jour périodiques de la base de données."
+      },
+      "hosting": {
+        "label": "Hébergement",
+        "value": "Hébergé sur une instance AWS EC2 utilisant un conteneur Docker pour ajouter de l'isolation et de la cohérence entre les environnements, assurant des ressources dédiées pour les opérations backend."
+      },
+      "load-balancer": {
+        "label": "Équilibreur de charge",
+        "value": "AWS Elastic Load Balancer (ELB) pour distribuer le trafic entre plusieurs instances backend pour une haute disponibilité, servant d'interface frontale vers internet."
+      },
+      "tls": {
+        "label": "Configuration TLS",
+        "value": "Pour une communication HTTP sécurisée entre le frontend et le backend."
+      },
+      "data-update": {
+        "label": "Mécanisme de mise à jour des données",
+        "value": "Tâches cron planifiées pour réinitialiser la vie de chaque utilisateur à 5 à minuit, assurant des mises à jour quotidiennes de la base de données."
+      }
+    },
+    "database": {
+      "title": "3. Base de données",
+      "technology": {
+        "label": "Technologie de base de données",
+        "value": "PostgreSQL."
+      },
+      "management": {
+        "label": "Gestion",
+        "value": "Hébergé sur une instance AWS RDS."
+      }
+    },
+    "security": {
+      "title": "4. Sécurité",
+      "ssl": {
+        "label": "SSL/TLS",
+        "value": "Certificats SSL/TLS pour le chiffrement de bout en bout."
+      },
+      "security-group": {
+        "label": "Groupe de sécurité AWS",
+        "value": "Assure qu'aucune instance n'est inutilement exposée à internet en configurant correctement les règles du groupe de sécurité."
+      }
+    }
+  }
 }

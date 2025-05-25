@@ -1,9 +1,7 @@
 {
   "get-my-resume": "Get my resume",
   "hello-im-louis": "👋 Hello, I'm Louis",
-  "job-title": "a full-stack software engineer",
-  "story-starting": "This whole story begins at the age of 13, the day I got my first computer. I started developing, taking my first steps with Python by creating calculator programs and branching games. Finally, after obtaining my science high school diploma, I logically ended up at EPITA.",
-  "story-gain-exp": "I quickly understand that regardless of the language, what I love is the creation that comes from it. My goal is to continuously push the limits of my skills to be able to solve problems that have an impact on the world. During my studies and through my early experiences, I became captivated by native and cross-platform mobile development. Mobile development offers me a great freedom of interaction with the user, which I particularly appreciate.",
+  "job-title": "a mobile software engineer",
   "story-ocean": "Outside of computing, I live for the Ocean. Driven by a growing passion for marine life and oceanography, my readings turn into scientific articles about manta rays. I love scuba diving or just snorkeling to observe the unparalleled calm and serenity of the Ocean!",
   "to-contact": "To contact me, please reach out here...",
   "send-me-an-email": "Send me an email",
@@ -13,7 +11,12 @@
   "education-title": "Education",
   "projects-title": "Projects",
   "my-toolkit": "My Toolkit",
-  "menu": {},
+  "menu": {
+    "about-me": "About me",
+    "experiences": "Experiences",
+    "education": "Education",
+    "projects": "Projects"
+  },
   "about-me-title": "About me",
   "lehibou": {
     "job-title": "Mobile Lead Engineer Intern",
@@ -67,5 +70,137 @@
     "title": "SudoSumo Infrastructure Technical Specifications"
   },
   "sudosumo-architecture-diagram": "Sudosumo architecture diagram",
-  "job-title-only": "Mobile Software Engineer & Oceanography Enthusiast"
+  "job-title-only": "Mobile Software Engineer & Oceanography Enthusiast",
+  "intro-job": "Passionate Mobile Engineer",
+  "experience-description": "My primary expertise is in <b>React Native</b>. I also master native iOS (<b>Swift</b>) and Android (<b>Java/Kotlin</b>) environments to address specific technical needs and ensure optimal user experiences. Additionally, I can design robust backends in the <b>Node.js</b> ecosystem or with <b>Java Spring Boot</b>, making me a full-stack developer capable of handling the entire application development process.",
+  "intro-what-am-i-doing": "👨‍💻 <b>Passionate mobile engineer</b>, I design complete, performant, and sustainable mobile applications that can easily evolve towards the concept you've imagined 💡",
+  "how-can-i-help": "🌟 How can I help you?",
+  "achievements-examples": "🚀 Achievement Examples",
+  "why-work-with-me": "🫵 Why work with me?",
+  "how-can-i-help-list": {
+    "item1": "Android/iOS mobile development with React Native, Swift, or Kotlin.",
+    "item2": "Robust back-end development (Java Spring Boot, Node.js, Express).",
+    "item3": "Setting up reliable CI/CD pipelines for automated deployments.",
+    "item4": "UI/UX screen design.",
+    "item5": "Technical audits and codebase optimizations."
+  },
+  "achievements-list": {
+    "item1": "Migration of two Bare React Native applications to the Expo SDK environment with automated builds and deployments.",
+    "item2": "Development of a telephony and communication application for isolated populations, with a secure Java Spring Boot back-end.",
+    "item3": "Design and creation of a native iOS widget for a React Native application."
+  },
+  "why-work-with-me-list": {
+    "passion": {
+      "title": "Passion and Expertise",
+      "description": "My constant interest in innovation and new technologies allows me to propose modern and performant solutions. I stay informed daily about the evolution of the technologies I use."
+    },
+    "design": {
+      "title": "Design and Development",
+      "description": "With a solid mastery of UI and UX design principles, I can bring significant added value to the creation and optimization of your application."
+    },
+    "flexibility": {
+      "title": "Flexibility and Pragmatism",
+      "description": "I adapt my approaches according to your priorities, allocating resources and time proportionally to the importance of each feature."
+    },
+    "international": {
+      "title": "International Experience",
+      "description": "Used to working with distributed teams, I master the tools and methodologies for effective remote work."
+    }
+  },
+  "see-more": "See more",
+  "sudosumo-tech": {
+    "frontend": {
+      "title": "1. Frontend",
+      "explore-repo": "Explore Frontend Repo",
+      "framework": {
+        "label": "Framework",
+        "value": "Next.js (React.js-based with TypeScript)."
+      },
+      "conception": {
+        "label": "Conception",
+        "value": "Figma."
+      },
+      "styling": {
+        "label": "Styling",
+        "value": "TailwindCSS."
+      },
+      "rendering": {
+        "label": "Rendering Strategy",
+        "value": "Server-Side Rendering (SSR) for improved security, efficient caching, and optimized SEO."
+      },
+      "auth": {
+        "label": "Authentication",
+        "value": "OAuth2 via Auth.js with Google as the provider."
+      },
+      "deployment": {
+        "label": "Deployment",
+        "value": "Deployed using a serverless provider Netlify for automatic scaling and cost efficiency."
+      },
+      "security": {
+        "label": "Security",
+        "value": "TLS configuration for secure communication between frontend and backend."
+      }
+    },
+    "backend": {
+      "title": "2. Backend",
+      "explore-repo": "Explore Backend Repo",
+      "technology": {
+        "label": "Technology",
+        "value": "Java Spring Boot (REST API)."
+      },
+      "architecture": {
+        "label": "Architecture",
+        "details": {
+          "ddd": "Domain-Driven Design (DDD) for improved modularity, separation of concerns, and ease of maintenance.",
+          "jakarta": "Build with Jakarta EE for enterprise-level scalability and robustness."
+        }
+      },
+      "security": {
+        "label": "Security",
+        "value": "OAuth2 with Google as the identity provider; uses JWT tokens for secure session management."
+      },
+      "db-interaction": {
+        "label": "Database Interaction",
+        "value": "REST API for frontend communication; additional cron jobs scheduled for periodic database updates."
+      },
+      "hosting": {
+        "label": "Hosting",
+        "value": "Hosted on an AWS EC2 instance using Docker container to add isolation and consistency across environments, ensuring dedicated resources for backend operations."
+      },
+      "load-balancer": {
+        "label": "Load Balancer",
+        "value": "AWS Elastic Load Balancer (ELB) to distribute traffic across multiple backend instances for high availability, serving as the front interface to the internet."
+      },
+      "tls": {
+        "label": "TLS Configuration",
+        "value": "For secure HTTP communication between frontend and backend."
+      },
+      "data-update": {
+        "label": "Data Update Mechanism",
+        "value": "Scheduled cron jobs to reset each user's life to 5 at midnight, ensuring daily updates to the database."
+      }
+    },
+    "database": {
+      "title": "3. Database",
+      "technology": {
+        "label": "Database Technology",
+        "value": "PostgreSQL."
+      },
+      "management": {
+        "label": "Management",
+        "value": "Hosted on an AWS RDS instance."
+      }
+    },
+    "security": {
+      "title": "4. Security",
+      "ssl": {
+        "label": "SSL/TLS",
+        "value": "SSL/TLS certificates for end-to-end encryption."
+      },
+      "security-group": {
+        "label": "AWS security group",
+        "value": "ensure that no instance is unnecessarily exposed to the internet by properly configuring security group rules."
+      }
+    }
+  }
 }

@@ -18,25 +18,28 @@ interface MenuItem {
   link: string
 }
 
-const navList: MenuItem[] = [
+const navList = computed<MenuItem[]>(() => [
   {
-    title: t('about-me-title'),
-    link: '/#about-me',
+    title: t('menu.about-me'),
+    link: `/${locale.value}#about-me`,
   },
   {
-    title: t('experiences-title'),
-    link: '/#exp',
+    title: t('menu.experiences'),
+    link: `/${locale.value}#exp`,
   },
   {
-    title: t('education-title'),
-    link: '/#edu',
+    title: t('menu.education'),
+    link: `/${locale.value}#edu`,
   },
   {
-    title: t('projects-title'),
-    link: '/#projects',
+    title: t('menu.projects'),
+    link: `/${locale.value}#projects`,
   },
-]
-console.log(locale)
+])
+
+async function handleLocaleChange() {
+  setLocale(locale.value === 'fr' ? 'en' : 'fr')
+}
 </script>
 
 <template>
@@ -65,12 +68,12 @@ console.log(locale)
               class="animElt-slideRight flex flex-row gap-3 pr-3 items-center"
             >
               <button
-                class="w-fit h-fit rounded-full flex flex-row gap-2 items-center px-2 border-2 border-burnedSand"
-                @click="
-                  $i18n.locale === 'fr' ? setLocale('en') : setLocale('fr')
-                "
+                class="w-fit h-fit rounded-full flex flex-row gap-2 items-center px-2 border-2 border-black hover:bg-sand"
+                @click="handleLocaleChange"
               >
-                <p>{{ $i18n.locale === 'fr' ? 'FR' : 'US' }}</p>
+                <p class="select-none">
+                  {{ $i18n.locale === 'fr' ? 'FR' : 'US' }}
+                </p>
                 <Icon
                   :name="
                     $i18n.locale === 'fr'
