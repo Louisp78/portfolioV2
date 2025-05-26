@@ -29,7 +29,7 @@
   },
   "master-of-computer-science": "Master of Computer Science",
   "epita-mti": "Major MTI, Multimedia and Information Technologies.",
-  "upec-dual-bachelor": "Dual Bachelor\\'s Degree in Computer Science",
+  "upec-dual-bachelor": "Dual Bachelor's Degree in Computer Science",
   "upec": "University of Paris-Est Créteil, FR",
   "cmas-one-star-diver": "CMAS One Star Diver",
   "blue-water-diving-center-mau": "Blue Water Diving Center, MAU",
@@ -201,6 +201,42 @@
         "label": "AWS security group",
         "value": "ensure that no instance is unnecessarily exposed to the internet by properly configuring security group rules."
       }
+    }
+  },
+  "get-a-quote": "Get a quote in less than 24 hours",
+  "quote": {
+    "modal": {
+      "title": "Get my quote",
+      "subtitle": "Get your quote in 24h and an estimate right now.",
+      "project-info": "1. Project Information",
+      "client-name": "Your Name",
+      "client-email": "Your Email",
+      "project-name": "Project Name",
+      "project-description": "Description (Optional)",
+      "mission-details": "2. Mission Details",
+      "add-item": "Add an item",
+      "item-details": "Item details",
+      "duration": "Duration (hours)",
+      "quantity": "Quantity",
+      "estimation": "Estimate:",
+      "total": "Total:",
+      "disclaimer": "Important: Estimates generated through this tool are provided for indicative purposes only and have no contractual value. The final quote, including any project-specific requirements, will be established after discussion and mutual agreement.",
+      "submit": "Submit",
+      "placeholders": {
+        "client-name": "John Doe",
+        "client-email": "example{'@'}domain.com",
+        "project-name": "Mobile App Migration to Expo",
+        "project-description": "Task management mobile application",
+        "item-description": "Setting up the application architecture"
+      }
+    },
+    "validation": {
+      "client-name-required": "Client name is required.",
+      "invalid-email": "Invalid email.",
+      "project-name-required": "Project name is required.",
+      "description-required": "Please provide a description.",
+      "duration-invalid": "Please enter a valid duration (>0).",
+      "quantity-invalid": "Please enter a valid quantity (>0)."
     }
   }
 }

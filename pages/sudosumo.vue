@@ -3,7 +3,6 @@ const backRepoUrl: string = 'https://github.com/Louisp78/sudosumo-api'
 const frontRepoUrl: string = 'https://github.com/Louisp78/sudosumo-v2'
 </script>
 
-<!-- TODO: fix spacing between texts -->
 <template>
   <main
     class="flex flex-grow flex-col gap-3 items-center text-center w-full pt-20 px-5 pb-20"
@@ -21,7 +20,7 @@ const frontRepoUrl: string = 'https://github.com/Louisp78/sudosumo-v2'
       </p>
     </div>
 
-    <ol class="flex flex-col gap-12 text-left pt-12">
+    <ol class="flex flex-col gap-12 text-left pt-12 pl-12 pr-12">
       <li>
         <h3 class="text-xl md:text-2xl">
           {{ $t('sudosumo-tech.frontend.title') }}
@@ -38,13 +37,13 @@ const frontRepoUrl: string = 'https://github.com/Louisp78/sudosumo-v2'
           {{ $t('sudosumo-tech.frontend.explore-repo') }}
         </NuxtLink>
         <ul class="flex flex-col gap-3 pl-4 pt-2">
-          <li><span class="font-semibold">{{ $t('sudosumo-tech.frontend.framework.label') }}</span>{{ $t('sudosumo-tech.frontend.framework.value') }}</li>
-          <li><span class="font-semibold">{{ $t('sudosumo-tech.frontend.conception.label') }}</span>{{ $t('sudosumo-tech.frontend.conception.value') }}</li>
-          <li><span class="font-semibold">{{ $t('sudosumo-tech.frontend.styling.label') }}</span>{{ $t('sudosumo-tech.frontend.styling.value') }}</li>
-          <li><span class="font-semibold">{{ $t('sudosumo-tech.frontend.rendering.label') }}</span>{{ $t('sudosumo-tech.frontend.rendering.value') }}</li>
-          <li><span class="font-semibold">{{ $t('sudosumo-tech.frontend.auth.label') }}</span>{{ $t('sudosumo-tech.frontend.auth.value') }}</li>
-          <li><span class="font-semibold">{{ $t('sudosumo-tech.frontend.deployment.label') }}</span>{{ $t('sudosumo-tech.frontend.deployment.value') }}</li>
-          <li><span class="font-semibold">{{ $t('sudosumo-tech.frontend.security.label') }}</span>{{ $t('sudosumo-tech.frontend.security.value') }}</li>
+          <li><span class="font-semibold">{{ $t('sudosumo-tech.frontend.framework.label') }}</span> <span>{{ $t('sudosumo-tech.frontend.framework.value') }}</span></li>
+          <li><span class="font-semibold">{{ $t('sudosumo-tech.frontend.conception.label') }}</span> <span>{{ $t('sudosumo-tech.frontend.conception.value') }}</span></li>
+          <li><span class="font-semibold">{{ $t('sudosumo-tech.frontend.styling.label') }}</span> <span>{{ $t('sudosumo-tech.frontend.styling.value') }}</span></li>
+          <li><span class="font-semibold">{{ $t('sudosumo-tech.frontend.rendering.label') }}</span> <span>{{ $t('sudosumo-tech.frontend.rendering.value') }}</span></li>
+          <li><span class="font-semibold">{{ $t('sudosumo-tech.frontend.auth.label') }}</span> <span>{{ $t('sudosumo-tech.frontend.auth.value') }}</span></li>
+          <li><span class="font-semibold">{{ $t('sudosumo-tech.frontend.deployment.label') }}</span> <span>{{ $t('sudosumo-tech.frontend.deployment.value') }}</span></li>
+          <li><span class="font-semibold">{{ $t('sudosumo-tech.frontend.security.label') }}</span> <span>{{ $t('sudosumo-tech.frontend.security.value') }}</span></li>
         </ul>
       </li>
       <li>
@@ -63,7 +62,7 @@ const frontRepoUrl: string = 'https://github.com/Louisp78/sudosumo-v2'
           {{ $t('sudosumo-tech.backend.explore-repo') }}
         </NuxtLink>
         <ul class="flex flex-col gap-3 pl-4 pt-2">
-          <li><span class="font-semibold">{{ $t('sudosumo-tech.backend.technology.label') }}</span>{{ $t('sudosumo-tech.backend.technology.value') }}</li>
+          <li><span class="font-semibold">{{ $t('sudosumo-tech.backend.technology.label') }}</span> <span>{{ $t('sudosumo-tech.backend.technology.value') }}</span></li>
           <li>
             <span class="font-semibold">{{ $t('sudosumo-tech.backend.architecture.label') }}</span>
             <ul class="pl-4">
@@ -71,12 +70,12 @@ const frontRepoUrl: string = 'https://github.com/Louisp78/sudosumo-v2'
               <li>{{ $t('sudosumo-tech.backend.architecture.details.jakarta') }}</li>
             </ul>
           </li>
-          <li><span class="font-semibold">{{ $t('sudosumo-tech.backend.security.label') }}</span>{{ $t('sudosumo-tech.backend.security.value') }}</li>
-          <li><span class="font-semibold">{{ $t('sudosumo-tech.backend.db-interaction.label') }}</span>{{ $t('sudosumo-tech.backend.db-interaction.value') }}</li>
-          <li><span class="font-semibold">{{ $t('sudosumo-tech.backend.hosting.label') }}</span>{{ $t('sudosumo-tech.backend.hosting.value') }}</li>
-          <li><span class="font-semibold">{{ $t('sudosumo-tech.backend.load-balancer.label') }}</span>{{ $t('sudosumo-tech.backend.load-balancer.value') }}</li>
-          <li><span class="font-semibold">{{ $t('sudosumo-tech.backend.tls.label') }}</span>{{ $t('sudosumo-tech.backend.tls.value') }}</li>
-          <li><span class="font-semibold">{{ $t('sudosumo-tech.backend.data-update.label') }}</span>{{ $t('sudosumo-tech.backend.data-update.value') }}</li>
+          <li><span class="font-semibold">{{ $t('sudosumo-tech.backend.security.label') }}</span> <span>{{ $t('sudosumo-tech.backend.security.value') }}</span></li>
+          <li><span class="font-semibold">{{ $t('sudosumo-tech.backend.db-interaction.label') }}</span> <span>{{ $t('sudosumo-tech.backend.db-interaction.value') }}</span></li>
+          <li><span class="font-semibold">{{ $t('sudosumo-tech.backend.hosting.label') }}</span> <span>{{ $t('sudosumo-tech.backend.hosting.value') }}</span></li>
+          <li><span class="font-semibold">{{ $t('sudosumo-tech.backend.load-balancer.label') }}</span> <span>{{ $t('sudosumo-tech.backend.load-balancer.value') }}</span></li>
+          <li><span class="font-semibold">{{ $t('sudosumo-tech.backend.tls.label') }}</span> <span>{{ $t('sudosumo-tech.backend.tls.value') }}</span></li>
+          <li><span class="font-semibold">{{ $t('sudosumo-tech.backend.data-update.label') }}</span> <span>{{ $t('sudosumo-tech.backend.data-update.value') }}</span></li>
         </ul>
       </li>
       <li>
@@ -84,8 +83,8 @@ const frontRepoUrl: string = 'https://github.com/Louisp78/sudosumo-v2'
           {{ $t('sudosumo-tech.database.title') }}
         </h3>
         <ul class="flex flex-col gap-3 pl-4 pt-2">
-          <li><span class="font-semibold">{{ $t('sudosumo-tech.database.technology.label') }}</span>{{ $t('sudosumo-tech.database.technology.value') }}</li>
-          <li><span class="font-semibold">{{ $t('sudosumo-tech.database.management.label') }}</span>{{ $t('sudosumo-tech.database.management.value') }}</li>
+          <li><span class="font-semibold">{{ $t('sudosumo-tech.database.technology.label') }}</span> <span>{{ $t('sudosumo-tech.database.technology.value') }}</span></li>
+          <li><span class="font-semibold">{{ $t('sudosumo-tech.database.management.label') }}</span> <span>{{ $t('sudosumo-tech.database.management.value') }}</span></li>
         </ul>
       </li>
       <li>
@@ -93,8 +92,8 @@ const frontRepoUrl: string = 'https://github.com/Louisp78/sudosumo-v2'
           {{ $t('sudosumo-tech.security.title') }}
         </h3>
         <ul class="flex flex-col gap-3 pl-4 pt-2">
-          <li><span class="font-semibold">{{ $t('sudosumo-tech.security.ssl.label') }}</span>{{ $t('sudosumo-tech.security.ssl.value') }}</li>
-          <li><span class="font-semibold">{{ $t('sudosumo-tech.security.security-group.label') }}</span>{{ $t('sudosumo-tech.security.security-group.value') }}</li>
+          <li><span class="font-semibold">{{ $t('sudosumo-tech.security.ssl.label') }}</span> <span>{{ $t('sudosumo-tech.security.ssl.value') }}</span></li>
+          <li><span class="font-semibold">{{ $t('sudosumo-tech.security.security-group.label') }}</span> <span>{{ $t('sudosumo-tech.security.security-group.value') }}</span></li>
         </ul>
       </li>
     </ol>

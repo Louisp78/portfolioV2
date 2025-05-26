@@ -46,7 +46,7 @@ onUnmounted(() => {
         class="font-inconsolata font-medium transition-all ease-in-out duration-1000 whitespace-nowrap opacity-100"
         :style="{ width: isOpen ? bodyWidth : '0px', opacity: isOpen ? 1 : 0 }"
       >
-        Obtenir un devis en moins de 24h
+        {{ $t('get-a-quote') }}
       </p>
       <Icon
         class="text-black"

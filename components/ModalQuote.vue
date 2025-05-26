@@ -4,6 +4,7 @@ import SpinnerComponent from './SpinnerComponent.vue'
 import QuoteItem from '~/types/QuoteItem'
 import { ICON_SIZE } from '~/constants'
 
+const { t } = useI18n()
 const { execute: executeRecaptcha } = useRecaptcha()
 
 const isLoading = ref(false)
@@ -16,22 +17,22 @@ const errors = ref<Record<string, string>>({})
 const textareaRefs = ref<HTMLTextAreaElement[]>([])
 
 const formSchema = z.object({
-  clientName: z.string().nonempty({ message: 'Le nom du client est requis.' }),
-  clientEmail: z.string().email({ message: 'Email invalide.' }),
-  projectName: z.string().nonempty({ message: 'Le nom du projet est requis.' }),
+  clientName: z.string().nonempty({ message: t('quote.validation.client-name-required') }),
+  clientEmail: z.string().email({ message: t('quote.validation.invalid-email') }),
+  projectName: z.string().nonempty({ message: t('quote.validation.project-name-required') }),
   projectDescription: z.string(),
   itemList: z
     .array(
       z.object({
         description: z
           .string()
-          .nonempty({ message: 'Préciser une description.' }),
+          .nonempty({ message: t('quote.validation.description-required') }),
         duration: z
           .number()
-          .gt(0, { message: 'Renseigner une durée valide (>0).' }),
+          .gt(0, { message: t('quote.validation.duration-invalid') }),
         quantity: z
           .number()
-          .gt(0, { message: 'Renseigner une quantité valide (>0).' }),
+          .gt(0, { message: t('quote.validation.quantity-invalid') }),
       }),
     ),
 })
@@ -84,7 +85,6 @@ async function validateForm() {
   })
 }
 
-// TODO: add focus on the newly created item
 function handleAddItem(event: MouseEvent) {
   event.preventDefault()
 
@@ -170,23 +170,23 @@ const emit = defineEmits<{
           </button>
         </div>
         <div class="flex flex-col items-center -mt-5 mb-5">
-          <h2>Obtenir mon devis</h2>
+          <h2>{{ t('quote.modal.title') }}</h2>
           <p class="text-gray-500">
-            Obtenez votre devis en 24h et une estimation dès maintenant.
+            {{ t('quote.modal.subtitle') }}
           </p>
         </div>
         <div class="flex flex-col items-start w-full mb-5">
           <section class="w-full pb-5">
             <h3 class="text-left pb-3">
-              1. Informations projet
+              {{ t('quote.modal.project-info') }}
             </h3>
             <form class="flex flex-col gap-2">
               <div>
-                <label for="client-name">Votre Nom</label>
+                <label for="client-name">{{ t('quote.modal.client-name') }}</label>
                 <input
                   v-model="clientName"
                   type="text"
-                  placeholder="Jean Dupont"
+                  :placeholder="t('quote.modal.placeholders.client-name')"
                   :class="errors.clientName ? 'border-red-500 border-2' : ''"
                   @blur="validateField('clientName', clientName)"
                 >
@@ -198,12 +198,12 @@ const emit = defineEmits<{
                 </p>
               </div>
               <div>
-                <label for="client-email">Votre Email</label>
+                <label for="client-email">{{ t('quote.modal.client-email') }}</label>
                 <input
                   id="client-email"
                   v-model="clientEmail"
                   type="email"
-                  placeholder="example@domain.com"
+                  :placeholder="t('quote.modal.placeholders.client-email')"
                   :class="errors.clientEmail ? 'border-red-500 border-2' : ''"
                   @blur="validateField('clientEmail', clientEmail)"
                 >
@@ -215,12 +215,12 @@ const emit = defineEmits<{
                 </p>
               </div>
               <div>
-                <label for="project-name">Nom du projet</label>
+                <label for="project-name">{{ t('quote.modal.project-name') }}</label>
                 <input
                   v-model="projectName"
                   name="project-name"
                   type="text"
-                  placeholder="Migration d'application mobile sous Expo"
+                  :placeholder="t('quote.modal.placeholders.project-name')"
                   :class="errors.projectName ? 'border-red-500 border-2' : ''"
                   @blur="validateField('projectName', projectName)"
                 >
@@ -232,18 +232,18 @@ const emit = defineEmits<{
                 </p>
               </div>
               <div>
-                <label for="project-description">Description (Optionnel)</label>
+                <label for="project-description">{{ t('quote.modal.project-description') }}</label>
                 <textarea
                   v-model="projectDescription"
                   name="project-description"
                   rows="4"
-                  placeholder="Application mobile de gestion de tâches"
+                  :placeholder="t('quote.modal.placeholders.project-description')"
                 />
               </div>
             </form>
           </section>
           <section class="w-full flex flex-col gap-5">
-            <h3>2. Détailler la mission</h3>
+            <h3>{{ t('quote.modal.mission-details') }}</h3>
             <button
               type="button"
               class="w-full flex flex-row gap-2 items-center border rounded px-2 py-3 hover:bg-gray-100"
@@ -253,7 +253,7 @@ const emit = defineEmits<{
                 name="line-md:plus-circle"
                 size="24"
               />
-              <span>Ajouter un élément</span>
+              <span>{{ t('quote.modal.add-item') }}</span>
             </button>
             <ul class="flex flex-col gap-3">
               <li
@@ -265,7 +265,7 @@ const emit = defineEmits<{
                     <label
                       for="message"
                       class="block mb-2 font-medium text-gray-900 dark:text-white"
-                    >Détail de l'élément {{ index + 1 }}</label>
+                    >{{ t('quote.modal.item-details') }} {{ index + 1 }}</label>
                     <button
                       type="button"
                       class="text-red-500 hover:text-red-700"
@@ -286,7 +286,7 @@ const emit = defineEmits<{
                     name="item-description"
                     rows="4"
                     class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:ring-0 focus:border-burnedSand focus:border-2"
-                    placeholder="Mise en place de l'architecture de l'application"
+                    :placeholder="t('quote.modal.placeholders.item-description')"
                     :class="
                       errors[`itemList.${index}.description`]
                         ? 'border-red-500 border-2'
@@ -304,7 +304,7 @@ const emit = defineEmits<{
                   </p>
                   <div class="flex flex-row justify-between items-center">
                     <div>
-                      <label for="duration">Durée (heure)</label>
+                      <label for="duration">{{ t('quote.modal.duration') }}</label>
                       <input
                         v-model="item.duration"
                         type="number"
@@ -327,7 +327,7 @@ const emit = defineEmits<{
                       </p>
                     </div>
                     <div>
-                      <label for="duration">Quantité</label>
+                      <label for="duration">{{ t('quote.modal.quantity') }}</label>
                       <input
                         v-model="item.quantity"
                         type="number"
@@ -357,13 +357,9 @@ const emit = defineEmits<{
               v-if="itemList.length"
               class="flex flex-col gap-1"
             >
-              <h3>Estimation :</h3>
-              <span>Total : {{ total }}€</span>
-              <span class="text-xs text-gray-500">Important : Les estimations générées via cet outil sont
-                fournies à titre indicatif et n’ont aucune valeur contractuelle.
-                Le devis final, incluant les éventuelles spécificités de votre
-                projet, sera établi après discussion et validation
-                mutuelle.</span>
+              <h3>{{ t('quote.modal.estimation') }}</h3>
+              <span>{{ t('quote.modal.total') }} {{ total }}€</span>
+              <span class="text-xs text-gray-500">{{ t('quote.modal.disclaimer') }}</span>
             </div>
             <div class="w-full flex flex-row justify-center">
               <SpinnerComponent v-if="isLoading" />
@@ -373,7 +369,7 @@ const emit = defineEmits<{
                 :disabled="isError"
                 @click="handleSubmit"
               >
-                Enregister
+                {{ t('quote.modal.submit') }}
               </button>
             </div>
           </section>

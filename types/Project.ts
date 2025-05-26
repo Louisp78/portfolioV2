@@ -1,5 +1,6 @@
 import type Skill from '~/types/Skill'
 
+// TODO: add recommendation
 export default interface Project {
   title: string
   link?: string

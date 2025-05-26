@@ -202,5 +202,41 @@
         "value": "Assure qu'aucune instance n'est inutilement exposée à internet en configurant correctement les règles du groupe de sécurité."
       }
     }
+  },
+  "get-a-quote": "Obtenir un devis en moins de 24h",
+  "quote": {
+    "modal": {
+      "title": "Obtenir mon devis",
+      "subtitle": "Obtenez votre devis en 24h et une estimation dès maintenant.",
+      "project-info": "1. Informations projet",
+      "client-name": "Votre Nom",
+      "client-email": "Votre Email",
+      "project-name": "Nom du projet",
+      "project-description": "Description (Optionnel)",
+      "mission-details": "2. Détailler la mission",
+      "add-item": "Ajouter un élément",
+      "item-details": "Détail de l'élément",
+      "duration": "Durée (heure)",
+      "quantity": "Quantité",
+      "estimation": "Estimation :",
+      "total": "Total :",
+      "disclaimer": "Important : Les estimations générées via cet outil sont fournies à titre indicatif et n'ont aucune valeur contractuelle. Le devis final, incluant les éventuelles spécificités de votre projet, sera établi après discussion et validation mutuelle.",
+      "submit": "Enregistrer",
+      "placeholders": {
+        "client-name": "Jean Dupont",
+        "client-email": "example{'@'}domain.com",
+        "project-name": "Migration d'application mobile sous Expo",
+        "project-description": "Application mobile de gestion de tâches",
+        "item-description": "Mise en place de l'architecture de l'application"
+      }
+    },
+    "validation": {
+      "client-name-required": "Le nom du client est requis.",
+      "invalid-email": "Email invalide.",
+      "project-name-required": "Le nom du projet est requis.",
+      "description-required": "Préciser une description.",
+      "duration-invalid": "Renseigner une durée valide (>0).",
+      "quantity-invalid": "Renseigner une quantité valide (>0)."
+    }
   }
 }
