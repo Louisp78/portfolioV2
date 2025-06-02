@@ -145,8 +145,6 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <!-- TODO: Split the component into two smaller compoenent: one for the form and one for tell the user infos are well sent -->
-  <!-- TODO: Add the possibility to delete an item + focus on the newly created item on create + items are not mandatory -->
   <div
     class="z-10 font-inconsolata"
     aria-labelledby="modal-title"

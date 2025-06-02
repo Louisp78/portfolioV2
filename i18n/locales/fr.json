@@ -237,6 +237,11 @@
       "description-required": "Préciser une description.",
       "duration-invalid": "Renseigner une durée valide (>0).",
       "quantity-invalid": "Renseigner une quantité valide (>0)."
+    },
+    "email-sent": {
+      "title": "Email envoyé !",
+      "message": "Je répondrai à votre email sous 24 heures. J'ai hâte de découvrir votre projet !",
+      "close": "Fermer"
     }
   }
 }

@@ -29,6 +29,7 @@ definePageMeta({
 const expList = experiencesListFactory(t)
 const educationList: Education[] = educationListFactory(t)
 const projectList: Project[] = projectListFactory(t)
+const quoteModalOpen = ref<boolean>(false)
 
 const allSkillList = computed(() => {
   let allSkill = projectList.map(elt => elt.skills).flat()
@@ -50,7 +51,16 @@ const allSkillList = computed(() => {
     <!-- TODO: fix logo nuxt img for responsivity -->
     <!-- TODO: Fix when switching language it jump to the top of the page -->
     <!-- TODO: Clean locales not used -->
-    <FloatingQuoteBtn />
+    <QuoteFloatingBtn
+      v-if="!quoteModalOpen"
+      @click="quoteModalOpen = !quoteModalOpen"
+    />
+    <QuoteActivity
+      v-if="quoteModalOpen"
+      :modal-open="quoteModalOpen"
+      @close="quoteModalOpen = false"
+    />
+
     <div id="about-me">
       <div class="bg-background-beach bg-cover bg-no-repeat pt-20">
         <div class="flex flex-col lg:flex-row-reverse lg:justify-between pb-20">
