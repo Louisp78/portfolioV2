@@ -45,7 +45,6 @@ export default {
         sand: '#FFB36E',
         burnedSand: '#FF4D00',
         moon: '#5F5F5F',
-        white: '#FFFFFF',
         green: '#00FF51',
         darkGreen: '#81B928',
       },
