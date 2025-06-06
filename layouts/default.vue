@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const route = useRoute()
-const { setLocale, t, locale } = useI18n()
+const { t, locale } = useI18n()
 useHead({
   meta: [
     { property: 'og:title', content: `Portfolio - ${route.meta.title}` },
@@ -36,10 +36,6 @@ const navList = computed<MenuItem[]>(() => [
     link: `/${locale.value}#projects`,
   },
 ])
-
-async function handleLocaleChange() {
-  setLocale(locale.value === 'fr' ? 'en' : 'fr')
-}
 </script>
 
 <template>
@@ -67,21 +63,7 @@ async function handleLocaleChange() {
             <li
               class="animElt-slideRight flex flex-row gap-3 pr-3 items-center"
             >
-              <button
-                class="w-fit h-fit rounded-full flex flex-row gap-2 items-center px-2 border-2 border-black hover:bg-sand"
-                @click="handleLocaleChange"
-              >
-                <p class="select-none">
-                  {{ $i18n.locale === 'fr' ? 'FR' : 'US' }}
-                </p>
-                <Icon
-                  :name="
-                    $i18n.locale === 'fr'
-                      ? 'circle-flags:fr'
-                      : 'circle-flags:us'
-                  "
-                />
-              </button>
+              <LocaleBtnComponent />
             </li>
           </ul>
         </li>
@@ -114,6 +96,11 @@ async function handleLocaleChange() {
           >
             {{ navItem.title }}
           </NuxtLink>
+        </li>
+        <li
+          class="animElt-slideBottom"
+        >
+          <LocaleBtnComponent />
         </li>
       </ul>
     </nav>

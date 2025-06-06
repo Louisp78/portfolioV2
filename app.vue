@@ -31,6 +31,7 @@ useHead({
   </div>
 </template>
 
+<!-- TODO: No global style, it's cursed -->
 <style lang="postcss">
   /* Global style */
   .menu-item {

@@ -143,12 +143,12 @@ const emit = defineEmits<{
   <form class="flex flex-col w-full">
     <div class="flex flex-col items-center -mt-5 mb-5">
       <h2>{{ t('quote.modal.title') }}</h2>
-      <p class="text-gray-500">
+      <p class="text-gray-500 text-center">
         {{ t('quote.modal.subtitle') }}
       </p>
     </div>
     <div class="flex flex-col items-start w-full mb-5">
-      <section class="w-full pb-5">
+      <section class="w-full pb-5 px-0 md:px-5">
         <h3 class="text-left pb-3">
           {{ t('quote.modal.project-info') }}
         </h3>

@@ -29,19 +29,17 @@ const emit = defineEmits<{
       class="fixed inset-0 z-10 w-screen overflow-y-auto bg-black bg-opacity-30 flex justify-center items-center"
     >
       <div
-        class="bg-white w-[70%] overflow-scroll flex flex-col items-center px-5 pt-5 pb-10 rounded-xl shadow-lg"
+        class="bg-white w-full max-h-full md:h-auto md:w-[70%] overflow-scroll flex flex-col items-center px-5 pt-5 pb-10 rounded-xl shadow-lg"
         :class="{
-          'max-h-[80%]': !formValidated,
-          'max-h-[40%]': formValidated,
+          'md:max-h-[80%]': !formValidated,
+          'md:max-h-[40%]': formValidated,
         }"
       >
         <div
           v-if="!formValidated"
           class="sticky w-full flex justify-start left-5 top-0"
         >
-          <button
-            @click="handleClose"
-          >
+          <button @click="handleClose">
             <Icon
               name="ic:round-close"
               size="24"
