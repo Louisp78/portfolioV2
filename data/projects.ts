@@ -1,4 +1,4 @@
-import type Project from '~/types/Project'
+import type { Project } from '~/types/Project'
 
 export const projectListFactory = (t: (key: string) => string): Project[] => [
   {
@@ -101,7 +101,6 @@ export const projectListFactory = (t: (key: string) => string): Project[] => [
   },
   {
     title: 'LivLink',
-    link: '',
     imgSrc: '/img/livlink2.png',
     imgAlt:
       'Three screenshots of the LivLink App: the first shows the contacts list, and the second and third display the \'Circle Call\' feature.',
@@ -121,7 +120,6 @@ export const projectListFactory = (t: (key: string) => string): Project[] => [
   {
     title: 'Studeam',
     description: t('projects.studeam.description'),
-    link: '',
     imgSrc: '/img/studeam1.png',
     imgAlt: t('projects.studeam.img-alt'),
     skills: [

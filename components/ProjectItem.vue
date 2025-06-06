@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type Project from '~~/types/Project'
+import type { Project } from '~/types/Project'
 
 defineProps<{ vModel: Project }>()
 const { slideOnObs } = useSlideRightObsAnim()

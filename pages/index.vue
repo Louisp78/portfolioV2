@@ -3,8 +3,8 @@ import { educationListFactory } from '~/data/educations'
 import { experiencesListFactory } from '~/data/experiences'
 import { projectListFactory } from '~/data/projects'
 import type Education from '~/types/Education'
-import type Project from '~/types/Project'
 import { ICON_SIZE } from '~/constants'
+import type { Project } from '~/types/Project'
 
 const runtimeConfig = useRuntimeConfig()
 
