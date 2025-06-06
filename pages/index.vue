@@ -5,6 +5,7 @@ import { projectListFactory } from '~/data/projects'
 import type Education from '~/types/Education'
 import { ICON_SIZE } from '~/constants'
 import type { Project } from '~/types/Project'
+import type Skill from '~/types/Skill'
 
 const runtimeConfig = useRuntimeConfig()
 
@@ -31,18 +32,10 @@ const educationList: Education[] = educationListFactory(t)
 const projectList: Project[] = projectListFactory(t)
 const quoteModalOpen = ref<boolean>(false)
 
-const allSkillList = computed(() => {
-  let allSkill = projectList.map(elt => elt.skills).flat()
-  allSkill = allSkill.concat(expList.map(elt => elt.skills).flat())
-  allSkill = allSkill.concat([
-    {
-      title: 'Python',
-    },
-  ])
-  allSkill = Array.from(
-    new Map(allSkill.map(item => [item.title, item])).values(),
-  )
-  return allSkill
+const allSkillList = computed<Skill[]>(() => {
+  return [{
+    title: 'React Native',
+  }, { title: 'Expo' }, { title: 'SwiftUI' }, { title: 'Java' }, { title: 'Kotlin' }, { title: 'Spring Boot' }]
 })
 </script>
 
