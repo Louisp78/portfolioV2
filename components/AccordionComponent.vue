@@ -44,6 +44,9 @@ const toggle = async () => {
       <div
         ref="accordionBody"
         class="transition-[height] duration-300 ease-in-out overflow-hidden pl-3 pr-3"
+        :class="{
+          'py-4 md:py-0': isOpen,
+        }"
         :style="{ height: isOpen ? bodyHeight : '0px' }"
       >
         <slot name="body">

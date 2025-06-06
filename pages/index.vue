@@ -124,14 +124,15 @@ const allSkillList = computed(() => {
             <article class="flex flex-col gap-5 mb-5 lg:mb-10 lg:w-fit">
               <div>
                 <p v-html="$t('intro-what-am-i-doing')" />
-                <p v-html="$t('experience-description')" />
               </div>
               <AccordionComponent>
                 <template #title>
-                  <h4>{{ $t('how-can-i-help') }}</h4>
+                  <h4 class="introduce-section-title">
+                    {{ $t('how-can-i-help') }}
+                  </h4>
                 </template>
                 <template #body>
-                  <ol class="flex flex-col gap-1 pl-10 list-disc pr-5">
+                  <ol class="flex flex-col gap-4 md:gap-1 pl-10 list-disc pr-5 ">
                     <li>{{ $t('how-can-i-help-list.item1') }}</li>
                     <li>{{ $t('how-can-i-help-list.item2') }}</li>
                     <li>{{ $t('how-can-i-help-list.item3') }}</li>
@@ -142,7 +143,9 @@ const allSkillList = computed(() => {
               </AccordionComponent>
               <AccordionComponent>
                 <template #title>
-                  <h4>{{ $t('achievements-examples') }}</h4>
+                  <h4 class="introduce-section-title">
+                    {{ $t('achievements-examples') }}
+                  </h4>
                 </template>
                 <template #body>
                   <div class="flex flex-col gap-5 pb-3">
@@ -164,7 +167,9 @@ const allSkillList = computed(() => {
               </AccordionComponent>
               <AccordionComponent>
                 <template #title>
-                  <h4>{{ $t('why-work-with-me') }}</h4>
+                  <h4 class="introduce-section-title">
+                    {{ $t('why-work-with-me') }}
+                  </h4>
                 </template>
                 <template #body>
                   <ol class="flex flex-col gap-1 list-disc pl-10 pr-5">
@@ -303,6 +308,9 @@ const allSkillList = computed(() => {
 </template>
 
 <style scoped lang="postcss">
+  .introduce-section-title {
+    @apply text-center w-full md:w-auto;
+  }
   .btn-primary {
     @apply flex justify-center items-center gap-3 p-2 font-inconsolata font-medium border border-black rounded-md hover:bg-sand hover:text-burnedSand;
   }
