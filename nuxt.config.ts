@@ -49,7 +49,7 @@ export default defineNuxtConfig({
   },
   nodemailer: {
     from: '"Quote Bot" <quote@louisplace.com>',
-    host: 'sandbox.smtp.mailtrap.io',
+    host: process.env.NUXT_MAILTRAP_HOST,
     port: 2525,
     auth: {
       user: process.env.NUXT_MAILTRAP_USER,
