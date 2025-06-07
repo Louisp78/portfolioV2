@@ -14,6 +14,9 @@ export default defineNuxtConfig({
     "nuxt-nodemailer",
   ],
   css: ["~/assets/css/main.css"],
+  typescript: {
+    typeCheck: true,
+  },
   eslint: {
     config: {
       stylistic: true,
