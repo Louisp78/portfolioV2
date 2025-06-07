@@ -3,8 +3,8 @@ on:
   workflow_dispatch: # Allows manual triggering
 
 jobs:
-  lhci:
-    name: Lighthouse
+  review:
+    name: Review
     runs-on: ubuntu-latest
     env:
       LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }} # Set environment variable using GitHub Secret
@@ -29,13 +29,13 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nuxt-build-
 
-      - name: pnpm install 
+      - name: pnpm install
         run: |
           pnpm install
 
       - name: pnpm generate
         run: pnpm run generate
-        continue-on-error: true  # Continue even if this step fails
+        continue-on-error: true # Continue even if this step fails
 
       - name: run Lighthouse CI
         run: |

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 const route = useRoute()
-
+const { t, locale } = useI18n()
 useHead({
-  meta: [{ property: 'og:title', content: `Portfolio - ${route.meta.title}` }],
+  meta: [{ property: "og:title", content: `Portfolio - ${route.meta.title}` }],
 })
 
 const menuOpened = ref<boolean>(false)
@@ -16,30 +16,29 @@ interface MenuItem {
   link: string
 }
 
-const navList: MenuItem[] = [
+const navList = computed<MenuItem[]>(() => [
   {
-    title: 'About me',
-    link: '/#about-me',
+    title: t("menu.about-me"),
+    link: `/${locale.value}#about-me`,
   },
   {
-    title: 'Experiences',
-    link: '/#exp',
+    title: t("menu.experiences"),
+    link: `/${locale.value}#exp`,
   },
   {
-    title: 'Educations',
-    link: '/#edu',
-
+    title: t("menu.education"),
+    link: `/${locale.value}#edu`,
   },
   {
-    title: 'Projects',
-    link: '/#projects',
+    title: t("menu.projects"),
+    link: `/${locale.value}#projects`,
   },
-]
+])
 </script>
 
 <template>
   <div>
-    <nav class="fixed w-full bg-softSand z-10">
+    <nav class="fixed w-full bg-softSand z-10 border-b-2 border-black">
       <ul class="flex justify-center lg:justify-between items-center">
         <li class="z-10">
           <NuxtLink to="/">
@@ -55,11 +54,14 @@ const navList: MenuItem[] = [
               :key="navItem.title"
               class="animElt-slideRight"
             >
-              <NuxtLink
-                :to="navItem.link"
-              >
+              <NuxtLink :to="navItem.link">
                 {{ navItem.title }}
               </NuxtLink>
+            </li>
+            <li
+              class="animElt-slideRight flex flex-row gap-3 pr-3 items-center"
+            >
+              <LocaleBtnComponent />
             </li>
           </ul>
         </li>
@@ -69,7 +71,11 @@ const navList: MenuItem[] = [
         @click="handleBurgerMenu"
       >
         <Icon
-          :name="menuOpened ? 'material-symbols:close-rounded' : 'material-symbols:menu-rounded'"
+          :name="
+            menuOpened
+              ? 'material-symbols:close-rounded'
+              : 'material-symbols:menu-rounded'
+          "
           size="20"
         />
       </div>
@@ -82,26 +88,27 @@ const navList: MenuItem[] = [
           :key="navItem.title"
           class="animElt-slideBottom"
         >
-          <NuxtLink
-            :to="navItem.link"
-            @click="handleBurgerMenu"
-          >
+          <NuxtLink :to="navItem.link" @click="handleBurgerMenu">
             {{ navItem.title }}
           </NuxtLink>
+        </li>
+        <li class="animElt-slideBottom">
+          <LocaleBtnComponent />
         </li>
       </ul>
     </nav>
     <slot />
-    <footer class="bg-softSand border-t-2 flex items-center py-3 flex-col gap-2">
-      <span class="text-sm">A website made with 💚 and a pinch of Nuxt.js</span>
+    <footer
+      class="bg-softSand border-t-2 flex items-center py-3 flex-col gap-2"
+    >
+      <span class="text-sm">{{ $t("footer-credits") }}</span>
       <NuxtLink
         to="https://github.com/Louisp78/portfolioV2"
         target="_blank"
         class="text-sm underline hover:text-burnedSand"
       >
-        View project on Github
+        {{ $t("view-project-on-github") }}
       </NuxtLink>
-      <span class="hidden">{{ 'Thank you Raph for what you teach me ;)' }}</span>
     </footer>
   </div>
 </template>
@@ -111,8 +118,5 @@ const navList: MenuItem[] = [
   a {
     @apply text-2xl duration-100 select-none flex px-10 py-3 items-center text-moon hover:text-burnedSand hover:cursor-pointer;
   }
-}
-nav {
-  @apply border-b-2;
 }
 </style>

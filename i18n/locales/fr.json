@@ -1,0 +1,246 @@
+{
+  "get-my-resume": "Voir mon cv",
+  "hello-im-louis": "👋 Salut, je suis Louis",
+  "job-title": "un ingénieur logiciel mobile",
+  "story-ocean": "En dehors de l’informatique, je vis pour l’Océan. Porté par une passion grandissante pour la vie marine et l’océanographie, mes lectures se transforment en articles scientifiques sur les raies manta. J’adore faire de la plongée sous-marine ou simplement du snorkeling pour observer le calme et la sérénité incomparables de l’Océan !",
+  "to-contact": "Pour me contacter, veuillez m’écrire ici…",
+  "send-me-an-email": "Envoyer un email",
+  "or": "ou",
+  "hire-me-on": "Engagez-moi sur",
+  "experiences-title": "Expériences",
+  "projects-title": "Projets",
+  "my-toolkit": "Mes outils",
+  "menu": {
+    "about-me": "À propos",
+    "experiences": "Expériences",
+    "education": "Formation",
+    "projects": "Projets"
+  },
+  "about-me-title": "À propos",
+  "education-title": "Éducation",
+  "mauritius": "Île Maurice",
+  "lehibou": {
+    "job-title": "Stagiaire Lead Développeur Mobile",
+    "description": "Responsable de la maintenance et Développeur Principal d’une application mobile construite avec React Native utilisant Expo, Maestro et Jest pour les tests, avec un déploiement complet sur les stores iOS et Android. A travaillé au sein d’une équipe internationale basée à l’île Maurice, collaborant avec des collègues de différentes origines culturelles. A évolué dans un environnement Agile, suivant la méthodologie SCRUM. De plus, a joué un rôle clé dans le développement d’une application web utilisant Nuxt.js."
+  },
+  "spliit": {
+    "description": "Développement d’un outil Google App Script utilisant Excel comme outil avancé. Analyse de base de données avec Google Data Studio utilisant PostgreSQL. Tests en équipe et développement d’une application web en React.js. Développeur principal d’un outil de collecte de données automatisé.",
+    "job-title": "Stagiaire en Analyse de Données"
+  },
+  "epita-mti": "Spécialité MTI, Multimédia et Technologies de l’Information.",
+  "upec-dual-bachelor": "Double diplôme de Bachelor en Informatique",
+  "upec": "Université de Paris-Est Créteil, FR",
+  "cmas-one-star-diver": "Plongeur CMAS Niveau 1",
+  "blue-water-diving-center-mau": "Blue Water Diving, MAU",
+  "python-basics-for-data-science": "Python Basics for Data Science",
+  "bac-s": "Baccalauréat Scientifique",
+  "school": "Lycée Blanche de Castille, Le Chesnay, FR",
+  "master-of-computer-science": "Diplôme d’Ingénieur en Informatique",
+  "projects": {
+    "maconsigne": {
+      "description": "Imaginez prendre deux anciennes applications React Native, les dépoussiérer et leur offrir un tout nouveau foyer dans Expo SDK 51—c’était ma mission avec MaConsigne. De la gestion des dépendances à l’assurance que tout fonctionne parfaitement dans son nouvel environnement propulsé par Expo, c’était comme déménager, mais pour des applications (et avec moins de cartons à déballer). Pour couronner le tout, j’ai mis en place un pipeline CI/CD élégant avec EAS, automatisant les builds et les déploiements afin que les versions sortent désormais sans effort. Le résultat ? Deux applications modernisées prêtes à conquérir le monde mobile, tout en gardant les choses rapides et sans stress pour les développeurs. 🚀",
+      "img-alt": "Trois captures d’écran de l’application MaConsigne",
+      "title": "MaConsigne Apps - une histoire de migration vers Expo"
+    },
+    "lehibou-app": {
+      "title": "Application LeHibou",
+      "description": "Imaginez ceci : j’ai pris une application mobile, y ai contribué en utilisant React Native et Expo, et l’ai lancée sur les stores iOS et Android avec 4 versions sur 6 mois — un véritable défi. En cours de route, j’ai effectué des tests approfondis avec Jest et Maestro pour m’assurer que tout fonctionnait parfaitement. Mais je ne me suis pas arrêté là. J’ai créé un élégant widget iOS natif en Swift pour permettre aux freelances de régler leur disponibilité. Pour couronner le tout, j’ai mis en place un pipeline CI/CD avec GitLab CI pour automatiser les déploiements et garantir que tout fonctionne de manière fluide. Tout cela a été réalisé dans un environnement Agile, en suivant de près la méthodologie SCRUM. Le résultat ? Une application parfaitement peaufinée et performante, prête à conquérir le marché de l’intermédiation de services entre freelances et entreprises, avec des déploiements fluides et sans tracas pour les développeurs. 🚀"
+    },
+    "sudosumo": {
+      "description": "SudoSumo est une application Sudoku full-stack qui associe un frontend Next.js à un backend Java Spring Boot. Stylée avec TailwindCSS et sécurisée grâce à OAuth2, l’application profite du rendu côté serveur pour améliorer sa sécurité. Le backend, conçu selon la méthodologie Domain-Driven Design (DDD), interagit avec une base de données PostgreSQL hébergée sur AWS. L’application est déployée sur AWS EC2 et utilise un fournisseur serverless pour assurer sa scalabilité et garantir une haute disponibilité."
+    },
+    "livlink": {
+      "description": "Développement d’une application Android en Kotlin axée sur la téléphonie et la communication pour les personnes isolées, conçue pour améliorer la connectivité dans les zones reculées. Le back-end a été développé avec Java Spring Boot, garantissant une fonctionnalité côté serveur robuste et évolutive. Il s’agissait d’un projet client d’une durée d’un an, réalisé dans un cadre Agile, avec des évaluations régulières des progrès via des présentations et des livrables."
+    },
+    "studeam": {
+      "description": "Développement d’une application mobile conçue pour le travail collaboratif et l’organisation de séances de groupe, en utilisant React Native pour le frontend et Java Spring Boot pour le backend. Ce projet d’une durée d’un an, réalisé au sein d’une équipe de quatre personnes, comprenait des livrables réguliers et des présentations pour suivre les progrès et garantir l’alignement avec les exigences du client.",
+      "img-alt": "Deux captures d’écran de l’application Studeam : la première montre une liste de séances de travail en groupe, et la seconde affiche l’écran de connexion."
+    }
+  },
+  "visit-the-website": "Visiter le site",
+  "download-on-app-store": "Télécharger sur l'App Store",
+  "seo": {
+    "index-title": "Louis Place Ingénieur Mobile",
+    "description": "Bienvenue sur le portfolio de Louis Place ! En tant que développeur mobile, je vous invite à découvrir mes projets innovants, mon expertise technique et les passions qui animent mon travail. Plongez dans mon univers pour voir comment je donne vie aux idées et contactez-moi pour collaborer ou en savoir plus."
+  },
+  "more-details": "Voir plus",
+  "footer-credits": "Un site créé avec du 💚 et une pincée de Nuxt.js",
+  "view-project-on-github": "Voir le projet sur Github",
+  "sudosumo": {
+    "title": "Spécifications techniques de l'infrastructure SudoSumo"
+  },
+  "sudosumo-architecture-diagram": "Sudosumo diagramme d'architecture",
+  "job-title-only": "Développeur d'Applications Mobiles Fullstack",
+  "intro-job": "Ingénieur mobile passionné",
+  "intro-what-am-i-doing": "👨‍💻 <b>Ingénieur mobile passionné</b>, je conçoit des applications mobiles complète, performante et durable afin quels puisse facilement évoluer vers le concept que vous avez imaginez 💡",
+  "how-can-i-help": "🌟 Comment je peux vous être utile ?",
+  "achievements-examples": "🚀 Exemples de réalisations",
+  "why-work-with-me": "🫵 Pourquoi travailler avec moi ?",
+  "how-can-i-help-list": {
+    "item1": "Développement mobile Android/iOS avec React Native, Swift ou Kotlin.",
+    "item2": "Développement de back-ends robustes (Java Spring Boot, Node.js, Express).",
+    "item3": "Mise en place de pipelines CI/CD fiables pour automatiser les déploiements.",
+    "item4": "Conception de design UI / UX d'écrans.",
+    "item5": "Audits techniques et optimisations de codebases existantes."
+  },
+  "achievements-list": {
+    "item1": "Migration de deux applications Bare React Native vers l'environnement Expo SDK avec automatisation des builds et déploiements.",
+    "item2": "Développement d'une application de téléphonie et communication pour des populations isolées, avec un back-end sécurisé en Java Spring Boot.",
+    "item3": "Conception, design et création d'un widget natif iOS pour une application React Native."
+  },
+  "why-work-with-me-list": {
+    "passion": {
+      "title": "Passion et expertise",
+      "description": "Mon intérêt constant pour l'innovation et les nouvelles technologies me permet de proposer des solutions modernes et performantes. Je veille quotidiennement à me tenir informé des évolutions des technologies que j'utilise."
+    },
+    "design": {
+      "title": "Design et conception",
+      "description": "Grâce à une solide maîtrise des principes de design UI et UX, je suis en mesure d'apporter une valeur ajoutée significative à la création et à l'optimisation de votre application."
+    },
+    "flexibility": {
+      "title": "Flexibilité et pragmatisme",
+      "description": "J'adapte mes approches selon vos priorités, en allouant les ressources et le temps de manière proportionnée à l'importance de chaque fonctionnalité."
+    },
+    "international": {
+      "title": "Expérience internationale",
+      "description": "Habitué à travailler avec des équipes dispersées, je maîtrise les outils et méthodologies pour un remote efficace."
+    }
+  },
+  "see-more": "Voir plus",
+  "sudosumo-tech": {
+    "frontend": {
+      "title": "1. Frontend",
+      "explore-repo": "Explorer le repo Frontend",
+      "framework": {
+        "label": "Framework",
+        "value": "Next.js (basé sur React.js avec TypeScript)."
+      },
+      "conception": {
+        "label": "Conception",
+        "value": "Figma."
+      },
+      "styling": {
+        "label": "Style",
+        "value": "TailwindCSS."
+      },
+      "rendering": {
+        "label": "Stratégie de rendu",
+        "value": "Rendu côté serveur (SSR) pour une meilleure sécurité, un cache efficace et une optimisation SEO."
+      },
+      "auth": {
+        "label": "Authentification",
+        "value": "OAuth2 via Auth.js avec Google comme fournisseur."
+      },
+      "deployment": {
+        "label": "Déploiement",
+        "value": "Déployé via un fournisseur serverless Netlify pour une mise à l'échelle automatique et une efficacité des coûts."
+      },
+      "security": {
+        "label": "Sécurité",
+        "value": "Configuration TLS pour une communication sécurisée entre le frontend et le backend."
+      }
+    },
+    "backend": {
+      "title": "2. Backend",
+      "explore-repo": "Explorer le repo Backend",
+      "technology": {
+        "label": "Technologie",
+        "value": "Java Spring Boot (API REST)."
+      },
+      "architecture": {
+        "label": "Architecture",
+        "details": {
+          "ddd": "Domain-Driven Design (DDD) pour une meilleure modularité, séparation des préoccupations et facilité de maintenance.",
+          "jakarta": "Construit avec Jakarta EE pour une scalabilité et une robustesse de niveau entreprise."
+        }
+      },
+      "security": {
+        "label": "Sécurité",
+        "value": "OAuth2 avec Google comme fournisseur d'identité ; utilise des tokens JWT pour une gestion sécurisée des sessions."
+      },
+      "db-interaction": {
+        "label": "Interaction avec la base de données",
+        "value": "API REST pour la communication frontend ; tâches cron additionnelles planifiées pour les mises à jour périodiques de la base de données."
+      },
+      "hosting": {
+        "label": "Hébergement",
+        "value": "Hébergé sur une instance AWS EC2 utilisant un conteneur Docker pour ajouter de l'isolation et de la cohérence entre les environnements, assurant des ressources dédiées pour les opérations backend."
+      },
+      "load-balancer": {
+        "label": "Équilibreur de charge",
+        "value": "AWS Elastic Load Balancer (ELB) pour distribuer le trafic entre plusieurs instances backend pour une haute disponibilité, servant d'interface frontale vers internet."
+      },
+      "tls": {
+        "label": "Configuration TLS",
+        "value": "Pour une communication HTTP sécurisée entre le frontend et le backend."
+      },
+      "data-update": {
+        "label": "Mécanisme de mise à jour des données",
+        "value": "Tâches cron planifiées pour réinitialiser la vie de chaque utilisateur à 5 à minuit, assurant des mises à jour quotidiennes de la base de données."
+      }
+    },
+    "database": {
+      "title": "3. Base de données",
+      "technology": {
+        "label": "Technologie de base de données",
+        "value": "PostgreSQL."
+      },
+      "management": {
+        "label": "Gestion",
+        "value": "Hébergé sur une instance AWS RDS."
+      }
+    },
+    "security": {
+      "title": "4. Sécurité",
+      "ssl": {
+        "label": "SSL/TLS",
+        "value": "Certificats SSL/TLS pour le chiffrement de bout en bout."
+      },
+      "security-group": {
+        "label": "Groupe de sécurité AWS",
+        "value": "Assure qu'aucune instance n'est inutilement exposée à internet en configurant correctement les règles du groupe de sécurité."
+      }
+    }
+  },
+  "get-a-quote": "Obtenir un devis en moins de 24h",
+  "quote": {
+    "modal": {
+      "title": "Obtenir mon devis",
+      "subtitle": "Obtenez votre devis en 24h et une estimation dès maintenant.",
+      "project-info": "1. Informations projet",
+      "client-name": "Votre Nom",
+      "client-email": "Votre Email",
+      "project-name": "Nom du projet",
+      "project-description": "Description (Optionnel)",
+      "mission-details": "2. Détailler la mission",
+      "add-item": "Ajouter un élément",
+      "item-details": "Détail de l'élément",
+      "duration": "Durée (heure)",
+      "quantity": "Quantité",
+      "estimation": "Estimation :",
+      "total": "Total :",
+      "disclaimer": "Important : Les estimations générées via cet outil sont fournies à titre indicatif et n'ont aucune valeur contractuelle. Le devis final, incluant les éventuelles spécificités de votre projet, sera établi après discussion et validation mutuelle.",
+      "submit": "Enregistrer",
+      "placeholders": {
+        "client-name": "Jean Dupont",
+        "client-email": "example{'@'}domain.com",
+        "project-name": "Migration d'application mobile sous Expo",
+        "project-description": "Application mobile de gestion de tâches",
+        "item-description": "Mise en place de l'architecture de l'application"
+      }
+    },
+    "validation": {
+      "client-name-required": "Le nom du client est requis.",
+      "invalid-email": "Email invalide.",
+      "project-name-required": "Le nom du projet est requis.",
+      "description-required": "Préciser une description.",
+      "duration-invalid": "Renseigner une durée valide (>0).",
+      "quantity-invalid": "Renseigner une quantité valide (>0)."
+    },
+    "email-sent": {
+      "title": "Email envoyé !",
+      "message": "Je répondrai à votre email sous 24 heures. J'ai hâte de découvrir votre projet !",
+      "close": "Fermer"
+    }
+  }
+}

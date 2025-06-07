@@ -6,7 +6,7 @@ export const useSlideRightObsAnim = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animElt-slideRight')
+            entry.target.classList.add("animElt-slideRight")
           }
         })
       },
