@@ -9,7 +9,6 @@ function handleClose() {
 
 function handleSubmit() {
   formValidated.value = true
-  console.log("Quote form submitted")
 }
 
 const emit = defineEmits<{

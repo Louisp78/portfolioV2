@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ICON_SIZE } from "~/constants"
+import { CONTACT_EMAIL, ICON_SIZE } from "~/constants"
 import { educationListFactory } from "~/data/educations"
 import { experiencesListFactory } from "~/data/experiences"
 import { projectListFactory } from "~/data/projects"
@@ -21,8 +21,6 @@ useHead({
 })
 
 const { t } = useI18n()
-
-const contactEmail = "placelouis@gmail.com"
 
 definePageMeta({
   title: "seo.index-title",
@@ -47,7 +45,6 @@ const allSkillList = [
   <div>
     <!-- TODO: fix logo nuxt img for responsivity -->
     <!-- TODO: Fix when switching language it jump to the top of the page -->
-    <!-- TODO: Clean locales not used -->
     <QuoteFloatingBtn
       v-if="!quoteModalOpen"
       @click="quoteModalOpen = !quoteModalOpen"
@@ -196,8 +193,7 @@ const allSkillList = [
               class="flex flex-col items-center gap-3 text-center lg:text-left lg:items-start"
             >
               <div class="flex flex-col md:flex-row items-center gap-3">
-                <!-- TODO : Add a tooltip for the btn with my email adress -->
-                <NuxtLink :to="`mailto:${contactEmail}`" class="button">
+                <NuxtLink :to="`mailto:${CONTACT_EMAIL}`" class="button">
                   <Icon name="ic:outline-email" :size="ICON_SIZE" />
                   <span>
                     {{ $t("send-me-an-email") }}

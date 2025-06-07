@@ -42,14 +42,13 @@ const formSchema = z.object({
   ),
 })
 
-type FormData = z.infer<typeof formSchema>
+type QuoteForm = z.infer<typeof formSchema>
 
 const isError = computed(() => {
-  console.log(errors.value)
   return Object.values(errors.value).filter((elt) => elt !== "").length > 0
 })
 
-function validateField<T extends keyof FormData>(field: T, value: unknown) {
+function validateField<T extends keyof QuoteForm>(field: T, value: unknown) {
   try {
     formSchema.shape[field].parse(value)
     errors.value[field] = "" // Clear error if valid
@@ -84,7 +83,6 @@ async function validateForm() {
   validateField("clientEmail", clientEmail.value)
   validateField("projectName", projectName.value)
   validateField("projectDescription", projectDescription.value)
-  validateField("clientEmail", clientEmail.value)
   itemList.value.forEach((elt: QuoteItem, index: number) => {
     validateItemField(index, "description", elt.description)
     validateItemField(index, "duration", elt.duration)
@@ -132,11 +130,11 @@ async function handleSubmit(event: Event) {
         total: total.value,
       },
     })
+    handleClose()
   } catch (err) {
     console.error(err)
   } finally {
     isLoading.value = false
-    handleClose()
   }
 }
 
@@ -277,7 +275,6 @@ const emit = defineEmits<{
                     </button>
                   </div>
 
-                  <!-- TODO: Change the ring focus color to burnedSand -->
                   <textarea
                     :ref="
                       (el) => {

@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { ICON_SIZE } from "~/constants"
 
-const emit = defineEmits<{
+defineEmits<{
   (e: "click"): void
 }>()
 
 let intervalId: ReturnType<typeof setInterval> | null = null
 
-const bodyWidth = ref("0px")
+const bodyWidth = ref(0)
 const showTextBtn = ref(false)
 
 const floatingBtnBody = ref<HTMLElement | null>(null)
@@ -17,11 +17,7 @@ const switchOpen = async () => {
   await nextTick()
 
   if (floatingBtnBody.value) {
-    if (showTextBtn.value) {
-      bodyWidth.value = `${floatingBtnBody.value.scrollWidth}px`
-    } else {
-      bodyWidth.value = "0px"
-    }
+    bodyWidth.value = showTextBtn.value ? floatingBtnBody.value.scrollWidth : 0
   }
 }
 
@@ -29,7 +25,9 @@ onMounted(() => {
   intervalId = setInterval(switchOpen, 3000)
 })
 onUnmounted(() => {
-  if (intervalId) clearInterval(intervalId)
+  if (intervalId) {
+    clearInterval(intervalId)
+  }
 })
 </script>
 
@@ -37,12 +35,12 @@ onUnmounted(() => {
   <button
     ref="floatingBtnBody"
     class="z-10 fixed right-5 bottom-5 rounded-full bg-softSand border-2 border-sand flex flex-row items-center p-3 text-black shadow h-12"
-    @click="emit('click')"
+    @click="$emit('click')"
   >
     <p
       class="font-inconsolata font-medium transition-all ease-in-out duration-1000 whitespace-nowrap opacity-100"
       :style="{
-        width: showTextBtn ? bodyWidth : '0px',
+        width: `${bodyWidth}px`,
         opacity: showTextBtn ? 1 : 0,
       }"
     >

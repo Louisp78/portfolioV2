@@ -7,15 +7,6 @@ import { ICON_SIZE } from "~/constants"
 const { t } = useI18n()
 const { execute: executeRecaptcha } = useRecaptcha()
 
-const isLoading = ref(false)
-const clientEmail = ref<string>("")
-const clientName = ref<string>("")
-const projectName = ref<string>("")
-const projectDescription = ref<string>("")
-const itemList = ref<QuoteItem[]>([])
-const errors = ref<Record<string, string>>({})
-const textareaRefs = ref<HTMLTextAreaElement[]>([])
-
 const formSchema = z.object({
   clientName: z
     .string()
@@ -41,8 +32,16 @@ const formSchema = z.object({
     }),
   ),
 })
-
 type FormData = z.infer<typeof formSchema>
+
+const isLoading = ref(false)
+const clientEmail = ref<string>("")
+const clientName = ref<string>("")
+const projectName = ref<string>("")
+const projectDescription = ref<string>("")
+const itemList = ref<QuoteItem[]>([])
+const errors = ref<Record<string, string>>({})
+const textareaRefs = ref<HTMLTextAreaElement[]>([])
 
 const isError = computed(() => {
   return Object.values(errors.value).filter((elt) => elt !== "").length > 0
