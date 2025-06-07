@@ -3,8 +3,8 @@ on:
   workflow_dispatch: # Allows manual triggering
 
 jobs:
-  lhci:
-    name: Lighthouse
+  review:
+    name: Review
     runs-on: ubuntu-latest
     env:
       LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }} # Set environment variable using GitHub Secret
