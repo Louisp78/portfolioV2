@@ -15,7 +15,7 @@ const compat = new FlatCompat({
 
 export default defineConfig([
   {
-    extends: compat.extends("prettier"),
+    extends: compat.extends("eslint:recommended", "prettier"),
 
     plugins: {
       prettier,
@@ -30,6 +30,7 @@ export default defineConfig([
           semi: false,
         },
       ],
+      "no-console": "error",
     },
   },
 ])
