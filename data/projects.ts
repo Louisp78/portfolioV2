@@ -9,26 +9,7 @@ export const projectListFactory = (t: (key: string) => string): Project[] => [
     target: "_blank",
     imgAlt: t("projects.maconsigne.img-alt"),
     description: t("projects.maconsigne.description"),
-    skills: [
-      {
-        title: "React Native",
-      },
-      {
-        title: "Expo & Co",
-      },
-      {
-        title: "Tailwind",
-      },
-      {
-        title: "Redux",
-      },
-      {
-        title: "EAS",
-      },
-      {
-        title: "CI/CD",
-      },
-    ],
+    skills: ["React Native", "Expo & Co", "Tailwind", "Redux", "EAS", "CI/CD"],
   },
   {
     title: t("projects.lehibou-app.title"),
@@ -39,20 +20,7 @@ export const projectListFactory = (t: (key: string) => string): Project[] => [
     imgAlt:
       "Two screenshots of the Lehibou App: the first shows the login screen, and the second displays the iOS widget for freelance availability.",
     description: t("projects.lehibou-app.description"),
-    skills: [
-      {
-        title: "React Native",
-      },
-      {
-        title: "Expo",
-      },
-      {
-        title: "Swift",
-      },
-      {
-        title: "Typescript",
-      },
-    ],
+    skills: ["React Native", "Expo", "Swift", "Typescript"],
   },
   {
     title: "🍜 SudoSumo",
@@ -63,40 +31,17 @@ export const projectListFactory = (t: (key: string) => string): Project[] => [
       "Desktop screenshot of the SudoSumo app displaying a sudoku puzzle on the screen.",
     description: t("projects.sudosumo.description"),
     skills: [
-      {
-        title: "Next.js",
-      },
-      {
-        title: "React.js",
-      },
-      {
-        title: "Typescript",
-      },
-      {
-        title: "TailwindCSS",
-      },
-      {
-        title: "Java",
-      },
-      {
-        title: "Spring boot",
-      },
-      {
-        title: "AWS EC2",
-      },
-      {
-        title: "AWS RDS",
-      },
-      {
-        title: "Docker",
-      },
-      {
-        title: "OAuth2",
-      },
-
-      {
-        title: "Sudoku solver algorithms",
-      },
+      "Next.js",
+      "React.js",
+      "Typescript",
+      "TailwindCSS",
+      "Java",
+      "Spring boot",
+      "AWS EC2",
+      "AWS RDS",
+      "Docker",
+      "OAuth2",
+      "Sudoku solver algorithms",
     ],
   },
   {
@@ -105,36 +50,13 @@ export const projectListFactory = (t: (key: string) => string): Project[] => [
     imgAlt:
       "Three screenshots of the LivLink App: the first shows the contacts list, and the second and third display the 'Circle Call' feature.",
     description: t("projects.livlink.description"),
-    skills: [
-      {
-        title: "Android",
-      },
-      {
-        title: "Kotlin",
-      },
-      {
-        title: "Java Spring Boot",
-      },
-    ],
+    skills: ["Android", "Kotlin", "Java Spring Boot"],
   },
   {
     title: "Studeam",
     description: t("projects.studeam.description"),
     imgSrc: "/img/studeam1.png",
     imgAlt: t("projects.studeam.img-alt"),
-    skills: [
-      {
-        title: "React Native",
-      },
-      {
-        title: "Typescript",
-      },
-      {
-        title: "Java Spring Boot",
-      },
-      {
-        title: "Neo4j",
-      },
-    ],
+    skills: ["React Native", "Typescript", "Java Spring Boot", "Neo4j"],
   },
 ]

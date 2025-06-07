@@ -8,23 +8,7 @@ export const experiencesListFactory = (
     companie: "LeHibou",
     location: t("mauritius"),
     description: t("lehibou.description"),
-    skills: [
-      {
-        title: "React Native",
-      },
-      {
-        title: "Expo",
-      },
-      {
-        title: "Nuxt.js",
-      },
-      {
-        title: "Typescript",
-      },
-      {
-        title: "Swift",
-      },
-    ],
+    skills: ["React Native", "Expo", "Nuxt.js", "Typescript", "Swift"],
   },
   {
     title: t("spliit.job-title"),
@@ -32,24 +16,12 @@ export const experiencesListFactory = (
     companie: "Spliit",
     description: t("spliit.description"),
     skills: [
-      {
-        title: "Excel",
-      },
-      {
-        title: "Google App Script",
-      },
-      {
-        title: "PostgreSQL",
-      },
-      {
-        title: "Typescript",
-      },
-      {
-        title: "Google Data Studio",
-      },
-      {
-        title: "React.js",
-      },
+      "Excel",
+      "Google App Script",
+      "PostgreSQL",
+      "Typescript",
+      "Google Data Studio",
+      "React.js",
     ],
   },
 ]

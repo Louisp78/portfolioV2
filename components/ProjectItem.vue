@@ -17,8 +17,8 @@ const { slideOnObs } = useSlideRightObsAnim()
         <div class="skillContainer md:!justify-start">
           <SkillLabel
             v-for="skill in vModel.skills"
-            :key="skill.title"
-            :v-model="skill"
+            :key="skill"
+            :skill="skill"
           />
         </div>
       </header>

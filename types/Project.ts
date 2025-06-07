@@ -1,11 +1,9 @@
-import type Skill from "~/types/Skill"
-
 type ProjectBase = {
   title: string
   imgSrc: string
   imgAlt: string
   description: string
-  skills: Skill[]
+  skills: string[]
   target?: string
 }
 

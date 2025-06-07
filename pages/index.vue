@@ -1,11 +1,10 @@
 <script lang="ts" setup>
+import { ICON_SIZE } from "~/constants"
 import { educationListFactory } from "~/data/educations"
 import { experiencesListFactory } from "~/data/experiences"
 import { projectListFactory } from "~/data/projects"
 import type Education from "~/types/Education"
-import { ICON_SIZE } from "~/constants"
 import type { Project } from "~/types/Project"
-import type Skill from "~/types/Skill"
 
 const runtimeConfig = useRuntimeConfig()
 
@@ -34,16 +33,14 @@ const educationList: Education[] = educationListFactory(t)
 const projectList: Project[] = projectListFactory(t)
 const quoteModalOpen = ref<boolean>(false)
 
-const allSkillList = computed<Skill[]>(() => {
-  return [
-    { title: "React Native" },
-    { title: "Expo" },
-    { title: "SwiftUI" },
-    { title: "Java" },
-    { title: "Kotlin" },
-    { title: "Spring Boot" },
-  ]
-})
+const allSkillList = [
+  "React Native",
+  "Expo",
+  "SwiftUI",
+  "Java",
+  "Kotlin",
+  "Spring Boot",
+]
 </script>
 
 <template>
@@ -279,8 +276,8 @@ const allSkillList = computed<Skill[]>(() => {
         <div class="skillContainer">
           <SkillLabel
             v-for="skill in allSkillList"
-            :key="skill.title"
-            :v-model="skill"
+            :key="skill"
+            :skill="skill"
           />
         </div>
       </section>
