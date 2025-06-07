@@ -1,12 +1,15 @@
 <template>
   <div class="lds-ring">
-    <div /><div /><div /><div />
+    <div />
+    <div />
+    <div />
+    <div />
   </div>
 </template>
 
 <style lang="postcss" scoped>
 .lds-ring {
-  color: #FF4D00;
+  color: #ff4d00;
 }
 .lds-ring,
 .lds-ring div {

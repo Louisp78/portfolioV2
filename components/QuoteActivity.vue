@@ -4,16 +4,16 @@ const formValidated = ref(false)
 
 function handleClose() {
   formValidated.value = false
-  emit('close')
+  emit("close")
 }
 
 function handleSubmit() {
   formValidated.value = true
-  console.log('Quote form submitted')
+  console.log("Quote form submitted")
 }
 
 const emit = defineEmits<{
-  (e: 'close'): void
+  (e: "close"): void
 }>()
 </script>
 
@@ -40,10 +40,7 @@ const emit = defineEmits<{
           class="sticky w-full flex justify-start left-5 top-0"
         >
           <button @click="handleClose">
-            <Icon
-              name="ic:round-close"
-              size="24"
-            />
+            <Icon name="ic:round-close" size="24" />
           </button>
         </div>
         <QuoteForm
@@ -51,10 +48,7 @@ const emit = defineEmits<{
           @close="handleClose"
           @submit="handleSubmit"
         />
-        <QuoteEmailSent
-          v-else
-          @close="handleClose"
-        />
+        <QuoteEmailSent v-else @close="handleClose" />
       </div>
     </div>
   </div>

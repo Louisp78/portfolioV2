@@ -1,70 +1,77 @@
 <script lang="ts" setup>
-import { z } from 'zod'
-import SpinnerComponent from './SpinnerComponent.vue'
-import QuoteItem from '~/types/QuoteItem'
-import { ICON_SIZE } from '~/constants'
+import { z } from "zod"
+import SpinnerComponent from "./SpinnerComponent.vue"
+import QuoteItem from "~/types/QuoteItem"
+import { ICON_SIZE } from "~/constants"
 
 const { t } = useI18n()
 const { execute: executeRecaptcha } = useRecaptcha()
 
 const isLoading = ref(false)
-const clientEmail = ref<string>('')
-const clientName = ref<string>('')
-const projectName = ref<string>('')
-const projectDescription = ref<string>('')
+const clientEmail = ref<string>("")
+const clientName = ref<string>("")
+const projectName = ref<string>("")
+const projectDescription = ref<string>("")
 const itemList = ref<QuoteItem[]>([])
 const errors = ref<Record<string, string>>({})
 const textareaRefs = ref<HTMLTextAreaElement[]>([])
 
 const formSchema = z.object({
-  clientName: z.string().nonempty({ message: t('quote.validation.client-name-required') }),
-  clientEmail: z.string().email({ message: t('quote.validation.invalid-email') }),
-  projectName: z.string().nonempty({ message: t('quote.validation.project-name-required') }),
+  clientName: z
+    .string()
+    .nonempty({ message: t("quote.validation.client-name-required") }),
+  clientEmail: z
+    .string()
+    .email({ message: t("quote.validation.invalid-email") }),
+  projectName: z
+    .string()
+    .nonempty({ message: t("quote.validation.project-name-required") }),
   projectDescription: z.string(),
-  itemList: z
-    .array(
-      z.object({
-        description: z
-          .string()
-          .nonempty({ message: t('quote.validation.description-required') }),
-        duration: z
-          .number()
-          .gt(0, { message: t('quote.validation.duration-invalid') }),
-        quantity: z
-          .number()
-          .gt(0, { message: t('quote.validation.quantity-invalid') }),
-      }),
-    ),
+  itemList: z.array(
+    z.object({
+      description: z
+        .string()
+        .nonempty({ message: t("quote.validation.description-required") }),
+      duration: z
+        .number()
+        .gt(0, { message: t("quote.validation.duration-invalid") }),
+      quantity: z
+        .number()
+        .gt(0, { message: t("quote.validation.quantity-invalid") }),
+    }),
+  ),
 })
 
 type FormData = z.infer<typeof formSchema>
 
 const isError = computed(() => {
-  return Object.values(errors.value).filter(elt => elt !== '').length > 0
+  return Object.values(errors.value).filter((elt) => elt !== "").length > 0
 })
 
 function validateField<T extends keyof FormData>(field: T, value: unknown) {
   try {
     formSchema.shape[field].parse(value)
-    errors.value[field] = '' // Clear error if valid
-  }
-  catch (err) {
+    errors.value[field] = "" // Clear error if valid
+  } catch (err) {
     if (err instanceof z.ZodError) {
       errors.value[field] = err.issues[0].message // Set error message if invalid
     }
   }
 }
 
-function validateItemField(index: number, field: keyof QuoteItem, value: unknown) {
+function validateItemField(
+  index: number,
+  field: keyof QuoteItem,
+  value: unknown,
+) {
   try {
     // Dynamically validate the field based on the index and field name
     const schema = formSchema.shape.itemList.element as z.ZodObject<{
       [K in keyof QuoteItem]: z.ZodTypeAny
     }>
     schema.shape[field].parse(value)
-    errors.value[`itemList.${index}.${field}`] = '' // Clear error if valid
-  }
-  catch (err) {
+    errors.value[`itemList.${index}.${field}`] = "" // Clear error if valid
+  } catch (err) {
     if (err instanceof z.ZodError) {
       errors.value[`itemList.${index}.${field}`] = err.issues[0].message
     }
@@ -72,15 +79,15 @@ function validateItemField(index: number, field: keyof QuoteItem, value: unknown
 }
 
 async function validateForm() {
-  validateField('clientName', clientName.value)
-  validateField('clientEmail', clientEmail.value)
-  validateField('projectName', projectName.value)
-  validateField('projectDescription', projectDescription.value)
-  validateField('clientEmail', clientEmail.value)
+  validateField("clientName", clientName.value)
+  validateField("clientEmail", clientEmail.value)
+  validateField("projectName", projectName.value)
+  validateField("projectDescription", projectDescription.value)
+  validateField("clientEmail", clientEmail.value)
   itemList.value.forEach((elt: QuoteItem, index: number) => {
-    validateItemField(index, 'description', elt.description)
-    validateItemField(index, 'duration', elt.duration)
-    validateItemField(index, 'quantity', elt.quantity)
+    validateItemField(index, "description", elt.description)
+    validateItemField(index, "duration", elt.duration)
+    validateItemField(index, "quantity", elt.quantity)
   })
 }
 
@@ -93,7 +100,10 @@ function handleAddItem(event: MouseEvent) {
     if (textareaRefs.value[lastItemIndex]) {
       textareaRefs.value[lastItemIndex].focus()
       // Ensure the element is visible
-      textareaRefs.value[lastItemIndex].scrollIntoView({ behavior: 'smooth', block: 'center' })
+      textareaRefs.value[lastItemIndex].scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      })
     }
   })
 }
@@ -105,8 +115,8 @@ async function handleSubmit(event: Event) {
     validateForm()
     const token = await executeRecaptcha()
 
-    await $fetch('/api/send-email', {
-      method: 'POST',
+    await $fetch("/api/send-email", {
+      method: "POST",
       body: {
         recaptchaResponse: token,
         clientName: clientName.value,
@@ -117,12 +127,10 @@ async function handleSubmit(event: Event) {
         total: total.value,
       },
     })
-    emit('submit')
-  }
-  catch (err) {
+    emit("submit")
+  } catch (err) {
     console.error(err)
-  }
-  finally {
+  } finally {
     isLoading.value = false
   }
 }
@@ -135,42 +143,41 @@ const total = computed(() => {
 })
 
 const emit = defineEmits<{
-  (e: 'submit'): void
+  (e: "submit"): void
 }>()
 </script>
 
 <template>
   <form class="flex flex-col w-full">
     <div class="flex flex-col items-center -mt-5 mb-5">
-      <h2>{{ t('quote.modal.title') }}</h2>
+      <h2>{{ t("quote.modal.title") }}</h2>
       <p class="text-gray-500 text-center">
-        {{ t('quote.modal.subtitle') }}
+        {{ t("quote.modal.subtitle") }}
       </p>
     </div>
     <div class="flex flex-col items-start w-full mb-5">
       <section class="w-full pb-5 px-0 md:px-5">
         <h3 class="text-left pb-3">
-          {{ t('quote.modal.project-info') }}
+          {{ t("quote.modal.project-info") }}
         </h3>
         <form class="flex flex-col gap-2">
           <div>
-            <label for="client-name">{{ t('quote.modal.client-name') }}</label>
+            <label for="client-name">{{ t("quote.modal.client-name") }}</label>
             <input
               v-model="clientName"
               type="text"
               :placeholder="t('quote.modal.placeholders.client-name')"
               :class="errors.clientName ? 'border-red-500 border-2' : ''"
               @blur="validateField('clientName', clientName)"
-            >
-            <p
-              v-if="errors.clientName"
-              class="text-red-500"
-            >
+            />
+            <p v-if="errors.clientName" class="text-red-500">
               {{ errors.clientName }}
             </p>
           </div>
           <div>
-            <label for="client-email">{{ t('quote.modal.client-email') }}</label>
+            <label for="client-email">{{
+              t("quote.modal.client-email")
+            }}</label>
             <input
               id="client-email"
               v-model="clientEmail"
@@ -178,16 +185,15 @@ const emit = defineEmits<{
               :placeholder="t('quote.modal.placeholders.client-email')"
               :class="errors.clientEmail ? 'border-red-500 border-2' : ''"
               @blur="validateField('clientEmail', clientEmail)"
-            >
-            <p
-              v-if="errors.clientEmail"
-              class="text-red-500"
-            >
+            />
+            <p v-if="errors.clientEmail" class="text-red-500">
               {{ errors.clientEmail }}
             </p>
           </div>
           <div>
-            <label for="project-name">{{ t('quote.modal.project-name') }}</label>
+            <label for="project-name">{{
+              t("quote.modal.project-name")
+            }}</label>
             <input
               v-model="projectName"
               name="project-name"
@@ -195,16 +201,15 @@ const emit = defineEmits<{
               :placeholder="t('quote.modal.placeholders.project-name')"
               :class="errors.projectName ? 'border-red-500 border-2' : ''"
               @blur="validateField('projectName', projectName)"
-            >
-            <p
-              v-if="errors.projectName"
-              class="text-red-500"
-            >
+            />
+            <p v-if="errors.projectName" class="text-red-500">
               {{ errors.projectName }}
             </p>
           </div>
           <div>
-            <label for="project-description">{{ t('quote.modal.project-description') }}</label>
+            <label for="project-description">{{
+              t("quote.modal.project-description")
+            }}</label>
             <textarea
               v-model="projectDescription"
               name="project-description"
@@ -215,29 +220,24 @@ const emit = defineEmits<{
         </form>
       </section>
       <section class="w-full flex flex-col gap-5">
-        <h3>{{ t('quote.modal.mission-details') }}</h3>
+        <h3>{{ t("quote.modal.mission-details") }}</h3>
         <button
           type="button"
           class="w-full flex flex-row gap-2 items-center border rounded px-2 py-3 hover:bg-gray-100"
           @click="handleAddItem"
         >
-          <Icon
-            name="line-md:plus-circle"
-            size="24"
-          />
-          <span>{{ t('quote.modal.add-item') }}</span>
+          <Icon name="line-md:plus-circle" size="24" />
+          <span>{{ t("quote.modal.add-item") }}</span>
         </button>
         <ul class="flex flex-col gap-3">
-          <li
-            v-for="(item, index) in [...itemList].reverse()"
-            :key="index"
-          >
+          <li v-for="(item, index) in [...itemList].reverse()" :key="index">
             <form class="flex flex-col gap-2 border rounded p-3">
               <div class="flex justify-between">
                 <label
                   for="message"
                   class="block mb-2 font-medium text-gray-900 dark:text-white"
-                >{{ t('quote.modal.item-details') }} {{ index + 1 }}</label>
+                  >{{ t("quote.modal.item-details") }} {{ index + 1 }}</label
+                >
                 <button
                   type="button"
                   class="text-red-500 hover:text-red-700"
@@ -253,7 +253,11 @@ const emit = defineEmits<{
 
               <!-- TODO: Change the ring focus color to burnedSand -->
               <textarea
-                :ref="el => { if (el) textareaRefs[index] = el as HTMLTextAreaElement }"
+                :ref="
+                  (el) => {
+                    if (el) textareaRefs[index] = el as HTMLTextAreaElement
+                  }
+                "
                 v-model="item.description"
                 name="item-description"
                 rows="4"
@@ -276,7 +280,7 @@ const emit = defineEmits<{
               </p>
               <div class="flex flex-row justify-between items-center">
                 <div>
-                  <label for="duration">{{ t('quote.modal.duration') }}</label>
+                  <label for="duration">{{ t("quote.modal.duration") }}</label>
                   <input
                     v-model="item.duration"
                     type="number"
@@ -287,10 +291,8 @@ const emit = defineEmits<{
                         ? 'border-red-500 border-2'
                         : ''
                     "
-                    @blur="
-                      validateItemField(index, 'duration', item.duration)
-                    "
-                  >
+                    @blur="validateItemField(index, 'duration', item.duration)"
+                  />
                   <p
                     v-if="errors[`itemList.${index}.duration`]"
                     class="text-red-500"
@@ -299,7 +301,7 @@ const emit = defineEmits<{
                   </p>
                 </div>
                 <div>
-                  <label for="duration">{{ t('quote.modal.quantity') }}</label>
+                  <label for="duration">{{ t("quote.modal.quantity") }}</label>
                   <input
                     v-model="item.quantity"
                     type="number"
@@ -310,10 +312,8 @@ const emit = defineEmits<{
                         ? 'border-red-500 border-2'
                         : ''
                     "
-                    @blur="
-                      validateItemField(index, 'quantity', item.quantity)
-                    "
-                  >
+                    @blur="validateItemField(index, 'quantity', item.quantity)"
+                  />
                   <p
                     v-if="errors[`itemList.${index}.quantity`]"
                     class="text-red-500"
@@ -325,13 +325,12 @@ const emit = defineEmits<{
             </form>
           </li>
         </ul>
-        <div
-          v-if="itemList.length"
-          class="flex flex-col gap-1"
-        >
-          <h3>{{ t('quote.modal.estimation') }}</h3>
-          <span>{{ t('quote.modal.total') }} {{ total }}€</span>
-          <span class="text-xs text-gray-500">{{ t('quote.modal.disclaimer') }}</span>
+        <div v-if="itemList.length" class="flex flex-col gap-1">
+          <h3>{{ t("quote.modal.estimation") }}</h3>
+          <span>{{ t("quote.modal.total") }} {{ total }}€</span>
+          <span class="text-xs text-gray-500">{{
+            t("quote.modal.disclaimer")
+          }}</span>
         </div>
         <div class="w-full flex flex-row justify-center">
           <SpinnerComponent v-if="isLoading" />
@@ -341,7 +340,7 @@ const emit = defineEmits<{
             :disabled="isError"
             @click="handleSubmit"
           >
-            {{ t('quote.modal.submit') }}
+            {{ t("quote.modal.submit") }}
           </button>
         </div>
       </section>
@@ -351,6 +350,6 @@ const emit = defineEmits<{
 
 <style scoped lang="postcss">
 label {
-  @apply block mb-2 text-gray-900 ;
+  @apply block mb-2 text-gray-900;
 }
 </style>

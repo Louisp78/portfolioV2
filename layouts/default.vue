@@ -2,9 +2,7 @@
 const route = useRoute()
 const { t, locale } = useI18n()
 useHead({
-  meta: [
-    { property: 'og:title', content: `Portfolio - ${route.meta.title}` },
-  ],
+  meta: [{ property: "og:title", content: `Portfolio - ${route.meta.title}` }],
 })
 
 const menuOpened = ref<boolean>(false)
@@ -20,19 +18,19 @@ interface MenuItem {
 
 const navList = computed<MenuItem[]>(() => [
   {
-    title: t('menu.about-me'),
+    title: t("menu.about-me"),
     link: `/${locale.value}#about-me`,
   },
   {
-    title: t('menu.experiences'),
+    title: t("menu.experiences"),
     link: `/${locale.value}#exp`,
   },
   {
-    title: t('menu.education'),
+    title: t("menu.education"),
     link: `/${locale.value}#edu`,
   },
   {
-    title: t('menu.projects'),
+    title: t("menu.projects"),
     link: `/${locale.value}#projects`,
   },
 ])
@@ -90,16 +88,11 @@ const navList = computed<MenuItem[]>(() => [
           :key="navItem.title"
           class="animElt-slideBottom"
         >
-          <NuxtLink
-            :to="navItem.link"
-            @click="handleBurgerMenu"
-          >
+          <NuxtLink :to="navItem.link" @click="handleBurgerMenu">
             {{ navItem.title }}
           </NuxtLink>
         </li>
-        <li
-          class="animElt-slideBottom"
-        >
+        <li class="animElt-slideBottom">
           <LocaleBtnComponent />
         </li>
       </ul>
@@ -108,22 +101,22 @@ const navList = computed<MenuItem[]>(() => [
     <footer
       class="bg-softSand border-t-2 flex items-center py-3 flex-col gap-2"
     >
-      <span class="text-sm">{{ $t('footer-credits') }}</span>
+      <span class="text-sm">{{ $t("footer-credits") }}</span>
       <NuxtLink
         to="https://github.com/Louisp78/portfolioV2"
         target="_blank"
         class="text-sm underline hover:text-burnedSand"
       >
-        {{ $t('view-project-on-github') }}
+        {{ $t("view-project-on-github") }}
       </NuxtLink>
     </footer>
   </div>
 </template>
 
 <style scoped lang="postcss">
-  .menu-item {
-    a {
-      @apply text-2xl duration-100 select-none flex px-10 py-3 items-center text-moon hover:text-burnedSand hover:cursor-pointer;
-    }
+.menu-item {
+  a {
+    @apply text-2xl duration-100 select-none flex px-10 py-3 items-center text-moon hover:text-burnedSand hover:cursor-pointer;
   }
+}
 </style>

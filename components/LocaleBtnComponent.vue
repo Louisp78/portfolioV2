@@ -2,7 +2,7 @@
 const { setLocale, locale } = useI18n()
 
 async function handleLocaleChange() {
-  setLocale(locale.value === 'fr' ? 'en' : 'fr')
+  setLocale(locale.value === "fr" ? "en" : "fr")
 }
 </script>
 
@@ -12,14 +12,10 @@ async function handleLocaleChange() {
     @click="handleLocaleChange"
   >
     <p class="select-none">
-      {{ $i18n.locale === 'fr' ? 'FR' : 'US' }}
+      {{ $i18n.locale === "fr" ? "FR" : "US" }}
     </p>
     <Icon
-      :name="
-        $i18n.locale === 'fr'
-          ? 'circle-flags:fr'
-          : 'circle-flags:us'
-      "
+      :name="$i18n.locale === 'fr' ? 'circle-flags:fr' : 'circle-flags:us'"
     />
   </button>
 </template>

@@ -1,18 +1,20 @@
 <script lang="ts" setup>
-import { educationListFactory } from '~/data/educations'
-import { experiencesListFactory } from '~/data/experiences'
-import { projectListFactory } from '~/data/projects'
-import type Education from '~/types/Education'
-import { ICON_SIZE } from '~/constants'
-import type { Project } from '~/types/Project'
-import type Skill from '~/types/Skill'
+import { educationListFactory } from "~/data/educations"
+import { experiencesListFactory } from "~/data/experiences"
+import { projectListFactory } from "~/data/projects"
+import type Education from "~/types/Education"
+import { ICON_SIZE } from "~/constants"
+import type { Project } from "~/types/Project"
+import type Skill from "~/types/Skill"
 
 const runtimeConfig = useRuntimeConfig()
 
 useHead({
   script: [
     {
-      src: 'https://www.google.com/recaptcha/api.js?render=' + runtimeConfig.public.recaptchaSiteKey,
+      src:
+        "https://www.google.com/recaptcha/api.js?render=" +
+        runtimeConfig.public.recaptchaSiteKey,
       async: true,
       defer: true,
     },
@@ -21,10 +23,10 @@ useHead({
 
 const { t } = useI18n()
 
-const contactEmail = 'placelouis@gmail.com'
+const contactEmail = "placelouis@gmail.com"
 
 definePageMeta({
-  title: 'seo.index-title',
+  title: "seo.index-title",
 })
 
 const expList = experiencesListFactory(t)
@@ -33,9 +35,14 @@ const projectList: Project[] = projectListFactory(t)
 const quoteModalOpen = ref<boolean>(false)
 
 const allSkillList = computed<Skill[]>(() => {
-  return [{
-    title: 'React Native',
-  }, { title: 'Expo' }, { title: 'SwiftUI' }, { title: 'Java' }, { title: 'Kotlin' }, { title: 'Spring Boot' }]
+  return [
+    { title: "React Native" },
+    { title: "Expo" },
+    { title: "SwiftUI" },
+    { title: "Java" },
+    { title: "Kotlin" },
+    { title: "Spring Boot" },
+  ]
 })
 </script>
 
@@ -87,10 +94,7 @@ const allSkillList = computed<Skill[]>(() => {
                     target="_blank"
                     class="btn-primary"
                   >
-                    <Icon
-                      name="carbon:logo-github"
-                      :size="ICON_SIZE"
-                    />
+                    <Icon name="carbon:logo-github" :size="ICON_SIZE" />
                     <span>Louisp78</span>
                   </NuxtLink>
                 </li>
@@ -101,18 +105,15 @@ const allSkillList = computed<Skill[]>(() => {
                 class="btn-primary w-fit"
                 external
               >
-                <Icon
-                  name="mdi:resume"
-                  :size="ICON_SIZE"
-                />
-                <span>{{ $t('get-my-resume') }}</span>
+                <Icon name="mdi:resume" :size="ICON_SIZE" />
+                <span>{{ $t("get-my-resume") }}</span>
               </NuxtLink>
             </nav>
           </section>
           <section class="mt-10 text-center lg:text-left lg:max-w-3xl">
             <header class="pb-5">
-              <h2>{{ $t('hello-im-louis') }}</h2>
-              <h3>{{ $t('job-title') }}</h3>
+              <h2>{{ $t("hello-im-louis") }}</h2>
+              <h3>{{ $t("job-title") }}</h3>
             </header>
             <article class="flex flex-col gap-5 mb-5 lg:mb-10 lg:w-fit">
               <div>
@@ -121,38 +122,38 @@ const allSkillList = computed<Skill[]>(() => {
               <AccordionComponent>
                 <template #title>
                   <h4 class="introduce-section-title">
-                    {{ $t('how-can-i-help') }}
+                    {{ $t("how-can-i-help") }}
                   </h4>
                 </template>
                 <template #body>
-                  <ol class="flex flex-col gap-4 md:gap-1 pl-10 list-disc pr-5 ">
-                    <li>{{ $t('how-can-i-help-list.item1') }}</li>
-                    <li>{{ $t('how-can-i-help-list.item2') }}</li>
-                    <li>{{ $t('how-can-i-help-list.item3') }}</li>
-                    <li>{{ $t('how-can-i-help-list.item4') }}</li>
-                    <li>{{ $t('how-can-i-help-list.item5') }}</li>
+                  <ol class="flex flex-col gap-4 md:gap-1 pl-10 list-disc pr-5">
+                    <li>{{ $t("how-can-i-help-list.item1") }}</li>
+                    <li>{{ $t("how-can-i-help-list.item2") }}</li>
+                    <li>{{ $t("how-can-i-help-list.item3") }}</li>
+                    <li>{{ $t("how-can-i-help-list.item4") }}</li>
+                    <li>{{ $t("how-can-i-help-list.item5") }}</li>
                   </ol>
                 </template>
               </AccordionComponent>
               <AccordionComponent>
                 <template #title>
                   <h4 class="introduce-section-title">
-                    {{ $t('achievements-examples') }}
+                    {{ $t("achievements-examples") }}
                   </h4>
                 </template>
                 <template #body>
                   <div class="flex flex-col gap-5 pb-3">
                     <ol class="flex flex-col gap-1 pl-10 pr-5 list-disc">
-                      <li>{{ $t('achievements-list.item1') }}</li>
-                      <li>{{ $t('achievements-list.item2') }}</li>
-                      <li>{{ $t('achievements-list.item3') }}</li>
+                      <li>{{ $t("achievements-list.item1") }}</li>
+                      <li>{{ $t("achievements-list.item2") }}</li>
+                      <li>{{ $t("achievements-list.item3") }}</li>
                     </ol>
                     <div class="flex flex-row justify-center">
                       <NuxtLink
                         to="#projects"
                         class="btn-primary w-fit text-sm"
                       >
-                        {{ $t('see-more') }}
+                        {{ $t("see-more") }}
                       </NuxtLink>
                     </div>
                   </div>
@@ -161,26 +162,34 @@ const allSkillList = computed<Skill[]>(() => {
               <AccordionComponent>
                 <template #title>
                   <h4 class="introduce-section-title">
-                    {{ $t('why-work-with-me') }}
+                    {{ $t("why-work-with-me") }}
                   </h4>
                 </template>
                 <template #body>
                   <ol class="flex flex-col gap-1 list-disc pl-10 pr-5">
                     <li>
-                      <b>{{ $t('why-work-with-me-list.passion.title') }}:</b>
-                      {{ $t('why-work-with-me-list.passion.description') }}
+                      <b>{{ $t("why-work-with-me-list.passion.title") }}:</b>
+                      {{ $t("why-work-with-me-list.passion.description") }}
                     </li>
                     <li>
-                      <b>{{ $t('why-work-with-me-list.design.title') }}:</b>
-                      {{ $t('why-work-with-me-list.design.description') }}
+                      <b>{{ $t("why-work-with-me-list.design.title") }}:</b>
+                      {{ $t("why-work-with-me-list.design.description") }}
                     </li>
                     <li>
-                      <b>{{ $t('why-work-with-me-list.flexibility.title') }}:</b>
-                      {{ $t('why-work-with-me-list.flexibility.description') }}
+                      <b
+                        >{{ $t("why-work-with-me-list.flexibility.title") }}:</b
+                      >
+                      {{ $t("why-work-with-me-list.flexibility.description") }}
                     </li>
                     <li>
-                      <b>{{ $t('why-work-with-me-list.international.title') }}:</b>
-                      {{ $t('why-work-with-me-list.international.description') }}
+                      <b
+                        >{{
+                          $t("why-work-with-me-list.international.title")
+                        }}:</b
+                      >
+                      {{
+                        $t("why-work-with-me-list.international.description")
+                      }}
                     </li>
                   </ol>
                 </template>
@@ -191,20 +200,14 @@ const allSkillList = computed<Skill[]>(() => {
             >
               <div class="flex flex-col md:flex-row items-center gap-3">
                 <!-- TODO : Add a tooltip for the btn with my email adress -->
-                <NuxtLink
-                  :to="`mailto:${contactEmail}`"
-                  class="button"
-                >
-                  <Icon
-                    name="ic:outline-email"
-                    :size="ICON_SIZE"
-                  />
+                <NuxtLink :to="`mailto:${contactEmail}`" class="button">
+                  <Icon name="ic:outline-email" :size="ICON_SIZE" />
                   <span>
-                    {{ $t('send-me-an-email') }}
+                    {{ $t("send-me-an-email") }}
                   </span>
                 </NuxtLink>
                 <span class="font-inconsolata font-medium">
-                  {{ $t('or') }}
+                  {{ $t("or") }}
                 </span>
                 <NuxtLink
                   to="https://www.malt.fr/profile/louisplace"
@@ -219,12 +222,10 @@ const allSkillList = computed<Skill[]>(() => {
                       class="absolute -top-1 inline-flex h-3 w-3 rounded-full bg-darkGreen"
                     />
                   </span>
-                  <span class="font-inconsolata font-medium">{{ $t('hire-me-on') }}
+                  <span class="font-inconsolata font-medium"
+                    >{{ $t("hire-me-on") }}
                   </span>
-                  <Icon
-                    name="simple-icons:malt"
-                    size="45"
-                  />
+                  <Icon name="simple-icons:malt" size="45" />
                 </NuxtLink>
               </div>
             </div>
@@ -234,12 +235,9 @@ const allSkillList = computed<Skill[]>(() => {
           class="flex flex-col justify-between text-white gap-10 lg:flex-row pb-20 bg-custom-gradient"
         >
           <section class="text-center lg:text-left lg:w-full">
-            <div
-              id="exp"
-              class="relative -top-20"
-            />
+            <div id="exp" class="relative -top-20" />
             <h2 class="pb-5 lg:pb-10">
-              {{ $t('experiences-title') }}
+              {{ $t("experiences-title") }}
             </h2>
             <ul class="expList">
               <ExperienceItem
@@ -250,12 +248,9 @@ const allSkillList = computed<Skill[]>(() => {
             </ul>
           </section>
           <section class="lg:w-full">
-            <div
-              id="edu"
-              class="relative -top-20"
-            />
+            <div id="edu" class="relative -top-20" />
             <h2 class="pb-5 text-center lg:pb-10 lg:text-right">
-              {{ $t('education-title') }}
+              {{ $t("education-title") }}
             </h2>
             <ul class="eduList text-center">
               <EducationItem
@@ -267,25 +262,19 @@ const allSkillList = computed<Skill[]>(() => {
           </section>
         </div>
       </div>
-      <section
-        id="projects"
-        class="bg-white text-center pb-28 md:pb-20"
-      >
+      <section id="projects" class="bg-white text-center pb-28 md:pb-20">
         <h2 class="py-16">
-          {{ $t('projects-title') }}
+          {{ $t("projects-title") }}
         </h2>
         <ul class="projectList">
-          <li
-            v-for="project in projectList"
-            :key="project.title"
-          >
+          <li v-for="project in projectList" :key="project.title">
             <ProjectItem :v-model="project" />
           </li>
         </ul>
       </section>
       <section class="text-center pb-10">
         <h2 class="pb-5">
-          {{ $t('my-toolkit') }}
+          {{ $t("my-toolkit") }}
         </h2>
         <div class="skillContainer">
           <SkillLabel
@@ -301,23 +290,23 @@ const allSkillList = computed<Skill[]>(() => {
 </template>
 
 <style scoped lang="postcss">
-  .introduce-section-title {
-    @apply text-center w-full md:w-auto;
-  }
-  .btn-primary {
-    @apply flex justify-center items-center gap-3 p-2 font-inconsolata font-medium border border-black rounded-md hover:bg-sand hover:text-burnedSand;
-  }
-  .expList {
-    @apply flex flex-col items-center gap-10 md:px-20 lg:px-0 lg:pl-12 pb-10;
-  }
-  .eduList {
-    @apply flex flex-col items-center lg:items-end lg:text-right gap-10 md:px-20 lg:px-0;
-  }
-  .projectList {
-    @apply flex flex-col gap-24 md:gap-10;
-  }
+.introduce-section-title {
+  @apply text-center w-full md:w-auto;
+}
+.btn-primary {
+  @apply flex justify-center items-center gap-3 p-2 font-inconsolata font-medium border border-black rounded-md hover:bg-sand hover:text-burnedSand;
+}
+.expList {
+  @apply flex flex-col items-center gap-10 md:px-20 lg:px-0 lg:pl-12 pb-10;
+}
+.eduList {
+  @apply flex flex-col items-center lg:items-end lg:text-right gap-10 md:px-20 lg:px-0;
+}
+.projectList {
+  @apply flex flex-col gap-24 md:gap-10;
+}
 
-  ul {
-    @apply flex flex-row gap-3;
-  }
+ul {
+  @apply flex flex-row gap-3;
+}
 </style>

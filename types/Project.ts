@@ -1,4 +1,4 @@
-import type Skill from '~/types/Skill'
+import type Skill from "~/types/Skill"
 
 type ProjectBase = {
   title: string

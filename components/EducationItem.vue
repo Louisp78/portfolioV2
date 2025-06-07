@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type Education from '~/types/Education'
+import type Education from "~/types/Education"
 
 defineProps<{
   vModel: Education
@@ -16,10 +16,7 @@ defineProps<{
         class="companieAndLocation"
       >
         {{ vModel.companie }}
-        <Icon
-          name="clarity:link-line"
-          size="24"
-        />
+        <Icon name="clarity:link-line" size="24" />
       </NuxtLink>
     </template>
     <template v-else>
@@ -27,10 +24,7 @@ defineProps<{
         {{ vModel.companie }}
       </div>
     </template>
-    <p
-      v-if="vModel.description"
-      class="text-md md:text-lg"
-    >
+    <p v-if="vModel.description" class="text-md md:text-lg">
       {{ vModel.description }}
     </p>
   </li>

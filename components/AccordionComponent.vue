@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const isOpen = ref(false)
 
-const bodyHeight = ref('0px')
+const bodyHeight = ref("0px")
 const accordionBody = ref<HTMLElement | null>(null)
 
 const toggle = async () => {
@@ -12,9 +12,8 @@ const toggle = async () => {
   if (accordionBody.value) {
     if (isOpen.value) {
       bodyHeight.value = `${accordionBody.value.scrollHeight}px`
-    }
-    else {
-      bodyHeight.value = '0px'
+    } else {
+      bodyHeight.value = "0px"
     }
   }
 }
@@ -29,9 +28,7 @@ const toggle = async () => {
       <div
         class="flex flex-row justify-between items-center pt-3 px-5 font-semibold hover:text-burnedSand"
       >
-        <slot name="title">
-          Default Title
-        </slot>
+        <slot name="title"> Default Title </slot>
         <Icon
           :name="
             isOpen
@@ -49,9 +46,7 @@ const toggle = async () => {
         }"
         :style="{ height: isOpen ? bodyHeight : '0px' }"
       >
-        <slot name="body">
-          Default Content
-        </slot>
+        <slot name="body"> Default Content </slot>
       </div>
     </div>
   </div>

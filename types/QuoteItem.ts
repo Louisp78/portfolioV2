@@ -4,7 +4,7 @@ export default class QuoteItem {
   quantity: number
 
   constructor() {
-    this.description = ''
+    this.description = ""
     this.duration = 0
     this.quantity = 1
   }

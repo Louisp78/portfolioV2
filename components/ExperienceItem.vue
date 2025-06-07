@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type Experience from '~/types/Experience'
+import type Experience from "~/types/Experience"
 
 defineProps<{
   vModel: Experience

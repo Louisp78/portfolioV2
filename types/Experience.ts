@@ -1,4 +1,4 @@
-import type Skill from './Skill'
+import type Skill from "./Skill"
 
 export default interface Experience {
   title: string

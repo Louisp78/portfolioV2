@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type Skill from '~/types/Skill'
+import type Skill from "~/types/Skill"
 
 defineProps<{ vModel: Skill }>()
 </script>

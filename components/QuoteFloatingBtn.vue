@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { ICON_SIZE } from '~/constants'
+import { ICON_SIZE } from "~/constants"
 
 const emit = defineEmits<{
-  (e: 'click'): void
+  (e: "click"): void
 }>()
 
 let intervalId: ReturnType<typeof setInterval> | null = null
 
-const bodyWidth = ref('0px')
+const bodyWidth = ref("0px")
 const showTextBtn = ref(false)
 
 const floatingBtnBody = ref<HTMLElement | null>(null)
@@ -19,9 +19,8 @@ const switchOpen = async () => {
   if (floatingBtnBody.value) {
     if (showTextBtn.value) {
       bodyWidth.value = `${floatingBtnBody.value.scrollWidth}px`
-    }
-    else {
-      bodyWidth.value = '0px'
+    } else {
+      bodyWidth.value = "0px"
     }
   }
 }
@@ -42,9 +41,12 @@ onUnmounted(() => {
   >
     <p
       class="font-inconsolata font-medium transition-all ease-in-out duration-1000 whitespace-nowrap opacity-100"
-      :style="{ width: showTextBtn ? bodyWidth : '0px', opacity: showTextBtn ? 1 : 0 }"
+      :style="{
+        width: showTextBtn ? bodyWidth : '0px',
+        opacity: showTextBtn ? 1 : 0,
+      }"
     >
-      {{ $t('get-a-quote') }}
+      {{ $t("get-a-quote") }}
     </p>
     <Icon
       class="text-black"

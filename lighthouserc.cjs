@@ -1,11 +1,11 @@
 module.exports = {
   ci: {
     upload: {
-      target: 'filesystem',
-      outputDir: 'lhci_results',
+      target: "filesystem",
+      outputDir: "lhci_results",
     },
     assert: {
-      preset: 'lighthouse:recommended',
+      preset: "lighthouse:recommended",
     },
   },
 }
