@@ -38,6 +38,7 @@ const allSkillList = [
   "Java",
   "Kotlin",
   "Spring Boot",
+  "TypeScript",
 ]
 </script>
 
@@ -93,6 +94,7 @@ const allSkillList = [
                   </NuxtLink>
                 </li>
               </ul>
+              <!-- TODO: Delete that ? -->
               <NuxtLink
                 to="/cv.pdf"
                 target="_blank"
@@ -192,35 +194,22 @@ const allSkillList = [
             <div
               class="flex flex-col items-center gap-3 text-center lg:text-left lg:items-start"
             >
-              <div class="flex flex-col md:flex-row items-center gap-3">
-                <NuxtLink :to="`mailto:${CONTACT_EMAIL}`" class="button">
-                  <Icon name="ic:outline-email" :size="ICON_SIZE" />
-                  <span>
-                    {{ $t("send-me-an-email") }}
-                  </span>
-                </NuxtLink>
-                <span class="font-inconsolata font-medium">
-                  {{ $t("or") }}
+              <button
+                class="min-h-12 flex items-center gap-2 px-3 border-2 rounded-md bg-softSand border-burnedSand"
+                @click="quoteModalOpen = !quoteModalOpen"
+              >
+                <span class="w-3 flex justify-center items-center relative">
+                  <span
+                    class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-darkGreen opacity-80"
+                  />
+                  <span
+                    class="absolute inline-flex h-3 w-3 rounded-full bg-darkGreen"
+                  />
                 </span>
-                <NuxtLink
-                  to="https://www.malt.fr/profile/louisplace"
-                  target="_blank"
-                  class="flex flex-row items-center gap-2 px-3 border-2 rounded-md bg-softSand border-burnedSand"
-                >
-                  <span class="relative w-3">
-                    <span
-                      class="animate-ping absolute -top-1 inline-flex h-3 w-3 rounded-full bg-darkGreen opacity-80"
-                    />
-                    <span
-                      class="absolute -top-1 inline-flex h-3 w-3 rounded-full bg-darkGreen"
-                    />
-                  </span>
-                  <span class="font-inconsolata font-medium"
-                    >{{ $t("hire-me-on") }}
-                  </span>
-                  <Icon name="simple-icons:malt" size="45" />
-                </NuxtLink>
-              </div>
+                <span class="font-inconsolata font-medium">
+                  {{ t("lets-discuss-project") }}
+                </span>
+              </button>
             </div>
           </section>
         </div>

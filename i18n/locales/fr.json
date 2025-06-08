@@ -2,11 +2,7 @@
   "get-my-resume": "Voir mon cv",
   "hello-im-louis": "👋 Salut, je suis Louis",
   "job-title": "un ingénieur logiciel mobile",
-  "story-ocean": "En dehors de l’informatique, je vis pour l’Océan. Porté par une passion grandissante pour la vie marine et l’océanographie, mes lectures se transforment en articles scientifiques sur les raies manta. J’adore faire de la plongée sous-marine ou simplement du snorkeling pour observer le calme et la sérénité incomparables de l’Océan !",
-  "to-contact": "Pour me contacter, veuillez m’écrire ici…",
-  "send-me-an-email": "Envoyer un email",
-  "or": "ou",
-  "hire-me-on": "Engagez-moi sur",
+  "lets-discuss-project": "Discutons de votre projet",
   "experiences-title": "Expériences",
   "projects-title": "Projets",
   "my-toolkit": "Mes outils",
@@ -64,8 +60,11 @@
     "description": "Bienvenue sur le portfolio de Louis Place ! En tant que développeur mobile, je vous invite à découvrir mes projets innovants, mon expertise technique et les passions qui animent mon travail. Plongez dans mon univers pour voir comment je donne vie aux idées et contactez-moi pour collaborer ou en savoir plus."
   },
   "more-details": "Voir plus",
-  "footer-credits": "Un site créé avec du 💚 et une pincée de Nuxt.js",
-  "view-project-on-github": "Voir le projet sur Github",
+  "footer": {
+    "credits": "Un site créé avec du 💚 et une pincée de Nuxt.js",
+    "hire-me-on": "Engagez-moi sur",
+    "view-project-on-github": "Voir le projet sur Github"
+  },
   "sudosumo": {
     "title": "Spécifications techniques de l'infrastructure SudoSumo"
   },

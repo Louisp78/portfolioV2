@@ -146,6 +146,7 @@ const emit = defineEmits<{
 }>()
 </script>
 
+<!-- TODO: fix invalid horizontal padding for last section -->
 <template>
   <form class="flex flex-col w-full">
     <div class="flex flex-col items-center -mt-5 mb-5">

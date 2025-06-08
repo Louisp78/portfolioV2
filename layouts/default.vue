@@ -101,14 +101,29 @@ const navList = computed<MenuItem[]>(() => [
     <footer
       class="bg-softSand border-t-2 flex items-center py-3 flex-col gap-2"
     >
-      <span class="text-sm">{{ $t("footer-credits") }}</span>
-      <NuxtLink
-        to="https://github.com/Louisp78/portfolioV2"
-        target="_blank"
-        class="text-sm underline hover:text-burnedSand"
-      >
-        {{ $t("view-project-on-github") }}
-      </NuxtLink>
+      <div class="flex gap-3 items-center">
+        <NuxtLink
+          to="https://github.com/Louisp78/portfolioV2"
+          target="_blank"
+          class="underline hover:text-burnedSand"
+        >
+          {{ $t("footer.view-project-on-github") }}
+        </NuxtLink>
+        <span> | </span>
+        <div
+          class="max-h-2 flex items-center gap-1 hover:text-burnedSand hover:cursor-pointer"
+        >
+          <NuxtLink
+            to="https://github.com/Louisp78/portfolioV2"
+            target="_blank"
+            class="underline"
+          >
+            {{ $t("footer.hire-me-on") }}
+          </NuxtLink>
+          <Icon name="simple-icons:malt" size="45" />
+        </div>
+      </div>
+      <span class="text-sm">{{ $t("footer.credits") }}</span>
     </footer>
   </div>
 </template>

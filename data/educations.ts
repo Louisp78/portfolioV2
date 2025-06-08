@@ -9,6 +9,7 @@ export const educationListFactory = (
     companieLink: "https://www.epita.fr",
     description: t("epita-mti"),
   },
+  // TODO: change french trad to match linkedin
   {
     title: t("upec-dual-bachelor"),
     companie: t("upec"),
