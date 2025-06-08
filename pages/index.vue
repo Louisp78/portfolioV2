@@ -186,14 +186,14 @@ const allSkillList = [
                 class="w-fit min-h-12 flex items-center gap-2 px-3 border-2 rounded-md bg-softSand border-burnedSand"
                 @click="quoteModalOpen = !quoteModalOpen"
               >
-                <span class="w-3 flex justify-center items-center relative">
+                <div class="w-3 flex justify-center items-center relative">
                   <span
                     class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-darkGreen opacity-80"
                   />
                   <span
                     class="absolute inline-flex h-3 w-3 rounded-full bg-darkGreen"
                   />
-                </span>
+                </div>
                 <span class="font-inconsolata font-medium">
                   {{ t("lets-discuss-project") }}
                 </span>
