@@ -218,7 +218,7 @@ const emit = defineEmits<{
           </div>
         </form>
       </section>
-      <section class="w-full flex flex-col gap-5">
+      <section class="w-full flex flex-col gap-5 px-0 md:px-5">
         <h3>{{ t("quote.modal.mission-details") }}</h3>
         <button
           type="button"
@@ -249,8 +249,6 @@ const emit = defineEmits<{
                   />
                 </button>
               </div>
-
-              <!-- TODO: Change the ring focus color to burnedSand -->
               <textarea
                 :ref="
                   (el) => {

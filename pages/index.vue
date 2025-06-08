@@ -38,6 +38,7 @@ const allSkillList = [
   "Java",
   "Kotlin",
   "Spring Boot",
+  "TypeScript",
 ]
 </script>
 
@@ -93,15 +94,6 @@ const allSkillList = [
                   </NuxtLink>
                 </li>
               </ul>
-              <NuxtLink
-                to="/cv.pdf"
-                target="_blank"
-                class="btn-primary w-fit"
-                external
-              >
-                <Icon name="mdi:resume" :size="ICON_SIZE" />
-                <span>{{ $t("get-my-resume") }}</span>
-              </NuxtLink>
             </nav>
           </section>
           <section class="mt-10 text-center lg:text-left lg:max-w-3xl">
@@ -189,38 +181,23 @@ const allSkillList = [
                 </template>
               </AccordionComponent>
             </article>
-            <div
-              class="flex flex-col items-center gap-3 text-center lg:text-left lg:items-start"
-            >
-              <div class="flex flex-col md:flex-row items-center gap-3">
-                <NuxtLink :to="`mailto:${CONTACT_EMAIL}`" class="button">
-                  <Icon name="ic:outline-email" :size="ICON_SIZE" />
-                  <span>
-                    {{ $t("send-me-an-email") }}
-                  </span>
-                </NuxtLink>
+            <div class="w-full md:w-auto flex justify-center md:justify-start">
+              <button
+                class="w-fit min-h-12 flex items-center gap-2 px-3 border-2 rounded-md bg-softSand border-burnedSand"
+                @click="quoteModalOpen = !quoteModalOpen"
+              >
+                <div class="w-3 flex justify-center items-center relative">
+                  <span
+                    class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-darkGreen opacity-80"
+                  />
+                  <span
+                    class="absolute inline-flex h-3 w-3 rounded-full bg-darkGreen"
+                  />
+                </div>
                 <span class="font-inconsolata font-medium">
-                  {{ $t("or") }}
+                  {{ t("lets-discuss-project") }}
                 </span>
-                <NuxtLink
-                  to="https://www.malt.fr/profile/louisplace"
-                  target="_blank"
-                  class="flex flex-row items-center gap-2 px-3 border-2 rounded-md bg-softSand border-burnedSand"
-                >
-                  <span class="relative w-3">
-                    <span
-                      class="animate-ping absolute -top-1 inline-flex h-3 w-3 rounded-full bg-darkGreen opacity-80"
-                    />
-                    <span
-                      class="absolute -top-1 inline-flex h-3 w-3 rounded-full bg-darkGreen"
-                    />
-                  </span>
-                  <span class="font-inconsolata font-medium"
-                    >{{ $t("hire-me-on") }}
-                  </span>
-                  <Icon name="simple-icons:malt" size="45" />
-                </NuxtLink>
-              </div>
+              </button>
             </div>
           </section>
         </div>
@@ -278,28 +255,64 @@ const allSkillList = [
         </div>
       </section>
     </div>
-    <!-- TODO : Afficher un bouton "me contacter" lorsque l'utilisateur arrive à la dernière section de lecture -->
   </div>
 </template>
 
 <style scoped lang="postcss">
 .introduce-section-title {
-  @apply text-center w-full md:w-auto;
+  @apply w-full
+    md:w-auto
+    text-center;
 }
+
 .btn-primary {
-  @apply flex justify-center items-center gap-3 p-2 font-inconsolata font-medium border border-black rounded-md hover:bg-sand hover:text-burnedSand;
+  @apply flex
+    justify-center
+    items-center
+    gap-3
+    p-2
+    rounded-md
+    border
+    border-black
+    font-inconsolata
+    font-medium
+    hover:bg-sand
+    hover:text-burnedSand;
 }
+
 .expList {
-  @apply flex flex-col items-center gap-10 md:px-20 lg:px-0 lg:pl-12 pb-10;
+  @apply flex
+    flex-col
+    items-center
+    gap-10
+    pb-10
+    md:px-20
+    lg:px-0
+    lg:pl-12;
 }
+
 .eduList {
-  @apply flex flex-col items-center lg:items-end lg:text-right gap-10 md:px-20 lg:px-0;
+  @apply flex
+    flex-col
+    items-center
+    gap-10
+    text-center
+    md:px-20
+    lg:px-0
+    lg:items-end
+    lg:text-right;
 }
+
 .projectList {
-  @apply flex flex-col gap-24 md:gap-10;
+  @apply flex
+    flex-col
+    gap-24
+    md:gap-10;
 }
 
 ul {
-  @apply flex flex-row gap-3;
+  @apply flex
+    flex-row
+    gap-3;
 }
 </style>

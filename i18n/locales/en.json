@@ -2,11 +2,7 @@
   "get-my-resume": "Get my resume",
   "hello-im-louis": "👋 Hello, I'm Louis",
   "job-title": "a mobile software engineer",
-  "story-ocean": "Outside of computing, I live for the Ocean. Driven by a growing passion for marine life and oceanography, my readings turn into scientific articles about manta rays. I love scuba diving or just snorkeling to observe the unparalleled calm and serenity of the Ocean!",
-  "to-contact": "To contact me, please reach out here...",
-  "send-me-an-email": "Send me an email",
-  "or": "or",
-  "hire-me-on": "Hire me on",
+  "lets-discuss-project": "Let’s discuss your project",
   "experiences-title": "Experiences",
   "education-title": "Education",
   "projects-title": "Projects",
@@ -64,8 +60,11 @@
     "description": "Welcome to Louis Place's portfolio! As a mobile software engineer, I invite you to explore my innovative projects, technical expertise, and the passions that drive my work. Dive in to discover how I bring ideas to life and connect with me to collaborate or learn more."
   },
   "more-details": "More details",
-  "footer-credits": "A website made with 💚 and a pinch of Nuxt.js",
-  "view-project-on-github": "View project on Github",
+  "footer": {
+    "credits": "A website made with 💚 and a pinch of Nuxt.js",
+    "hire-me-on": "Hire me on",
+    "view-project-on-github": "View project on Github"
+  },
   "sudosumo": {
     "title": "SudoSumo Infrastructure Technical Specifications"
   },
