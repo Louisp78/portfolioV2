@@ -191,11 +191,9 @@ const allSkillList = [
                 </template>
               </AccordionComponent>
             </article>
-            <div
-              class="flex flex-col items-center gap-3 text-center lg:text-left lg:items-start"
-            >
+            <div class="w-full md:w-auto flex justify-center md:justify-start">
               <button
-                class="min-h-12 flex items-center gap-2 px-3 border-2 rounded-md bg-softSand border-burnedSand"
+                class="w-fit min-h-12 flex items-center gap-2 px-3 border-2 rounded-md bg-softSand border-burnedSand"
                 @click="quoteModalOpen = !quoteModalOpen"
               >
                 <span class="w-3 flex justify-center items-center relative">

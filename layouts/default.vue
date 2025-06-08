@@ -99,9 +99,9 @@ const navList = computed<MenuItem[]>(() => [
     </nav>
     <slot />
     <footer
-      class="bg-softSand border-t-2 flex items-center py-3 flex-col gap-2"
+      class="flex flex-col items-center gap-2 py-3 bg-softSand border-t-2"
     >
-      <div class="flex gap-3 items-center">
+      <div class="flex items-center gap-3">
         <NuxtLink
           to="https://github.com/Louisp78/portfolioV2"
           target="_blank"
@@ -110,18 +110,16 @@ const navList = computed<MenuItem[]>(() => [
           {{ $t("footer.view-project-on-github") }}
         </NuxtLink>
         <span> | </span>
-        <div
+        <NuxtLink
+          to="https://www.malt.fr/profile/louisplace"
+          target="_blank"
           class="max-h-2 flex items-center gap-1 hover:text-burnedSand hover:cursor-pointer"
         >
-          <NuxtLink
-            to="https://github.com/Louisp78/portfolioV2"
-            target="_blank"
-            class="underline"
-          >
+          <span class="underline">
             {{ $t("footer.hire-me-on") }}
-          </NuxtLink>
+          </span>
           <Icon name="simple-icons:malt" size="45" />
-        </div>
+        </NuxtLink>
       </div>
       <span class="text-sm">{{ $t("footer.credits") }}</span>
     </footer>
@@ -131,7 +129,18 @@ const navList = computed<MenuItem[]>(() => [
 <style scoped lang="postcss">
 .menu-item {
   a {
-    @apply text-2xl duration-100 select-none flex px-10 py-3 items-center text-moon hover:text-burnedSand hover:cursor-pointer;
+    @apply flex
+      items-center
+      px-10 
+      py-3 
+      
+      text-2xl
+      select-none
+      text-moon
+      
+      duration-100
+      hover:cursor-pointer
+      hover:text-burnedSand;
   }
 }
 </style>
