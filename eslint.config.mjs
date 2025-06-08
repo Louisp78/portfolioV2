@@ -13,6 +13,8 @@ const compat = new FlatCompat({
   allConfig: js.configs.all,
 })
 
+//TODO: Make it work
+//TODO: Add rules about scss format : organise tailwind classes logically + unauthorize style on tag element
 export default defineConfig([
   {
     extends: compat.extends("eslint:recommended", "prettier"),
