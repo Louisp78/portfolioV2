@@ -94,16 +94,6 @@ const allSkillList = [
                   </NuxtLink>
                 </li>
               </ul>
-              <!-- TODO: Delete that ? -->
-              <NuxtLink
-                to="/cv.pdf"
-                target="_blank"
-                class="btn-primary w-fit"
-                external
-              >
-                <Icon name="mdi:resume" :size="ICON_SIZE" />
-                <span>{{ $t("get-my-resume") }}</span>
-              </NuxtLink>
             </nav>
           </section>
           <section class="mt-10 text-center lg:text-left lg:max-w-3xl">
@@ -265,28 +255,64 @@ const allSkillList = [
         </div>
       </section>
     </div>
-    <!-- TODO : Afficher un bouton "me contacter" lorsque l'utilisateur arrive à la dernière section de lecture -->
   </div>
 </template>
 
 <style scoped lang="postcss">
 .introduce-section-title {
-  @apply text-center w-full md:w-auto;
+  @apply w-full
+    md:w-auto
+    text-center;
 }
+
 .btn-primary {
-  @apply flex justify-center items-center gap-3 p-2 font-inconsolata font-medium border border-black rounded-md hover:bg-sand hover:text-burnedSand;
+  @apply flex
+    justify-center
+    items-center
+    gap-3
+    p-2
+    rounded-md
+    border
+    border-black
+    font-inconsolata
+    font-medium
+    hover:bg-sand
+    hover:text-burnedSand;
 }
+
 .expList {
-  @apply flex flex-col items-center gap-10 md:px-20 lg:px-0 lg:pl-12 pb-10;
+  @apply flex
+    flex-col
+    items-center
+    gap-10
+    pb-10
+    md:px-20
+    lg:px-0
+    lg:pl-12;
 }
+
 .eduList {
-  @apply flex flex-col items-center lg:items-end lg:text-right gap-10 md:px-20 lg:px-0;
+  @apply flex
+    flex-col
+    items-center
+    gap-10
+    text-center
+    md:px-20
+    lg:px-0
+    lg:items-end
+    lg:text-right;
 }
+
 .projectList {
-  @apply flex flex-col gap-24 md:gap-10;
+  @apply flex
+    flex-col
+    gap-24
+    md:gap-10;
 }
 
 ul {
-  @apply flex flex-row gap-3;
+  @apply flex
+    flex-row
+    gap-3;
 }
 </style>
