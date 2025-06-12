@@ -34,7 +34,7 @@
   "school": "High School Blanche de Castille, Le Chesnay, FR",
   "projects": {
     "maconsigne": {
-      "description": "Imagine taking two bare React Native old apps, dusting them off, and giving them a shiny new home in Expo SDK 51—this was my mission with MaConsigne. From wrangling dependencies to ensuring everything ran smoothly in its new Expo-powered environment, it was like moving houses but for apps (and with fewer boxes to unpack).To top it off, I set up a sleek CI/CD pipeline with EAS, automating builds and deployments so releases now glide out effortlessly. The result? Two modernized apps ready to conquer the mobile world, all while keeping things snappy and stress-free for the devs. 🚀",
+      "description": "Imagine taking two old bare React Native apps, dusting them off, and giving them a shiny new home in Expo SDK 51—this was my mission with MaConsigne. From wrangling dependencies to ensuring everything ran smoothly in its new Expo-powered environment, it was like moving houses but for apps (and with fewer boxes to unpack). To top it off, I set up a sleek CI/CD pipeline with EAS, automating builds and deployments so releases now glide out effortlessly. The result? Two modernized apps ready to conquer the mobile world, all while keeping things snappy and stress-free for the devs. 🚀",
       "title": "MaConsigne Apps - an Expo migration story",
       "img-alt": "Three screenshots of the MaConsigne App"
     },
@@ -56,7 +56,7 @@
   "visit-the-website": "Visit the website",
   "download-on-app-store": "Download on App Store",
   "seo": {
-    "index-title": "Louis Place Mobile / Mobile Software Engineer",
+    "index-title": "Louis Place - Mobile Software Engineer",
     "description": "Welcome to Louis Place's portfolio! As a mobile software engineer, I invite you to explore my innovative projects, technical expertise, and the passions that drive my work. Dive in to discover how I bring ideas to life and connect with me to collaborate or learn more."
   },
   "more-details": "More details",
@@ -150,7 +150,7 @@
         "label": "Architecture",
         "details": {
           "ddd": "Domain-Driven Design (DDD) for improved modularity, separation of concerns, and ease of maintenance.",
-          "jakarta": "Build with Jakarta EE for enterprise-level scalability and robustness."
+          "jakarta": "Built with Jakarta EE for enterprise-level scalability and robustness."
         }
       },
       "security": {
@@ -196,8 +196,8 @@
         "value": "SSL/TLS certificates for end-to-end encryption."
       },
       "security-group": {
-        "label": "AWS security group",
-        "value": "ensure that no instance is unnecessarily exposed to the internet by properly configuring security group rules."
+        "label": "AWS Security Group",
+        "value": "Ensures that no instance is unnecessarily exposed to the internet by properly configuring security group rules."
       }
     }
   },
