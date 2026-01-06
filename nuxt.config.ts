@@ -1,6 +1,3 @@
-import { plugin } from "postcss"
-
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: Boolean(process.env.NUXT_DEV_TOOLS_ENABLE) },
@@ -12,6 +9,7 @@ export default defineNuxtConfig({
     "@nuxtjs/seo",
     "@nuxtjs/i18n",
     "nuxt-nodemailer",
+    "@nuxtjs/tailwindcss",
   ],
   css: ["~/assets/css/main.css"],
   typescript: {
@@ -22,11 +20,9 @@ export default defineNuxtConfig({
       stylistic: true,
     },
   },
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
+  tailwindcss: {
+        exposeConfig: true,
+    viewer: true,
   },
   nitro: {
     compressPublicAssets: true,
