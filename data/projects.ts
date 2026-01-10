@@ -1,6 +1,6 @@
 import type { Project } from "~/types/Project"
 
-export const projectListFactory = (t: (key: string) => string): Project[] => [
+export const projectListFactory = (t: (key: string) => string, locale: string): Project[] => [
   {
     title: t("projects.maconsigne.title"),
     link: "https://maconsigne.com/",
@@ -24,7 +24,7 @@ export const projectListFactory = (t: (key: string) => string): Project[] => [
   },
   {
     title: "🍜 SudoSumo",
-    link: "/sudosumo",
+    link: `/${locale}/sudosumo`,
     btnTitle: t("more-details"),
     imgSrc: "/img/sudosumo.png",
     imgAlt:

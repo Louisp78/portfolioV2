@@ -20,7 +20,7 @@ useHead({
   ],
 })
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 
 definePageMeta({
   title: "seo.index-title",
@@ -28,7 +28,7 @@ definePageMeta({
 
 const expList = experiencesListFactory(t)
 const educationList: Education[] = educationListFactory(t)
-const projectList: Project[] = projectListFactory(t)
+const projectList: Project[] = projectListFactory(t, locale.value)
 const quoteModalOpen = ref<boolean>(false)
 
 const allSkillList = [
