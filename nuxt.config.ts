@@ -8,7 +8,6 @@ export default defineNuxtConfig({
     "@nuxt/eslint",
     "@nuxt/icon",
     "@nuxt/image",
-    "@nuxtjs/sitemap",
     "@nuxtjs/seo",
     "@nuxtjs/i18n",
     "nuxt-nodemailer",
