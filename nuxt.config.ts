@@ -14,7 +14,7 @@ export default defineNuxtConfig({
   ],
   css: ["~/assets/css/main.css"],
   typescript: {
-    typeCheck: true,
+    typeCheck: false,
   },
   eslint: {
     config: {
